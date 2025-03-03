@@ -1,7 +1,7 @@
-PWD /Users/simonvehreschild/Studium/Latex_Anleitung
+PWD /Users/simonvehreschild/Studium/Latex_Anleitung/latex_anleitung
 INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/web2c/texmf.cnf
 INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/simonvehreschild/Studium/Latex_Anleitung/main.tex
+INPUT /Users/simonvehreschild/Studium/Latex_Anleitung/latex_anleitung/main.tex
 OUTPUT out/main.log
 INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/base/article.cls
 INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/base/article.cls
