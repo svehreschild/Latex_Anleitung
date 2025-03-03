@@ -1,0 +1,70 @@
+\documentclass[titlepage,table]{article}
+%\usepackage{titlesec}
+
+% language stuff
+%\usepackage{ngerman}           % deutsche Überschriften etc.
+\usepackage[utf8]{inputenc} % direkte Einbgabe von Umlauten
+\usepackage[ngerman]{babel} % this is needed for umlauts
+\usepackage[T1]{fontenc}    % this is needed for correct output of umlauts in pdf
+
+% Layout-Einstellungen
+\frenchspacing                % no extra space after periods
+\usepackage{parskip}          % paragraph gaps instead of indentation
+\usepackage{times}            % default font Times
+\tolerance=9000               % avoid words across right border
+
+% miscellaneous
+\usepackage{graphicx}         % graphics
+\usepackage{subcaption}       % subfigures
+\usepackage{hhline}           % double lines in tables
+\usepackage{amsfonts}         % real numbers etc.
+\usepackage{amsmath}          % Gleichungen untereinander &=
+\newcommand*\diff{\mathop{}\!\mathrm{d}} % dx -> Integrale
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\usepackage{amssymb}          % more math symbols
+\usepackage[makeroom]{cancel} % cross out math formula
+\usepackage[rightcaption]{sidecap} % figure captions on the right (optional)
+\usepackage{hyperref}         % for URLs
+\usepackage{listings, pmboxdraw}         % for code samples
+\usepackage{fancyhdr}         % for header line
+%\usepackage{color}
+
+% Hier bei Bedarf die Seitenränder einstellen
+\usepackage{geometry}
+\usepackage{lastpage}
+\usepackage[inkscapeformat=png]{svg}
+
+\usepackage[backend=bibtex, sorting=nyt, urldate=long]{biblatex}
+\usepackage[toc,page]{appendix}
+\usepackage{acronym}
+\usepackage{comment}
+\usepackage{siunitx}
+\usepackage{pdfpages}        % for including pdfs
+\usepackage{multirow}       % for multirow in tables
+\usepackage[table]{xcolor}     % for coloring cells in tables
+%\geometry{a4paper}
+
+\usepackage{booktabs}
+\geometry{a4paper,left=25mm,right=25mm, top=3.5cm, bottom=2.5cm} 
+
+
+% Kopf- und Fußzeile
+\fancyhead{} % clear all header fields
+\fancyhead[RO,LE]{\leftmark}
+
+\begin{document}
+% \includepdf{chapters/Deckblatt.pdf}
+% \input{chapters/titlepage}
+\tableofcontents
+\newpage
+\pagestyle{fancy}
+\renewcommand{\labelenumi}{\alph{enumi}}
+\pagenumbering{arabic}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+% Text
+
+\input{Kapitel/Übersicht.tex}
+
+\end{document}
