@@ -1,0 +1,12 @@
+stages:
+  - build
+
+build_pdf:
+  image: texlive/texlive
+  stage: build
+  script:
+    - mkdir -p out
+    - pdflatex -output-directory=out src/main.tex
+  artifacts:
+    paths:
+      - out/*.pdf
