@@ -9,4 +9,5 @@ build_pdf:
     - pdflatex -output-directory=out main.tex
   artifacts:
     paths:
-      - out/*.pdf
+      - public/*.pdf
+      # - out/*.pdf
