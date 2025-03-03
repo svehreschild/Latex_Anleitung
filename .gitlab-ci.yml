@@ -6,7 +6,7 @@ build_pdf:
   stage: build
   script:
     - mkdir -p out
-    - pdflatex -output-directory=out src/main.tex
+    - pdflatex -output-directory=out main.tex
   artifacts:
     paths:
       - out/*.pdf
