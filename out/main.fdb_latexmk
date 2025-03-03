@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex out/main"] 1741034073.48679 "out/main.aux" "out/main.bbl" "out/main" 1741038701.19466 0
+["bibtex out/main"] 1741034073.48679 "out/main.aux" "out/main.bbl" "out/main" 1741038898.30053 0
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1710106625 65510 b1f696b0241395385f422f67543c37fd ""
-  "out/main-blx.bib" 1741038701.04756 342 fa167ed66261dc83ac7836313223e07f "pdflatex"
-  "out/main.aux" 1741038701.04574 1705 6eaaaf167f394d28d91d54915d98ac3a "pdflatex"
+  "out/main-blx.bib" 1741038898.16275 342 fa167ed66261dc83ac7836313223e07f "pdflatex"
+  "out/main.aux" 1741038898.1609 1705 6eaaaf167f394d28d91d54915d98ac3a "pdflatex"
   (generated)
   "out/main.bbl"
   "out/main.blg"
   (rewritten before read)
-["pdflatex"] 1741038700.32585 "/Users/simonvehreschild/Studium/Latex_Anleitung/latex_anleitung/main.tex" "out/main.pdf" "main" 1741038701.19478 0
+["pdflatex"] 1741038897.45543 "/Users/simonvehreschild/Studium/Latex_Anleitung/latex_anleitung/main.tex" "out/main.pdf" "main" 1741038898.30064 0
   "/Users/simonvehreschild/Studium/Latex_Anleitung/latex_anleitung/main.tex" 1741033607.24268 2354 92d7aa96a1335d73ccbb4d6a6033c24b ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1710106625 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/map/fontname/texfonts.map" 1710106625 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -193,13 +193,13 @@
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1710106625 8221880 586024644079ee3bb0c221d6d52d1611 ""
   "Anlagen/Tabellen/Dokumentklassen.tex" 1741034072.1657 1288 afd2398269d8303a3ff267a8c3ec95ce ""
   "Anlagen/Tabellen/Einstellungen_Dokumentklassen.tex" 1741034046.39568 1446 58bf61a9ea7dc0fb51ddd5676c98416d ""
-  "Kapitel/Übersicht.tex" 1741038700.16946 798 2e9d85584279cc3d46f6a98f2f8895ae ""
+  "Kapitel/Übersicht.tex" 1741038897.30354 784 d71efa53203ac0d99ac67f1f5a530a77 ""
   "main.tex" 1741033607.24268 2354 92d7aa96a1335d73ccbb4d6a6033c24b ""
-  "out/main.aux" 1741038701.04574 1705 6eaaaf167f394d28d91d54915d98ac3a "pdflatex"
+  "out/main.aux" 1741038898.1609 1705 6eaaaf167f394d28d91d54915d98ac3a "pdflatex"
   "out/main.bbl" 1741034073.54701 519 c509c3014ae4e0f7ab9c902c559d8615 "bibtex out/main"
-  "out/main.out" 1741038701.04686 410 013074ac720f30c1904478f25194310e "pdflatex"
-  "out/main.run.xml" 1741038701.04802 2518 25b2917873526ddb3e942b615aef9c99 "pdflatex"
-  "out/main.toc" 1741038701.04807 259 cee97cc955b085e91438efaee6466d86 "pdflatex"
+  "out/main.out" 1741038898.16202 410 013074ac720f30c1904478f25194310e "pdflatex"
+  "out/main.run.xml" 1741038898.1632 2518 25b2917873526ddb3e942b615aef9c99 "pdflatex"
+  "out/main.toc" 1741038898.16324 259 cee97cc955b085e91438efaee6466d86 "pdflatex"
   (generated)
   "out/main-blx.bib"
   "out/main.aux"
