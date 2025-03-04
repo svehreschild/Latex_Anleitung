@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  4 MAR 2025 20:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  4 MAR 2025 21:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1122,7 +1122,15 @@ Package biblatex Info: ... file 'main.bbl' found.
  (out/main.bbl)
 Package biblatex Info: Reference section=0 on input line 56.
 Package biblatex Info: Reference segment=0 on input line 56.
- (out/main.toc
+ (./kapitel/deckblatt.tex
+<anlagen/bilder/logo.png, id=27, 2673.99pt x 2451.1575pt>
+File: anlagen/bilder/logo.png Graphic file (type png)
+<use anlagen/bilder/logo.png>
+Package pdftex.def Info: anlagen/bilder/logo.png  used on input line 6.
+(pdftex.def)             Requested size: 113.81102pt x 104.31306pt.
+ [1
+
+{/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}{/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./anlagen/bilder/logo.png>]) (out/main.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3.
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1156,21 +1164,62 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
- [1{/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}{/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
+File: anlagen/bilder/logo.png Graphic file (type png)
+<use anlagen/bilder/logo.png>
+Package pdftex.def Info: anlagen/bilder/logo.png  used on input line 77.
+(pdftex.def)             Requested size: 34.14322pt x 31.26773pt.
 
-] (./Kapitel/Übersicht.tex (./Kapitel/erste_schritte.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.86777pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.86777pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-22.86777pt}.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.77 \newpage
+              [1] (./kapitel/übersicht.tex (./kapitel/erste_schritte.tex
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7.
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 7.
- (./Anlagen/Tabellen/Dokumentklassen.tex) (./Anlagen/Tabellen/Einstellungen_Dokumentklassen.tex
+ (./anlagen/tabellen/dokumentklassen.tex) (./anlagen/tabellen/einstellungen_dokumentklassen.tex
 Overfull \hbox (23.10184pt too wide) in paragraph at lines 3--18
  [][] 
  []
 
-) [2])) [3] 
+)
+File: anlagen/bilder/logo.png Graphic file (type png)
+<use anlagen/bilder/logo.png>
+Package pdftex.def Info: anlagen/bilder/logo.png  used on input line 21.
+(pdftex.def)             Requested size: 34.14322pt x 31.26773pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.86777pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.86777pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-22.86777pt}.
+
+[2]))
+File: anlagen/bilder/logo.png Graphic file (type png)
+<use anlagen/bilder/logo.png>
+Package pdftex.def Info: anlagen/bilder/logo.png  used on input line 82.
+(pdftex.def)             Requested size: 34.14322pt x 31.26773pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 34.86777pt, for example:
+(fancyhdr)                \setlength{\headheight}{34.86777pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-22.86777pt}.
+
+[3] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (out/main.aux)
  ***********
@@ -1184,18 +1233,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30671 strings out of 474116
- 597769 string characters out of 5732612
+ 30691 strings out of 474116
+ 598281 string characters out of 5732612
  1937187 words of memory out of 5000000
- 52556 multiletter control sequences out of 15000+600000
- 589703 words of font info for 61 fonts, out of 8000000 for 9000
+ 52572 multiletter control sequences out of 15000+600000
+ 595716 words of font info for 63 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 94i,11n,93p,1914b,2371s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on out/main.pdf (3 pages, 144252 bytes).
+ 94i,15n,93p,1914b,2371s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on out/main.pdf (4 pages, 9990791 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 94 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  11 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

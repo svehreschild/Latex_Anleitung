@@ -13,7 +13,7 @@
 \usepackage{lastpage}           % Gesamtseitenzahl abrufen
 \usepackage{fancyhdr}           % Für individuelle Kopf- und Fußzeilen -> s.u.
 \usepackage{geometry}           % Ermöglicht benutzerdefinierte Seitenränder
-\geometry{a4paper, left=25mm, right=25mm, top=3.5cm, bottom=2.5cm} % Ränder setzen
+    \geometry{a4paper, left=25mm, right=25mm, top=3.5cm, bottom=2.5cm} % Ränder setzen
 
 % praktische Pakete
 \usepackage{hyperref}           % Aktiviert klickbare Links (URLs, Querverweise, Inhaltsverzeichnis)
@@ -54,8 +54,11 @@
 %---------------------------------------------------------------------------------------
 
 \begin{document}
-% \includepdf{chapters/Deckblatt.pdf}                               ?????
-% \input{chapters/titlepage}                                        ?????
+
+% Deckblatt
+% \includepdf{kapitel/deckblatt.pdf}                 % komplettes Deckblatt als PDF einfügen
+\input{kapitel/deckblatt}                            % Deckblatt als LaTeX-Datei einfügen (selber erstellt)
+% \input{kapitel/deckblatt_vorlage_berichte}         
 
 % Kopf- und Fußzeilen
 \pagestyle{fancy}                                    % Aktiviert individuelle Kopf- und Fußzeilen
@@ -65,22 +68,15 @@
 \fancyfoot[L]{Latex Anleitung}                       % Linke Seite: Dokumentname#
 \renewcommand{\footrulewidth}{0.4pt}                 % Linie über der Fußzeile
 \fancyhead{}                                         % Löscht alle Standard-Kopfzeilen
-\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrulewidth}{0.4pt}                 % Linie unter der Kopfzeile
+\fancyhead[L]{\includegraphics[width=1.2cm]{anlagen/bilder/logo.png}} % Logo links in der Kopfzeile
 \fancyhead[R]{\leftmark}                             % Kopfzeile: Kapitelname
-\fancyhead[L]{\includegraphics[width=2cm]{logo.png}} % Logo links in der Kopfzeile
 
+% Inhaltsverzeichnis
 \tableofcontents
 \newpage
 
-
-% \renewcommand{\labelenumi}{\alph{enumi}}
-%\pagenumbering{arabic} %%ggf \fancyfoot[C]{Seite \thepage~von~\pageref{LastPage}}   \usepackage{lastpage}
-
-% \renewcommand{\familydefault}{\sfdefault}
-
-
-% Text
-
-\input{Kapitel/Übersicht.tex}
+% Kapitel in separaten Dateien
+\input{kapitel/übersicht.tex}
 
 \end{document}
