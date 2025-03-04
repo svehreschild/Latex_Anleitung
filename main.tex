@@ -1,39 +1,40 @@
 \documentclass[titlepage,table]{article}
-%\usepackage{titlesec}
 
-% language stuff
-%\usepackage{ngerman}           % deutsche Überschriften etc.
-\usepackage[utf8]{inputenc} % direkte Einbgabe von Umlauten
-\usepackage[ngerman]{babel} % this is needed for umlauts
-\usepackage[T1]{fontenc}    % this is needed for correct output of umlauts in pdf
+% Sprach-Pakete:
+\usepackage[ngerman]{babel}     % Deutsche Silbentrennung, Begriffe & Typografie
+\usepackage[T1]{fontenc}        % Korrekte Darstellung & Trennung von Umlauten
 
 % Layout-Einstellungen
-\frenchspacing                % no extra space after periods
-\usepackage{parskip}          % paragraph gaps instead of indentation
-\usepackage{times}            % default font Times
-\tolerance=9000               % avoid words across right border
+\frenchspacing                  % Einheitlicher Abstand nach Satzzeichen (keine extra Leerzeichen)
+\tolerance=9000                 % Erlaubt größere Lücken zwischen Wörtern, um unschöne Umbrüche zu vermeiden
+\usepackage{parskip}            % Entfernt Absatzeinrückung und fügt Abstand zwischen Absätzen hinzu
+\usepackage{lmodern}            % Schriftart Latin Modern
+\usepackage{titlesec}           % Benutzerdefinierte Überschriften
+\usepackage{geometry}           % Ermöglicht benutzerdefinierte Seitenränder
+\geometry{a4paper, left=25mm, right=25mm, top=3.5cm, bottom=2.5cm} % Ränder setzen
+\usepackage{hyperref}           % Aktiviert klickbare Links (URLs, Querverweise, Inhaltsverzeichnis)
+\usepackage{fancyhdr}           % Für individuelle Kopf- und Fußzeilen
+\usepackage{color}              % Ermöglicht farbige Darstellung von Text und Elementen
 
-% miscellaneous
-\usepackage{graphicx}         % graphics
-\usepackage{subcaption}       % subfigures
-\usepackage{hhline}           % double lines in tables
-\usepackage{amsfonts}         % real numbers etc.
-\usepackage{amsmath}          % Gleichungen untereinander &=
-\newcommand*\diff{\mathop{}\!\mathrm{d}} % dx -> Integrale
-\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
-\usepackage{amssymb}          % more math symbols
-\usepackage[makeroom]{cancel} % cross out math formula
-\usepackage[rightcaption]{sidecap} % figure captions on the right (optional)
-\usepackage{hyperref}         % for URLs
-\usepackage{listings, pmboxdraw}         % for code samples
-\usepackage{fancyhdr}         % for header line
-%\usepackage{color}
+% Bilder
+\usepackage{graphicx}           % Fügt Bilder (JPG, PNG, PDF) in LaTeX-Dokumente ein    -> \includegraphics[width=...]{bild.png}
+\usepackage[inkscapeformat=png]{svg} % Ermöglicht SVG-Grafiken, konvertiert zu PNG
+\usepackage{subcaption}         % Ermöglicht mehrere Teilabbildungen mit Untertiteln
 
-% Hier bei Bedarf die Seitenränder einstellen
-\usepackage{geometry}
-\usepackage{lastpage}
-\usepackage[inkscapeformat=png]{svg}
+% Tabellen
+\usepackage{hhline}             % Erlaubt doppelte und selektive Linien in Tabellen
 
+% Quellcode
+\usepackage{listings, pmboxdraw} % Quellcode einbinden und optisch ansprechend rahmen
+
+% Mathematik
+\usepackage{amsmath}            % Mathematische Symbole, align-Umgebung (&=)
+\usepackage{amssymb}            % Extra Mathe-Symbole (z. B. Mengen, Relationen)
+\usepackage[makeroom]{cancel}   % Streicht mathematische Ausdrücke durch (mit zusätzlichem Raum)
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[backend=bibtex, sorting=nyt, urldate=long]{biblatex}
 \usepackage[toc,page]{appendix}
 \usepackage{acronym}
@@ -45,8 +46,8 @@
 %\geometry{a4paper}
 
 \usepackage{booktabs}
-\geometry{a4paper,left=25mm,right=25mm, top=3.5cm, bottom=2.5cm} 
 
+%---------------------------------------------------------------------------------------
 
 % Kopf- und Fußzeile
 \fancyhead{} % clear all header fields
@@ -59,7 +60,8 @@
 \newpage
 \pagestyle{fancy}
 \renewcommand{\labelenumi}{\alph{enumi}}
-\pagenumbering{arabic}
+\pagenumbering{arabic} %%ggf \fancyfoot[C]{Seite \thepage~von~\pageref{LastPage}}   \usepackage{lastpage}
+
 \renewcommand{\familydefault}{\sfdefault}
 
 
