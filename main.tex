@@ -65,12 +65,12 @@
 \fancyfoot{}                                         % Löscht alle Standard-Fußzeilen
 \fancyfoot[C]{Seite \thepage~von~\pageref{LastPage}} % Fußzeile mit "Seite X von Y"     % Praktisch auch:[RO,LE]
 \fancyfoot[R]{Simon Vehreschild}                     % Rechte Seite: Autorname
-\fancyfoot[L]{Latex Anleitung}                       % Linke Seite: Dokumentname#
+\fancyfoot[L]{LaTeX Anleitung}                       % Linke Seite: Dokumentname#
 \renewcommand{\footrulewidth}{0.4pt}                 % Linie über der Fußzeile
 \fancyhead{}                                         % Löscht alle Standard-Kopfzeilen
 \renewcommand{\headrulewidth}{0.4pt}                 % Linie unter der Kopfzeile
 \fancyhead[L]{\includegraphics[width=1.2cm]{anlagen/bilder/logo.png}} % Logo links in der Kopfzeile
-\fancyhead[R]{\leftmark}                             % Kopfzeile: Kapitelname
+\fancyhead[R]{\nouppercase{\leftmark}}                             % Kopfzeile: Kapitelname
 
 % Inhaltsverzeichnis
 \tableofcontents
