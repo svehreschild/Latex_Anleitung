@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  4 MAR 2025 21:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  4 MAR 2025 21:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1196,7 +1196,7 @@ Overfull \hbox (23.10184pt too wide) in paragraph at lines 3--18
 )
 File: anlagen/bilder/logo.png Graphic file (type png)
 <use anlagen/bilder/logo.png>
-Package pdftex.def Info: anlagen/bilder/logo.png  used on input line 21.
+Package pdftex.def Info: anlagen/bilder/logo.png  used on input line 20.
 (pdftex.def)             Requested size: 34.14322pt x 31.26773pt.
 
 
@@ -1241,7 +1241,7 @@ Here is how much of TeX's memory you used:
  1143 hyphenation exceptions out of 8191
  94i,15n,93p,1914b,2371s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on out/main.pdf (4 pages, 9990798 bytes).
+Output written on out/main.pdf (4 pages, 9990794 bytes).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream
