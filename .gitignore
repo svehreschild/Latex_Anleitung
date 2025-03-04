@@ -1,0 +1,8 @@
+# macOS Systemdateien
+.DS_Store
+
+# Ignoriere den `out/`-Ordner mit temporären LaTeX-Dateien
+out/
+
+# Ignoriere `indent.log`
+indent.log
