@@ -1,6 +1,4 @@
-neue seite
-%\hspace{} \vspace{} \vfill \hfill \newline \linebreak \break \newpage
-%\\ für neue zeile
+%\\ für neue zeile (Tabellen und Umgebungen)
 
 reffernzen
 %\ und {} in anweisungen
