@@ -43,10 +43,17 @@ Soll die Kopfzeile den aktuellen \textbackslash section\{\} Namen anzeigen, kann
 
 Eine Trennlinie zwischen Fußzeile und Dokument, sowie zwischen Kopfzeile und Dokument kann mit den Befehlen \textbf{\texttt{\textbackslash renewcommand\{\textbackslash footrulewidth\}\{...pt\}}} und \textbf{\texttt{\textbackslash renewcommand\{\textbackslash headrulewidth\}\{...pt\}}} eingefügt oder mit 0pt gelöscht werden.
 
-% •	\thispagestyle{empty} – Keine Kopf- oder Fußzeile auf der aktuellen Seite
-% •	\thispagestyle{plain} – Normale Fußzeile ohne Kopfzeile
+Manchmal ist es gewünscht auf einer Seite keine Kopf- und/oder Fußzeile zu haben. Dies ist möglich mit:
+\begin{itemize}
+    \item \textbf{\texttt{\textbackslash thispagestyle\{empty\}}} - Keine Kopf- oder Fußzeile
+    \item \textbf{\texttt{\textbackslash thispagestyle\{plain\}}} - Normale Fußzeile ohne Kopfzeile
+\end{itemize}
 
+\subsubsection{Erstellen des Inhaltsverzeichnisses}
+% weiter 
+Das Inhaltsverzeichnis wird mit dem Befehl \textbf{\texttt{\textbackslash tableofcontents}} erstellt. Es ist ratsam, das Inhaltsverzeichnis auf einer neuen Seite zu beginnen, um eine bessere Übersicht zu gewährleisten. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash newpage}} erreicht werden.
 
+weitere  Einstelungen
 \newpage
 
 \section{Fehlt noch:}
