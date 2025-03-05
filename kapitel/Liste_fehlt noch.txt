@@ -1,0 +1,18 @@
+
+%kommentare
+fett, kursiv
+reffernzen
+%\ und {} in anweisungen
+% \text, texttt, textbf, textit, underline , emph , farbig mit \textcolor{color}{text}
+%\input
+hierachie
+pdfpages
+mathe gleichungen
+stichpunkjte
+quellcode
+%Tabellen, Booktabs, Multicolumn, Multirow, Landscape
+%\newcommand{cmd}{def}
+einheiten mit siunitx
+neue seite
+%\hspace{} \vspace{} \vfill \hfill \newline \linebreak \break \newpage
+%\\ für neue zeile
