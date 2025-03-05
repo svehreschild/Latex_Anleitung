@@ -28,6 +28,7 @@ Der Schriftstil kann mit den folgenden Befehlen geändert werden:
 
 Die Schriftstile können mit den Schriftgrößen kombiniert und mit anderen Schriftstilen überlagert werden.
 
+
 \subsubsection{Schriftfarbe}
 Die Schriftfarbe kann auf folgende drei Arten geändert werden:
 
@@ -43,6 +44,26 @@ Die Schriftfarbe kann auf folgende drei Arten geändert werden:
 \end{itemize}
 
 Für diese Varianten wird das Paket \textbf{xcolor} benötigt. Darüberhinaus ist zu beachten, dass textcolor einen auf 1 normierten RGB-Wert erwartet.
+
+
+\subsubsection{Rahmen und Boxen}
+Textpassagen können mit folgenden Befehlen in Rahmen oder Boxen gesetzt werden:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Befehl}                                  & \textbf{Wirkung}                 & \textbf{Darstellung}   \\
+        \midrule
+        \texttt{\textbackslash fbox\{Text\}}             & Rahmen um den Text               & \fbox{Text}            \\
+        \texttt{\textbackslash framebox(45,10)\{Text\}}  & Box mit fester Breite und Höhe   & \framebox(45,10){Text} \\
+        \texttt{\textbackslash colorbox\{cyan\}\{Text\}} & Farbige Box mit Hintergrundfarbe & \colorbox{cyan}{Text}  \\
+        \bottomrule
+    \end{tabular}
+    \caption{Rahmen und Boxen}
+    \label{tab:boxen}
+\end{table}
+
 
 \subsubsection{Spezialfälle}
 
@@ -62,5 +83,5 @@ Für diese Varianten wird das Paket \textbf{xcolor} benötigt. Darüberhinaus is
 \end{table}
 
 
-
+\subsection{Abstandsformatierung}
 

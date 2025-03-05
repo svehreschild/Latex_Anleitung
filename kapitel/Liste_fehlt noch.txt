@@ -1,5 +1,7 @@
+neue seite
+%\hspace{} \vspace{} \vfill \hfill \newline \linebreak \break \newpage
+%\\ für neue zeile
 
-fett, kursiv -> % \text, texttt, textbf, textit, underline , emph , farbig mit \textcolor{color}{text}
 reffernzen
 %\ und {} in anweisungen
 
@@ -12,6 +14,3 @@ quellcode
 %Tabellen, Booktabs, Multicolumn, Multirow, Landscape
 %\newcommand{cmd}{def}
 einheiten mit siunitx
-neue seite
-%\hspace{} \vspace{} \vfill \hfill \newline \linebreak \break \newpage
-%\\ für neue zeile
