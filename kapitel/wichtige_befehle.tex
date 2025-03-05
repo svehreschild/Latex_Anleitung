@@ -71,7 +71,7 @@ Textpassagen können mit folgenden Befehlen in Rahmen oder Boxen gesetzt werden:
     \centering
     \begin{tabular}{lll}
         \toprule
-        \textbf{Funktion}       & \textbf{Anweisung}                  & \textbf{Darstellung}             \\
+        \textbf{Funktion}       & \textbf{Befehl}                     & \textbf{Darstellung}             \\
         \midrule
         Text hochstellen        & \texttt{x\textasciicircum\{4\}}     & $x^{4}$                          \\
         Text tiefstellen        & \texttt{H\_\{2\}O}                  & $H_{2}O$                         \\
@@ -82,7 +82,20 @@ Textpassagen können mit folgenden Befehlen in Rahmen oder Boxen gesetzt werden:
     \label{tab:textformatierung}
 \end{table}
 
-\newpage
-
 \subsection{Abstandsformatierung}
+\subsubsection{Vertikaler Abstand}
+Der vertikale Abstand kann mit den folgenden Befehlen geändert werden:
 
+\input{anlagen/tabellen/abstand_vertikal.tex}
+
+Eine weitere Möglichkeit, vertikalen Abstand zu erzeugen, ist die Verwendung von Leerzeilen. Diese erzeugen (genau) einen neuen Absatz und somit vertikalen Abstand.
+Darüber hinaus kann \texttt{\textbackslash stretch\{X\}} als Argument an \texttt{\textbackslash vspace} übergeben werden, um flexiblen Abstand zu erzeugen. Der Wert von \texttt{X} gibt dabei an, wie viel Teile (Verhältnis) des verfügbaren Platzes der Abstand einnehmen soll.
+
+\subsubsection{Horizontaler Abstand}
+Der horizontale Abstand kann mit den folgenden Befehlen geändert werden:
+
+\input{anlagen/tabellen/abstand_horizontal.tex}
+
+Eine weitere Möglichkeit, horizontalen Abstand zu erzeugen, ist die Verwendung von Leerzeichen. Diese erzeugen (genau) ein Leerzeichen und somit horizontalen Abstand.
+Darüber hinaus kann \texttt{\textbackslash stretch\{X\}} als Argument an \texttt{\textbackslash hspace} übergeben werden, um flexiblen Abstand zu erzeugen. Der Wert von \texttt{X} gibt dabei an, wie viel Teile (Verhältnis) des verfügbaren Platzes der Abstand einnehmen soll.
+Ein em ist die Breite des Großbuchstaben M in der aktuellen Schriftart und ein pt entspricht etwa 0.35 mm.

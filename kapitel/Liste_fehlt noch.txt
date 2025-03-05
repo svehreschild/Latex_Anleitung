@@ -5,7 +5,7 @@ neue seite
 reffernzen
 %\ und {} in anweisungen
 
-%\input
+%\input / include
 hierachie
 pdfpages
 mathe gleichungen
