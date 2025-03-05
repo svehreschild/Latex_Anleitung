@@ -1,1 +1,66 @@
 \section{Wichtige Befehle}
+\subsection{Kommentare}
+Kommentare werden in Latex mit einem Prozentzeichen eingeleitet. Alles, was nach dem Prozentzeichen steht in der selben Zeile steht, wird von Latex ignoriert. Mehrzeilige Kommentare sind mit den Befehlen \textbf{\texttt{\textbackslash begin\{comment\}}} und \textbf{\texttt{\textbackslash end\{comment\}}} möglich. Es wird das Paket \textbf{comment} benötigt.
+
+\begin{lstlisting}
+    % Dies ist ein einzeiliger Kommentar
+    Text ohne Kommentar.
+    
+    \begin{comment}
+    Dies ist ein
+    langer Kommentarblock
+    \end{comment}
+\end{lstlisting}
+
+\subsection{Textformatierung}
+\subsubsection{Schriftgröße}
+Die Schriftgröße kann mit den folgenden Befehlen geändert werden:
+
+\input{anlagen/tabellen/schriftgrößen.tex}
+
+Durch Verwendung von geschweiften Klammern kann der Befehl auf einen Textbereich angewendet werden:
+\textbf{\texttt{\{\textbackslash large großer Text\}}}
+
+\subsubsection{Schriftstil}
+Der Schriftstil kann mit den folgenden Befehlen geändert werden:
+
+\input{anlagen/tabellen/schriftstil.tex}
+
+Die Schriftstile können mit den Schriftgrößen kombiniert und mit anderen Schriftstilen überlagert werden.
+
+\subsubsection{Schriftfarbe}
+Die Schriftfarbe kann auf folgende drei Arten geändert werden:
+
+\begin{itemize}
+    \item \textbf{\texttt{\textbackslash textcolor\{red\}\{Roter Text\}}}
+          \hspace{2.83cm} --- \hspace{1cm} \textcolor{red}{Roter Text}
+
+    \item \textbf{\texttt{\textbackslash textcolor[rgb]\{0,0.5,1\}\{RGB-Farbe\}}}
+          \hspace{1.35cm} --- \hspace{1cm} \textcolor[rgb]{0,0.5,1}{RGB-Farbe}
+
+    \item \textbf{\texttt{\textbackslash textcolor[HTML]\{00FF00\}\{Hex-Farbcode\}}}
+          \hspace{0.8cm} --- \hspace{1cm} \textcolor[HTML]{00FF00}{Hex-Farbcode}
+\end{itemize}
+
+Für diese Varianten wird das Paket \textbf{xcolor} benötigt. Darüberhinaus ist zu beachten, dass textcolor einen auf 1 normierten RGB-Wert erwartet.
+
+\subsubsection{Spezialfälle}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Funktion}       & \textbf{Anweisung}                  & \textbf{Darstellung}             \\
+        \midrule
+        Text hochstellen        & \texttt{x\textasciicircum\{4\}}     & $x^{4}$                          \\
+        Text tiefstellen        & \texttt{H\_\{2\}O}                  & $H_{2}O$                         \\
+        Geschütztes Leerzeichen & \texttt{Hallo\textasciitilde Welt!} & Hallo~Welt! (Verhindert Umbruch) \\
+        \bottomrule
+    \end{tabular}
+    \caption{Spezial Befehle zur Textformatierung}
+    \label{tab:textformatierung}
+\end{table}
+
+
+
+

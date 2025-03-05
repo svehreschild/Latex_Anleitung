@@ -1,9 +1,8 @@
 
-%kommentare
-fett, kursiv
+fett, kursiv -> % \text, texttt, textbf, textit, underline , emph , farbig mit \textcolor{color}{text}
 reffernzen
 %\ und {} in anweisungen
-% \text, texttt, textbf, textit, underline , emph , farbig mit \textcolor{color}{text}
+
 %\input
 hierachie
 pdfpages

@@ -35,6 +35,17 @@
 
 % Quellcode
 \usepackage{listings, pmboxdraw} % Quellcode einbinden und optisch ansprechend rahmen
+\lstset{
+    language=[LaTeX]TeX,        % Programmiersprache
+    frame=single,               % Rahmen um den Code
+    numbers=left,               % Zeilennummern links
+    numberstyle=\footnotesize,  % Kleine Zeilennummern
+    basicstyle=\ttfamily,       % Monospace-Schriftart
+    keywordstyle=\color{blue},  % Keywords blau
+    commentstyle=\color{gray},  % Kommentare grau
+    stringstyle=\color{red},    % Strings rot
+    showstringspaces=false      % Keine Leerzeichen in Strings anzeigen
+}
 
 % Mathematik
 \usepackage{amsmath}            % Mathematische Symbole, align-Umgebung (&=)
@@ -65,7 +76,7 @@
 \fancyfoot{}                                         % Löscht alle Standard-Fußzeilen
 \fancyfoot[C]{Seite \thepage~von~\pageref{LastPage}} % Fußzeile mit "Seite X von Y"     % Praktisch auch:[RO,LE]
 \fancyfoot[R]{Simon Vehreschild}                     % Rechte Seite: Autorname
-\fancyfoot[L]{LaTeX Anleitung}                       % Linke Seite: Dokumentname#
+\fancyfoot[L]{\LaTeX{} Anleitung}                       % Linke Seite: Dokumentname#
 \renewcommand{\footrulewidth}{0.4pt}                 % Linie über der Fußzeile
 \fancyhead{}                                         % Löscht alle Standard-Kopfzeilen
 \renewcommand{\headrulewidth}{0.4pt}                 % Linie unter der Kopfzeile
