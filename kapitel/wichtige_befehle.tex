@@ -92,6 +92,8 @@ Der vertikale Abstand kann mit den folgenden Befehlen geändert werden:
 
 \input{anlagen/tabellen/abstand_vertikal.tex}
 
+Die Priorität \textbf{[prio]} gibt an, wie wichtig der Abstand ist. 4 ist der höchste Wert.
+
 Eine weitere Möglichkeit, vertikalen Abstand zu erzeugen, ist die Verwendung von Leerzeilen. Diese erzeugen (genau) einen neuen Absatz und somit vertikalen Abstand.
 Darüber hinaus kann \texttt{\textbackslash stretch\{X\}} als Argument an \texttt{\textbackslash vspace} übergeben werden, um flexiblen vertikalen Abstand zu erzeugen. Der Wert von \texttt{X} gibt dabei an, wie viel Teile (Verhältnis) des verfügbaren Platzes der Abstand einnehmen soll.
 
@@ -126,17 +128,17 @@ In LaTeX können Texte und Objekte zentriert werden. Dafür gibt es die folgende
 
 \subsection{Einbinden von \LaTeX{}-Dateien}
 \label{sec:einbinden_von_latex_dateien}
-Häufig ist es notwendig und sinnvoll, den \LaTeX{}-Code in mehrere Dateien aufzuteilen. Dies kann z.B. zur Strukturierung des Dokuments, zur Wiederverwendung von Codeblöcken oder zur Auslagerung von z.B. Tabellen sinnvoll sein.
+Häufig ist es notwendig und sinnvoll, den \LaTeX{}-Code in mehrere Dateien aufzuteilen. Dies kann zur Strukturierung des Dokuments, zur Wiederverwendung von Codeblöcken oder zur Auslagerung von z.B. Tabellen sinnvoll sein.
 
 Für das Einbinden gibt es folgende Befehle:
 \begin{table}[H]
     \centering
     \begin{tabular}{lccc}
         \toprule
-        \textbf{Befehl}                                       & \textbf{Seitenumbruch} & \textbf{Nutzbar in Unterdateien} \\
+        \textbf{Befehl}                                       & \textbf{Seitenumbruch} \\
         \midrule
-        \texttt{\textbackslash input\{Pfad/zur/Datei.tex\}}   & Nein                   & Ja                               \\
-        \texttt{\textbackslash include\{Pfad/zur/Datei.tex\}} & Ja                     & Nein                             \\
+        \texttt{\textbackslash input\{Pfad/zur/Datei.tex\}}   & Nein                   \\
+        \texttt{\textbackslash include\{Pfad/zur/Datei.tex\}} & Ja                     \\
 
         \bottomrule
     \end{tabular}
@@ -144,7 +146,13 @@ Für das Einbinden gibt es folgende Befehle:
     \label{tab:latex_einbindung}
 \end{table}
 
-Es ist zu beachten, dass der Befehl \texttt{\textbackslash include} nur im Hauptdokument (main.tex) und nicht in bereits eingebundenen Dateien verwendet werden kann.
+Es ist zu beachten, dass der Befehl \texttt{\textbackslash include} in bereits inkludierten Dateien fehleranfällig sein kann und daher vermieden werden sollte.
+
+
+\subsection{Einbinden von PDF-Dateien}
+\label{sec:einbinden_von_pdf_dateien}
+PDF-Dateien können in \LaTeX{}-Dokumente eingebunden werden. Dafür wird das Paket \textbf{pdfpages} benötigt. Die Einbindung erfolgt mit dem Befehl \textbf{\texttt{\textbackslash includepdf\{Pfad/zur/Datei.pdf\}}}. Es können auch nur bestimmte Seiten eingebunden werden mit der Option \textbf{\texttt{\textbackslash includepdf[pages=\{...\}]\{Pfad/zur/Datei.pdf\}}}.
+
 
 \subsection{Dokumentenhierarchie}
 Jedes \LaTeX{}-Dokument hat eine Hierarchie, die durch die folgende Befehle definiert wird:
@@ -153,7 +161,7 @@ Jedes \LaTeX{}-Dokument hat eine Hierarchie, die durch die folgende Befehle defi
 Die Nummerierung der Ebenen erfolgt automatisch bis zur Ebene \textbf{subsubsection} (X=3).
 Mit dem Befehl \textbf{\texttt{\textbackslash setcounter\{secnumdepth\}\{X\}}} kann die Nummerierungstiefe angepasst werden. Das X entspricht der Nummerierungstiefe:
 
-\begin{table}[h]
+\begin{table}[H]
     \centering
     \begin{tabular}{cll}
         \toprule
@@ -173,16 +181,40 @@ Mit dem Befehl \textbf{\texttt{\textbackslash setcounter\{secnumdepth\}\{X\}}} k
     \label{tab:secnumdepth}
 \end{table}
 
-Die Hierarchie-Ebenen sind auch im Inhaltsverzeichnis sichtbar und kann dort mit \textbf{\texttt{\textbackslash setcounter\{tocdepth\}\{X\}}} angepasst werden (siehe auch \ref{sec:inhaltsverzeichnis}).
+Die Hierarchie-Ebenen sind auch im Inhaltsverzeichnis sichtbar und können dort mit \textbf{\texttt{\textbackslash setcounter\{tocdepth\}\{X\}}} angepasst werden (siehe auch \ref{sec:inhaltsverzeichnis}).
 
-In manchen Fällen ist es erwünscht, eine Ebene nicht zu nummerieren und auch nicht im Inhaltsverzeichnis aufzuführen. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash section*\{Überschrift\}}} erreicht werden. Der Stern (*) bewirkt, dass die Ebene nicht nummeriert wird.
+In manchen Fällen ist es erwünscht, eine Ebene nicht zu nummerieren und auch nicht im Inhaltsverzeichnis aufzuführen. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash section*\{Überschrift\}}} erreicht werden.
+
 Soll die Ebene zwar im Inhaltsverzeichnis erscheinen, aber nicht nummeriert werden, kann der Befehl \textbf{\texttt{\textbackslash addcontentsline\{toc\}\{section\}\{Überschrift\}}} nach der jeweiligen section mit (*) verwendet werden.
 
-Soll im Inhaltsverzeichnis eine andere Überschrift als im Text erscheinen, kann der Befehl \textbf{\texttt{\textbackslash section[Kurztitel]\{ausführlicher Titel\}}} verwendet werden. Der Text in den eckigen Klammern wird im Inhaltsverzeichnis angezeigt, der Text in den geschweiften Klammern im Text.
+Falls im Inhaltsverzeichnis eine andere Überschrift als im Text erscheinen soll, kann der Befehl \textbf{\texttt{\textbackslash section[Kurztitel]\{ausführlicher Titel\}}} verwendet werden. Der Text in den eckigen Klammern wird im Inhaltsverzeichnis angezeigt, der Text in den geschweiften Klammern im Text als Überschrift.
 
 In Berichten werden in der Regel nur die Ebenen \textbf{section} bis \textbf{subsubsection} verwendet:
-
 \section*{1 \hspace{0.15cm} section}
+
 \subsection*{1.1 \hspace{0.15cm} subsection}
+
 \subsubsection*{1.1.1 \hspace{0.15cm} subsubsection}
 
+
+\subsection{Querverweise (Label und Referenzen)}
+\label{sec:querverweise}
+\LaTeX{} bietet ein automatisches Querverweis-System, welches es ermöglicht, auf Kapitel, Abschnitte, Bilder, Tabellen, Formeln und andere Elemente im Dokument zu verweisen.
+Dafür werden Labels an den gewünschten Stellen im Dokument gesetzt und an anderer Stelle mit Referenzen darauf verwiesen.
+
+\textbf{Labels} können mit dem Befehl \textbf{\texttt{\textbackslash label\{name\}}} gesetzt werden. Der Name kann frei gewählt werden, sollte aber eindeutig sein. Hilfreich ist die konventionelle Benennung, \textbf{fig:} für Bilder, \textbf{tab:} für Tabellen, \textbf{sec:} für Abschnitte und \textbf{eq:} für Formeln.
+
+\textbf{Referenzen} können mit dem Befehl \textbf{\texttt{\textbackslash ref\{name\}}} gesetzt werden. Der Name entspricht dem Label, auf das verwiesen werden soll.
+
+Mit dem Befehl \textbf{\texttt{\textbackslash pageref\{name\}}} kann auf die Seitenzahl des Labels verwiesen werden.
+
+Der Befehl \textbf{\texttt{\textbackslash autoref\{name\}}} kann den \textbf{Typ des Labels} (Abschnitt, Tabelle, Abbildung, Gleichung) ausgeben. Allerdings ist das Paket \textbf{hyperref} erforderlich.
+
+Soll der \textbf{Name des referenzierten Objektes} ausgegeben werden, kann dies mit \textbf{\texttt{\textbackslash nameref\{name\}}} erzielt werden.
+
+Mit dem Befehl \textbf{\texttt{\textbackslash hyperref[name]\{eigener Kommentar\}}} kann ein Link auf das Label gesetzt werden. Dafür wird das Paket \textbf{hyperref} benötigt.
+
+In \autoref{tab:querverweise} wird dies anhand eines Beispiels demonstriert:
+\input{anlagen/tabellen/quellenverweise}
+
+Bei den Befehlen (Ausnahme \textbackslash eqref) kann ein \textbf{*} verwendet werden um den Hyperlink zu entfernen. Beispiel: \texttt{\textbackslash ref*\{sec:querverweise\}}
