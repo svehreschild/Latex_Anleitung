@@ -1,6 +1,6 @@
 \section{Wichtige Befehle}
 \subsection{Kommentare}
-Kommentare werden in Latex mit einem Prozentzeichen eingeleitet. Alles, was nach dem Prozentzeichen in der selben Zeile steht, wird von Latex ignoriert. Mehrzeilige Kommentare sind mit den Befehlen \textbf{\texttt{\textbackslash begin\{comment\}}} und \textbf{\texttt{\textbackslash end\{comment\}}} möglich. Dafür wird das Paket \textbf{comment} benötigt.
+Kommentare werden in \LaTeX{} mit einem Prozentzeichen eingeleitet. Alles, was nach dem Prozentzeichen in der selben Zeile steht, wird von \LaTeX{} ignoriert. Mehrzeilige Kommentare sind mit den Befehlen \textbf{\texttt{\textbackslash begin\{comment\}}} und \textbf{\texttt{\textbackslash end\{comment\}}} möglich. Dafür wird das Paket \textbf{comment} benötigt.
 
 \begin{lstlisting}
     % Dies ist ein einzeiliger Kommentar
@@ -49,7 +49,7 @@ Für diese Varianten wird das Paket \textbf{xcolor} benötigt. Darüberhinaus is
 \subsubsection{Rahmen und Boxen}
 Textpassagen können mit folgenden Befehlen in Rahmen oder Boxen gesetzt werden:
 
-\begin{table}[h]
+\begin{table}[H]
     \centering
     \begin{tabular}{lll}
         \toprule
@@ -67,7 +67,7 @@ Textpassagen können mit folgenden Befehlen in Rahmen oder Boxen gesetzt werden:
 
 \subsubsection{Spezialfälle}
 
-\begin{table}[h]
+\begin{table}[H]
     \centering
     \begin{tabular}{lll}
         \toprule
@@ -82,7 +82,7 @@ Textpassagen können mit folgenden Befehlen in Rahmen oder Boxen gesetzt werden:
     \label{tab:textformatierung}
 \end{table}
 
-Einige Zeichen, wie \textbf{\%}, \textbf{\#}, \textbf{\&}, \textbf{\_} und \textbf{\{} müssen in Latex mit einem Backslash maskiert werden, um sie als Textzeichen zu verwenden (\textbf{\textbackslash\%}, \textbf{\textbackslash\#}, \textbf{\textbackslash\&}, \textbf{\textbackslash\_}, \textbf{\textbackslash\{}).
+Einige Zeichen, wie \textbf{\%}, \textbf{\#}, \textbf{\&}, \textbf{\_} und \textbf{\{} müssen in \LaTeX{} mit einem Backslash maskiert werden, um sie als Textzeichen zu verwenden (\textbf{\textbackslash\%}, \textbf{\textbackslash\#}, \textbf{\textbackslash\&}, \textbf{\textbackslash\_}, \textbf{\textbackslash\{}).
 
 Für einige Zeichen gibt es auch spezielle Befehle, die eine Darstellung unabhängig von der Funktion des Zeichens ermöglichen. Beispiele sind \textbf{\textbackslash textbackslash} für den Backslash \textbf{\textbackslash}, \textbf{\textbackslash textasciitilde} für die Tilde \textbf{\textasciitilde} und \textbf{\textbackslash textasciicircum} für das Zirkumflex \textbf{\textasciicircum}.
 
@@ -107,7 +107,7 @@ Ein em ist die Breite des Großbuchstaben M in der aktuellen Schriftart und ein 
 
 \subsubsection{Zentrierung}
 In LaTeX können Texte und Objekte zentriert werden. Dafür gibt es die folgenden Befehle:
-\begin{table}[h]
+\begin{table}[H]
     \centering
     \begin{tabular}{lp{6cm}c}
         \toprule
@@ -123,3 +123,39 @@ In LaTeX können Texte und Objekte zentriert werden. Dafür gibt es die folgende
     \caption{Möglichkeiten zur Zentrierung}
     \label{tab:center_vs_centering}
 \end{table}
+
+\subsection{Einbinden von \LaTeX{}-Dateien}
+\label{sec:einbinden_von_latex_dateien}
+Häufig ist es notwendig und sinnvoll, den \LaTeX{}-Code in mehrere Dateien aufzuteilen. Dies kann z.B. zur Strukturierung des Dokuments, zur Wiederverwendung von Codeblöcken oder zur Auslagerung von z.B. Tabellen sinnvoll sein.
+
+Für das Einbinden gibt es folgende Befehle:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Befehl}                                       & \textbf{Seitenumbruch} & \textbf{Nutzbar in Unterdateien} \\
+        \midrule
+        \texttt{\textbackslash input\{Pfad/zur/Datei.tex\}}   & Nein                   & Ja                               \\
+        \texttt{\textbackslash include\{Pfad/zur/Datei.tex\}} & Ja                     & Nein                             \\
+
+        \bottomrule
+    \end{tabular}
+    \caption{Einbindung von \LaTeX{}-Dateien}
+    \label{tab:latex_einbindung}
+\end{table}
+
+Es ist zu beachten, dass der Befehl \texttt{\textbackslash include} nur im Hauptdokument (main.tex) und nicht in bereits eingebundenen Dateien verwendet werden kann.
+
+\subsection{Dokumentenhierarchie}
+Jedes \LaTeX{}-Dokument hat eine Hierarchie, die durch die folgende Befehle definiert wird:
+
+\input{anlagen/tabellen/hierachie.tex}
+Die Nummerierung der Ebenen erfolgt automatisch bis zur Ebene \textbf{subsubsection}.
+Die Hierarchie-Ebenen sind auch im Inhaltsverzeichnis sichtbar (siehe auch \ref{sec:inhaltsverzeichnis}).
+
+
+
+Inhaltsverzeichnis
+
+
+In Berichten werden in der Regel nur die Ebenen \textbf{section} bis \textbf{subsubsection} verwendet.
