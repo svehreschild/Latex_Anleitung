@@ -150,12 +150,39 @@ Es ist zu beachten, dass der Befehl \texttt{\textbackslash include} nur im Haupt
 Jedes \LaTeX{}-Dokument hat eine Hierarchie, die durch die folgende Befehle definiert wird:
 
 \input{anlagen/tabellen/hierachie.tex}
-Die Nummerierung der Ebenen erfolgt automatisch bis zur Ebene \textbf{subsubsection}.
-Die Hierarchie-Ebenen sind auch im Inhaltsverzeichnis sichtbar (siehe auch \ref{sec:inhaltsverzeichnis}).
+Die Nummerierung der Ebenen erfolgt automatisch bis zur Ebene \textbf{subsubsection} (X=3).
+Mit dem Befehl \textbf{\texttt{\textbackslash setcounter\{secnumdepth\}\{X\}}} kann die Nummerierungstiefe angepasst werden. Das X entspricht der Nummerierungstiefe:
 
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cll}
+        \toprule
+        \textbf{Wert (X)} & \textbf{Maximal nummerierte Ebene}                        \\
+        \midrule
+        -1                & Keine Nummerierung                                        \\
+        0                 & Nur \texttt{\textbackslash part\{\}}                      \\
+        1                 & Bis \texttt{\textbackslash chapter\{\}}                   \\
+        2                 & Bis \texttt{\textbackslash section\{\}}                   \\
+        3                 & Bis \texttt{\textbackslash subsection\{\}} (Standardwert) \\
+        4                 & Bis \texttt{\textbackslash subsubsection\{\}}             \\
+        5                 & Bis \texttt{\textbackslash paragraph\{\}}                 \\
+        6                 & Bis \texttt{\textbackslash subparagraph\{\}}              \\
+        \bottomrule
+    \end{tabular}
+    \caption{Nummerierungstiefe mit \texttt{secnumdepth}}
+    \label{tab:secnumdepth}
+\end{table}
 
+Die Hierarchie-Ebenen sind auch im Inhaltsverzeichnis sichtbar und kann dort mit \textbf{\texttt{\textbackslash setcounter\{tocdepth\}\{X\}}} angepasst werden (siehe auch \ref{sec:inhaltsverzeichnis}).
 
-Inhaltsverzeichnis
+In manchen Fällen ist es erwünscht, eine Ebene nicht zu nummerieren und auch nicht im Inhaltsverzeichnis aufzuführen. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash section*\{Überschrift\}}} erreicht werden. Der Stern (*) bewirkt, dass die Ebene nicht nummeriert wird.
+Soll die Ebene zwar im Inhaltsverzeichnis erscheinen, aber nicht nummeriert werden, kann der Befehl \textbf{\texttt{\textbackslash addcontentsline\{toc\}\{section\}\{Überschrift\}}} nach der jeweiligen section mit (*) verwendet werden.
 
+Soll im Inhaltsverzeichnis eine andere Überschrift als im Text erscheinen, kann der Befehl \textbf{\texttt{\textbackslash section[Kurztitel]\{ausführlicher Titel\}}} verwendet werden. Der Text in den eckigen Klammern wird im Inhaltsverzeichnis angezeigt, der Text in den geschweiften Klammern im Text.
 
-In Berichten werden in der Regel nur die Ebenen \textbf{section} bis \textbf{subsubsection} verwendet.
+In Berichten werden in der Regel nur die Ebenen \textbf{section} bis \textbf{subsubsection} verwendet:
+
+\section*{1 \hspace{0.15cm} section}
+\subsection*{1.1 \hspace{0.15cm} subsection}
+\subsubsection*{1.1.1 \hspace{0.15cm} subsubsection}
+
