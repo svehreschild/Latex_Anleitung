@@ -1,6 +1,6 @@
 \section{Wichtige Befehle}
 \subsection{Kommentare}
-Kommentare werden in Latex mit einem Prozentzeichen eingeleitet. Alles, was nach dem Prozentzeichen steht in der selben Zeile steht, wird von Latex ignoriert. Mehrzeilige Kommentare sind mit den Befehlen \textbf{\texttt{\textbackslash begin\{comment\}}} und \textbf{\texttt{\textbackslash end\{comment\}}} möglich. Es wird das Paket \textbf{comment} benötigt.
+Kommentare werden in Latex mit einem Prozentzeichen eingeleitet. Alles, was nach dem Prozentzeichen in der selben Zeile steht, wird von Latex ignoriert. Mehrzeilige Kommentare sind mit den Befehlen \textbf{\texttt{\textbackslash begin\{comment\}}} und \textbf{\texttt{\textbackslash end\{comment\}}} möglich. Dafür wird das Paket \textbf{comment} benötigt.
 
 \begin{lstlisting}
     % Dies ist ein einzeiliger Kommentar
@@ -19,7 +19,7 @@ Die Schriftgröße kann mit den folgenden Befehlen geändert werden:
 \input{anlagen/tabellen/schriftgrößen.tex}
 
 Durch Verwendung von geschweiften Klammern kann der Befehl auf einen Textbereich angewendet werden:
-\textbf{\texttt{\{\textbackslash large großer Text\}}}
+Beispiel: \textbf{\texttt{\{\textbackslash large großer Text\}}}
 
 \subsubsection{Schriftstil}
 Der Schriftstil kann mit den folgenden Befehlen geändert werden:
@@ -89,7 +89,7 @@ Der vertikale Abstand kann mit den folgenden Befehlen geändert werden:
 \input{anlagen/tabellen/abstand_vertikal.tex}
 
 Eine weitere Möglichkeit, vertikalen Abstand zu erzeugen, ist die Verwendung von Leerzeilen. Diese erzeugen (genau) einen neuen Absatz und somit vertikalen Abstand.
-Darüber hinaus kann \texttt{\textbackslash stretch\{X\}} als Argument an \texttt{\textbackslash vspace} übergeben werden, um flexiblen Abstand zu erzeugen. Der Wert von \texttt{X} gibt dabei an, wie viel Teile (Verhältnis) des verfügbaren Platzes der Abstand einnehmen soll.
+Darüber hinaus kann \texttt{\textbackslash stretch\{X\}} als Argument an \texttt{\textbackslash vspace} übergeben werden, um flexiblen vertikalen Abstand zu erzeugen. Der Wert von \texttt{X} gibt dabei an, wie viel Teile (Verhältnis) des verfügbaren Platzes der Abstand einnehmen soll.
 
 \subsubsection{Horizontaler Abstand}
 Der horizontale Abstand kann mit den folgenden Befehlen geändert werden:
@@ -97,5 +97,25 @@ Der horizontale Abstand kann mit den folgenden Befehlen geändert werden:
 \input{anlagen/tabellen/abstand_horizontal.tex}
 
 Eine weitere Möglichkeit, horizontalen Abstand zu erzeugen, ist die Verwendung von Leerzeichen. Diese erzeugen (genau) ein Leerzeichen und somit horizontalen Abstand.
-Darüber hinaus kann \texttt{\textbackslash stretch\{X\}} als Argument an \texttt{\textbackslash hspace} übergeben werden, um flexiblen Abstand zu erzeugen. Der Wert von \texttt{X} gibt dabei an, wie viel Teile (Verhältnis) des verfügbaren Platzes der Abstand einnehmen soll.
+Darüber hinaus kann \texttt{\textbackslash stretch\{X\}} als Argument an \texttt{\textbackslash hspace} übergeben werden, um flexiblen horizontalen Abstand zu erzeugen. Der Wert von \texttt{X} gibt dabei an, wie viel Teile (Verhältnis) des verfügbaren Platzes der Abstand einnehmen soll.
+
 Ein em ist die Breite des Großbuchstaben M in der aktuellen Schriftart und ein pt entspricht etwa 0.35 mm.
+
+\subsubsection{Zentrierung}
+In LaTeX können Texte und Objekte zentriert werden. Dafür gibt es die folgenden Befehle:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lp{6cm}c}
+        \toprule
+        \textbf{Befehl} & \textbf{Funktion}                                              \\
+        \midrule
+        \texttt{\textbackslash begin\{center\} ... \textbackslash end\{center\}}
+                        & Zentriert alles im Block (Text, Bilder, Tabellen, Formeln)     \\
+
+        \texttt{\textbackslash centering}
+                        & Zentriert innerhalb einer Umgebung (Tabellen, Bilder, Formeln) \\
+        \bottomrule
+    \end{tabular}
+    \caption{Möglichkeiten zur Zentrierung}
+    \label{tab:center_vs_centering}
+\end{table}
