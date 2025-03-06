@@ -1,7 +1,7 @@
 \section{Erste Schritte}
 \subsection{Einstellungen und Struktur}
 
-Zunächst werden die Grundeinstellungen für das Layout des Dokuments festgelegt. Dazu wird eine LaTeX-Datei \textbf{main.tex} erstellt, in welcher die Dokumentenklasse, die verwendeten Pakete und die Layout-Einstellungen festgelegt werden. Außerdem sind dort das Deckblatt, die Kopf- und Fußzeilen und das Inhaltsverzeichnis zu definieren, sowie die einzelnen Kapitel einzubinden.
+Zunächst werden die Grundeinstellungen für das Layout des Dokuments festgelegt. Dazu wird eine \LaTeX{}-Datei \textbf{main.tex} erstellt, in welcher die Dokumentenklasse, die verwendeten Pakete und die Layout-Einstellungen festgelegt werden. Außerdem sind dort das Deckblatt, die Kopf- und Fußzeilen und das Inhaltsverzeichnis zu definieren, sowie die einzelnen Kapitel einzubinden.
 
 \subsubsection{Festlegen der Dokumentenklasse}
 Mit dem Befehl \textbf{\texttt{\textbackslash documentclass[Option1, Option2, ...]\{Dokumentenklasse\}}} wird die Dokumentenklasse festgelegt außerdem können weitere Optionen angegeben werden.
@@ -22,9 +22,9 @@ Das eigentliche Dokument wird mit dem Befehl \textbf{\texttt{\textbackslash begi
 Alle Anweisungen davor dienen lediglich der Vorbereitung des Dokuments. Alle Anweisungen danach werden ignoriert. Alle Inhalte der folgenden Unterpunkte sind innerhalb dieser beiden Befehle zu platzieren.
 
 \subsection{Einbinden / Erstellen des Deckblatts}
-In der Regel wird ein Deckblatt benötigt, welches Informationen wie den Titel, den Autor, das Datum und ein Logo enthält. Dieses kann entweder als PDF-Datei eingebunden, falls ein bereits erstelltes Deckblatt verwendet werden soll oder als neue LaTeX-Datei erstellt werden.
+In der Regel wird ein Deckblatt benötigt, welches Informationen wie den Titel, den Autor, das Datum und ein Logo enthält. Dieses kann entweder als PDF-Datei eingebunden, falls ein bereits erstelltes Deckblatt verwendet werden soll oder als neue \LaTeX{}-Datei erstellt werden.
 Das einbinden einer PDF-Datei erfolgt mit dem Befehl \textbf{\texttt{\textbackslash includepdf\{Pfad/zur/Datei.pdf\}}}. Für diesen Befehl wird das Paket \textbf{pdfpages} benötigt (siehe auch \ref{sec:einbinden_von_pdf_dateien}).
-Alternativ kann das Deckblatt auch als LaTeX-Datei eingebunden werden, indem der Inhalt des Deckblatts in eine neue Datei geschrieben und mit dem Befehl \textbf{\texttt{\textbackslash input\{Pfad/zur/Datei.tex\}}} eingebunden wird. Hilfreich ist die Funktion \textbf{\texttt{\textbackslash begin\{titlepage\}}} und \textbf{\texttt{\textbackslash end\{titlepage\}}} um zwischen diesen Befehlen das Deckblatt zu erstellen. In dem Ordner \textbf{kapitel} sind zwei Beispieldateien zu finden.
+Alternativ kann das Deckblatt auch als \LaTeX{}-Datei eingebunden werden, indem der Inhalt des Deckblatts in eine neue Datei geschrieben und mit dem Befehl \textbf{\texttt{\textbackslash input\{Pfad/zur/Datei.tex\}}} eingebunden wird. Hilfreich ist die Funktion \textbf{\texttt{\textbackslash begin\{titlepage\}}} und \textbf{\texttt{\textbackslash end\{titlepage\}}} um zwischen diesen Befehlen das Deckblatt zu erstellen. In dem Ordner \textbf{kapitel} sind zwei Beispieldateien zu finden.
 
 \subsection{Anpassen der Kopf- und Fußzeilen}
 Die Kopf- und Fußzeilen können mit dem Paket \textbf{fancyhdr} besonders elegant angepasst werden. Zunächst wird mit dem Befehl \textbf{\texttt{\textbackslash pagestyle\{fancy\}}} die Verwendung von individuellen Kopf- und Fußzeilen aktiviert. Anschließend werden mit den Befehlen \textbf{\texttt{\textbackslash fancyfoot\{\}}} und \textbf{\texttt{\textbackslash fancyhead\{\}}} die Standardeinstellungen für Fuß- und Kopfzeile gelöscht. Die Befehle \textbf{\texttt{\textbackslash fancyfoot[Position]\{Text\}}} und \textbf{\texttt{\textbackslash fancyhead[Position]\{Text\}}} ermöglichen das Hinzufügen von Text oder Bildern in die Fuß- oder Kopfzeile.
@@ -72,7 +72,7 @@ Darüber hinaus sind weitere Einstellungen mit den Paketen \textbf{tocloft}, \te
 
 \subsection{Einbinden von Kapiteln}
 Besonders bei langen und umfangreichen Dokumenten ist es sinnvoll, die einzelnen Kapitel in separaten Dateien zu erstellen und diese dann in das Hauptdokument einzubinden. Dies geschieht mit dem Befehl \textbf{\texttt{\textbackslash input\{Pfad/zur/Datei.tex\}}}. Dabei ist darauf zu achten, dass der Pfad relativ zum Hauptdokument angegeben wird.
-Ich persönlich strukturiere meine LaTeX-Dateien in einem eigenen Ordner (kapitel) und binde sie in einer dafür vorgesehenen Datei (uebersicht.tex) ein, welche in der main.tex Datei eingefügt wird. Somit muss die main.tex Datei nach einmaliger Einrichtung nicht mehr verändert werden.
+Ich persönlich strukturiere meine \LaTeX{}-Dateien in einem eigenen Ordner (kapitel) und binde sie in einer dafür vorgesehenen Datei (uebersicht.tex) ein, welche in der main.tex Datei eingefügt wird. Somit muss die main.tex Datei nach einmaliger Einrichtung nicht mehr verändert werden.
 
-Mehr zu dem Inkludieren von LaTeX-Dateien ist in Kapitel \ref{sec:einbinden_von_latex_dateien} zu finden.
+Mehr zu dem Inkludieren von \LaTeX{}-Dateien ist in Kapitel \ref{sec:einbinden_von_latex_dateien} zu finden.
 
