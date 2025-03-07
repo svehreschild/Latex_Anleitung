@@ -1,9 +1,3 @@
-
-
-mathe gleichungen 
-
-
-
 quellcode
 %Tabellen, Booktabs, Multicolumn, Multirow, Landscape
 %\\ für neue zeile (Tabellen und Umgebungen)
