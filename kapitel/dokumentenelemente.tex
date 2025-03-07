@@ -6,7 +6,7 @@ In \LaTeX{} gibt es verschiedene Arten von Listen. Es folgen die wichtigsten Bei
 
 \subsubsection{Aufzählungen / ungeordnete Listen}
 
-\begin{minipage}{0.55\textwidth}
+\begin{minipage}{0.58\textwidth}
     \begin{lstlisting}
 \begin{itemize}
     \item Erster Punkt
@@ -26,7 +26,7 @@ In \LaTeX{} gibt es verschiedene Arten von Listen. Es folgen die wichtigsten Bei
 
 \subsubsection{Nummerierungen / geordnete Listen}
 
-\begin{minipage}{0.55\textwidth}
+\begin{minipage}{0.58\textwidth}
     \begin{lstlisting}
 \begin{enumerate}
     \item Erster Punkt
@@ -44,29 +44,31 @@ In \LaTeX{} gibt es verschiedene Arten von Listen. Es folgen die wichtigsten Bei
     \end{enumerate}
 \end{minipage}
 
+Falls die Nummerierung mit römischen Zahlen erfolgen soll, kann dies durch den Befehl \textbf{\texttt{\textbackslash begin\{enumerate\}[label=\textbackslash Roman*]}} erreicht werden. Analog dazu können für kleine römische Zahlen \textbf{\texttt{\textbackslash roman*}} und für Buchstaben \textbf{\texttt{\textbackslash alph*}} verwendet werden. Für diese Anpassungen wird das Paket \texttt{enumitem} benötigt.
+
 \subsubsection{Definitionslisten}
 
-\begin{minipage}{0.55\textwidth}
+\begin{minipage}{0.58\textwidth}
     \begin{lstlisting}
 \begin{description}
-    \item[Erster Punkt] Beschreibung
-    \item[Zweiter Punkt] Beschreibung
-    \item[Dritter Punkt] Beschreibung
+    \item[Erster Punkt] Beschreibung 1
+    \item[Zweiter Punkt] Beschreibung 2
+    \item[Dritter Punkt] Beschreibung 3
 \end{description}
 \end{lstlisting}
 \end{minipage}
 \hfill
 \begin{minipage}{0.35\textwidth}
     \begin{description}
-        \item[Erster Punkt] Beschreibung
-        \item[Zweiter Punkt] Beschreibung
-        \item[Dritter Punkt] Beschreibung
+        \item[Erster Punkt] Beschreibung 1
+        \item[Zweiter Punkt] Beschreibung 2
+        \item[Dritter Punkt] Beschreibung 3
     \end{description}
 \end{minipage}
 
 \subsubsection{Angepasste Listen}
 
-\begin{minipage}{0.55\textwidth}
+\begin{minipage}{0.58\textwidth}
     \begin{lstlisting}
 \begin{itemize}[label=$\rightarrow$]
     \item Erster Punkt
@@ -84,4 +86,34 @@ In \LaTeX{} gibt es verschiedene Arten von Listen. Es folgen die wichtigsten Bei
     \end{itemize}
 \end{minipage}
 
-vorstellung der items
+Neben $\rightarrow$ können auch andere Symbole oder Zeichenketten als Aufzählungszeichen verwendet werden. Es ist allerdings darauf zu achten ggf. (\$) für Objekte aus der Mathematikumgebung zu verwenden. Vorstellbar beispielsweise wäre ein Haken $\checkmark$ (\$\textbackslash checkmark\$) oder ein Kreuz $\times$ (\$\textbackslash times\$). Es wird das Paket \texttt{enumitem} benötigt.
+
+\subsubsection{Mehrspaltige Listen}
+
+\begin{minipage}{0.50\textwidth}
+    \begin{lstlisting}
+\begin{multicols}{2}
+\begin{itemize}
+    \item Erster Punkt
+    \item Zweiter Punkt
+    \item Dritter Punkt
+    \item Vierter Punkt
+\end{itemize}
+\end{multicols}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item Erster Punkt
+            \item Zweiter Punkt
+            \item Dritter Punkt
+            \item Vierter Punkt
+        \end{itemize}
+    \end{multicols}
+\end{minipage}
+
+Mit der Umgebung \texttt{multicols} können mehrspaltige Listen erstellt werden. Die Anzahl der Spalten wird als Argument in geschweiften Klammern übergeben. Es wird das Paket \texttt{multicol} benötigt.
+
+\subsection{Gleichungen / Mathematikumgebungen}

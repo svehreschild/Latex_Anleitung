@@ -20,7 +20,7 @@
 \usepackage{color}              % Ermöglicht farbige Darstellung von Text und Elementen
 \usepackage{comment}            % große Textblöcke auskommentieren -> \begin{comment} ... \end{comment}
 \usepackage{siunitx}            % Einheiten -> \SI{wert}{\einheit}
-\usepackage{float}             % Positionierung von Gleitobjekten (Bilder, Tabellen) -> \begin{figure}[H]
+\usepackage{float}              % Positionierung von Gleitobjekten (Bilder, Tabellen) -> \begin{figure}[H]
 
 % Bilder / PDFs
 \usepackage{graphicx}           % Fügt Bilder (JPG, PNG, PDF) in LaTeX-Dokumente ein    -> \includegraphics[width=...]{bild.png}
@@ -30,6 +30,7 @@
 
 % Listen
 \usepackage{enumitem}           % Ermöglicht Anpassungen von Listen -> \begin{itemize}[label=...]
+\usepackage{multicol}           % Ermöglicht mehrspaltige Listen -> \begin{multicols}{2} ... \end{multicols}
 
 % Tabellen
 \usepackage{hhline}             % Erlaubt doppelte und selektive Linien in Tabellen
@@ -80,7 +81,7 @@
 \fancyfoot{}                                         % Löscht alle Standard-Fußzeilen
 \fancyfoot[C]{Seite \thepage~von~\pageref{LastPage}} % Fußzeile mit "Seite X von Y"     % Praktisch auch:[RO,LE]
 \fancyfoot[R]{Simon Vehreschild}                     % Rechte Seite: Autorname
-\fancyfoot[L]{\LaTeX{} Anleitung}                       % Linke Seite: Dokumentname#
+\fancyfoot[L]{\LaTeX{} Anleitung}                    % Linke Seite: Dokumentname#
 \renewcommand{\footrulewidth}{0.4pt}                 % Linie über der Fußzeile
 \fancyhead{}                                         % Löscht alle Standard-Kopfzeilen
 \renewcommand{\headrulewidth}{0.4pt}                 % Linie unter der Kopfzeile
