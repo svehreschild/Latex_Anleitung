@@ -1,6 +1,8 @@
 
-minipage? -> parallel Darstellung
-mathe gleichungen kurzform $$
+
+mathe gleichungen 
+
+
 
 quellcode
 %Tabellen, Booktabs, Multicolumn, Multirow, Landscape
@@ -10,5 +12,7 @@ quellcode
 %\newcommand{cmd}{def} renewcommand (makros)
 
 einheiten mit siunitx
+minipage? -> parallel Darstellung
+
 literaturverzeichnis
 zitate

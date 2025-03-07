@@ -117,3 +117,127 @@ Neben $\rightarrow$ können auch andere Symbole oder Zeichenketten als Aufzählu
 Mit der Umgebung \texttt{multicols} können mehrspaltige Listen erstellt werden. Die Anzahl der Spalten wird als Argument in geschweiften Klammern übergeben. Es wird das Paket \texttt{multicol} benötigt.
 
 \subsection{Gleichungen / Mathematikumgebungen}
+In \LaTeX{} gibt es verschiedene Umgebungen, um mathematische Formeln zu setzen. Die wichtigsten Aspekte zu den mathematischen Umgebungen werden im Folgenden vorgestellt.
+
+\subsubsection{Inline-Gleichungen}
+In einem Text können mathematische Formeln direkt eingebettet werden. Dazu wird der Text in zwei Dollarzeichen (\$) eingeschlossen.
+Beispiel: $a^2 + b^2 = c^2$ (Syntax: \texttt{\$a\^{}2 + b\^{}2 = c\^{}2\$})
+
+\subsubsection{Abgesetzte Gleichungen}
+Für abgesetzte Gleichungen gibt es die Umgebung \textbf{\texttt{equation}}. Diese setzt die Gleichung zentriert und nummeriert sie.
+Wird in der \textbf{\texttt{equation}}-Umgebung ein \textbf{\texttt{\textbackslash label\{...\}}} Befehl verwendet, kann die Gleichung im Text referenziert werden (\autoref{eq:planck}) (siehe auch \ref{sec:querverweise}).
+Alternativ kann auch die Kurzform \textbf{\texttt{\textbackslash [ ... \textbackslash ]}} verwendet werden, bei welcher jedoch keine Nummerierung erfolgt.
+
+\begin{minipage}{0.5\textwidth}
+    \begin{lstlisting}
+\begin{equation}
+    \label{eq:planck}
+    E = h \cdot f
+\end{equation}
+
+\[
+    E = h \cdot f
+\]
+
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \begin{equation}
+        \label{eq:planck}
+        E = h \cdot f
+    \end{equation}
+
+    \[
+        E = h \cdot f
+    \]
+\end{minipage}
+Alternativ kann die Nummerierung auch unterdrückt werden, indem die \textbf{\texttt{equation*}}-Umgebung verwendet wird oder in dem der Befehl \textbf{\texttt{\textbackslash nonumber}} eingesetzt wird.
+
+\subsubsection{Mehrzeilige Gleichungen}
+Für mehrzeilige Gleichungen gibt es die \textbf{\texttt{align}}-Umgebung. Mit dem \textbf{\texttt{\&}}-Zeichen wird die Ausrichtung der Gleichungen festgelegt. Mit dem \textbf{\texttt{\textbackslash\textbackslash}}-Zeichen wird eine neue Zeile begonnen. Die Gleichungen werden an den \textbf{\texttt{\&}}-Zeichen ausgerichtet.
+
+\begin{lstlisting}
+\begin{align}
+    \label{eq:trig}
+    1                 & = \sin^2{(x)} + \cos^2{(x)}     \\
+    \label{eq:euler}
+    \exp{(j \cdot x)} & = \cos{(x)} + j \cdot \sin{(x)}
+\end{align}
+\end{lstlisting}
+
+\begin{align}
+    \label{eq:trig}
+    1                 & = \sin^2{(x)} + \cos^2{(x)}     \\
+    \label{eq:euler}
+    \exp{(j \cdot x)} & = \cos{(x)} + j \cdot \sin{(x)}
+\end{align}
+
+Auch in den \textbf{\texttt{align}}-Umgebungen können die Gleichungen mit \textbf{\texttt{\textbackslash label\{...\}}} versehen werden, um sie im Text referenzieren zu können (\autoref{eq:trig} und \autoref{eq:euler}). Soll die Nummerierung einer einzelnen Gleichung unterdrückt werden, kann dies mit \textbf{\texttt{\textbackslash nonumber}} erreicht werden oder durch das Verwenden von \textbf{\texttt{\textbackslash begin\{align*\}}}.
+
+In der \textbf{\texttt{equation}}-Umgebung kann die Unterumgebung \textbf{\texttt{aligned}} verwendet werden, um mehrzeilige Gleichungen mit dem \textbf{\texttt{\&}}-Zeichen auszurichten.
+
+\subsubsection{Formatierung in Gleichungen}
+In mathematischen Umgebungen können verschiedene Formatierungen vorgenommen werden. Dazu gehören unter anderem:
+
+\input{anlagen/tabellen/formatierung_matheumgebung.tex}
+
+
+\subsubsection{Mathematische Symbole}
+In \LaTeX{} gibt es viele mathematische Rechenoperatoren und Symbole, die mit folgenden Befehlen in mathematische Umgebungen eingefügt werden können:
+
+\input{anlagen/tabellen/mathematische_symbole.tex}
+
+Darüber hinaus gibt es noch viele weitere mathematische Symbole, die in der VSC-Umgebung einfach über die \LaTeX{}-Erweiterung eingefügt werden können.
+
+\subsubsection{Matritzen}
+Matritzen können in \LaTeX{} mit der \textbf{\texttt{bmatrix}}-Umgebung erstellt werden. Die Spalten werden durch \textbf{\texttt{\&}} und die Zeilen durch \textbf{\texttt{\textbackslash\textbackslash}} getrennt.
+
+\begin{minipage}{0.5\textwidth}
+    \begin{lstlisting}
+\begin{equation}
+    \begin{bmatrix}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9
+    \end{bmatrix}
+\end{equation}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \begin{equation}
+        \begin{bmatrix}
+            1 & 2 & 3 \\
+            4 & 5 & 6 \\
+            7 & 8 & 9
+        \end{bmatrix}
+    \end{equation}
+\end{minipage}
+
+Anstelle der \textbf{\texttt{bmatrix}}-Umgebung können auch die Umgebungen \textbf{\texttt{pmatrix}} (runde Klammern), \textbf{\texttt{Bmatrix}} (geschweifte Klammern), \textbf{\texttt{vmatrix}} (einfache Striche) und \textbf{\texttt{Vmatrix}} (doppelte Striche) verwendet werden.
+
+\subsubsection{Fallunterscheidungen}
+Fallunterscheidungen können in \LaTeX{} mit der \textbf{\texttt{cases}}-Umgebung erstellt werden. Die einzelnen Fälle werden durch \textbf{\texttt{\textbackslash\textbackslash}} getrennt und mit \textbf{\texttt{\&}} ausgerichtet.
+
+\begin{minipage}{0.5\textwidth}
+    \begin{lstlisting}
+\begin{equation}
+    f(x) =
+    \begin{cases}
+        0 & \text{:\quad} x < 0 \\
+        1 & \text{:\quad} x \geq 0
+    \end{cases}
+\end{equation}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \begin{equation}
+        f(x) =
+        \begin{cases}
+            0 & \text{:\quad} x < 0    \\
+            1 & \text{:\quad} x \geq 0
+        \end{cases}
+    \end{equation}
+\end{minipage}
