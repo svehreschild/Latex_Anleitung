@@ -2,3 +2,86 @@
 Neben dem Text gibt es noch weitere Elemente, die in einem Dokument vorkommen können. Dazu gehören unter anderem Bilder, Tabellen, Listen und Quellcode. In diesem Kapitel werden die wichtigsten Elemente vorgestellt.
 
 \subsection{Listen}
+In \LaTeX{} gibt es verschiedene Arten von Listen. Es folgen die wichtigsten Beispiele.
+
+\subsubsection{Aufzählungen / ungeordnete Listen}
+
+\begin{minipage}{0.55\textwidth}
+    \begin{lstlisting}
+\begin{itemize}
+    \item Erster Punkt
+    \item Zweiter Punkt
+    \item Dritter Punkt
+\end{itemize}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \begin{itemize}
+        \item Erster Punkt
+        \item Zweiter Punkt
+        \item Dritter Punkt
+    \end{itemize}
+\end{minipage}
+
+\subsubsection{Nummerierungen / geordnete Listen}
+
+\begin{minipage}{0.55\textwidth}
+    \begin{lstlisting}
+\begin{enumerate}
+    \item Erster Punkt
+    \item Zweiter Punkt
+    \item Dritter Punkt
+\end{enumerate}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \begin{enumerate}
+        \item Erster Punkt
+        \item Zweiter Punkt
+        \item Dritter Punkt
+    \end{enumerate}
+\end{minipage}
+
+\subsubsection{Definitionslisten}
+
+\begin{minipage}{0.55\textwidth}
+    \begin{lstlisting}
+\begin{description}
+    \item[Erster Punkt] Beschreibung
+    \item[Zweiter Punkt] Beschreibung
+    \item[Dritter Punkt] Beschreibung
+\end{description}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \begin{description}
+        \item[Erster Punkt] Beschreibung
+        \item[Zweiter Punkt] Beschreibung
+        \item[Dritter Punkt] Beschreibung
+    \end{description}
+\end{minipage}
+
+\subsubsection{Angepasste Listen}
+
+\begin{minipage}{0.55\textwidth}
+    \begin{lstlisting}
+\begin{itemize}[label=$\rightarrow$]
+    \item Erster Punkt
+    \item Zweiter Punkt
+    \item Dritter Punkt
+\end{itemize}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \begin{itemize}[label=$\rightarrow$]
+        \item Erster Punkt
+        \item Zweiter Punkt
+        \item Dritter Punkt
+    \end{itemize}
+\end{minipage}
+
+vorstellung der items

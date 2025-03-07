@@ -1,4 +1,5 @@
-listen
+listen 
+minipage? -> parallel Darstellung
 mathe gleichungen kurzform $$
 
 quellcode
