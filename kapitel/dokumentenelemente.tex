@@ -267,6 +267,32 @@ Matritzen können in \LaTeX{} mit der \textbf{\texttt{bmatrix}}-Umgebung erstell
 
 Anstelle der \textbf{\texttt{bmatrix}}-Umgebung können die Umgebungen \textbf{\texttt{pmatrix}} (runde Klammern), \textbf{\texttt{Bmatrix}} (geschweifte Klammern), \textbf{\texttt{vmatrix}} (einfache Striche) und \textbf{\texttt{Vmatrix}} (doppelte Striche) verwendet werden.
 
+Die Determinante einer Matrix kann mit dem Befehl \textbf{\texttt{\textbackslash det}} gesetzt werden. Die Transponierte einer Matrix kann mit dem Befehl \textbf{\texttt{\textbackslash top}} und die Inverse einer Matrix kann folgendermaßen gesetzt werden:
+
+\begin{minipage}{0.5\textwidth}
+    \begin{lstlisting}
+\begin{equation}
+    \det
+    \begin{bmatrix}
+        a & b \\
+        c & d
+    \end{bmatrix}^{-1}
+\end{equation}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \begin{equation}
+        \det
+        \begin{bmatrix}
+            a & b \\
+            c & d
+        \end{bmatrix}^{-1}
+    \end{equation}
+\end{minipage}
+
+
+
 \subsubsection{Fallunterscheidungen}
 Fallunterscheidungen können in \LaTeX{} mit der \textbf{\texttt{cases}}-Umgebung erstellt werden. Die einzelnen Fälle werden durch \textbf{\texttt{\textbackslash\textbackslash}} getrennt und mit \textbf{\texttt{\&}} ausgerichtet.
 
@@ -311,10 +337,5 @@ Gleichungssysteme können in \LaTeX{} mit der \textbf{\texttt{gather}}-Umgebung 
     \end{gather}
 \end{minipage}
 
-
-
-
 \subsection{Quellcode}
-
-
-dd
+Quellcode kann in \LaTeX{} mit der \textbf{\texttt{lstlisting}}-Umgebung eingefügt werden. Dabei können verschiedene Einstellungen vorgenommen werden, um den Quellcode optisch ansprechend darzustellen.

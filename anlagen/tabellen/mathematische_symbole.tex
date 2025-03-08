@@ -1,9 +1,12 @@
+\renewcommand{\arraystretch}{1.5}
 \begin{longtable}{l l l}
     \\
+    % Überschrift für die erste Seite
     \toprule
     \textbf{Operator}         & \textbf{LaTeX-Code}                                                                     & \textbf{Beispiel}                    \\
     \midrule
     \endfirsthead
+    % Überschrift für alle folgenden Seiten
     \toprule
     \textbf{Operator}         & \textbf{LaTeX-Code}                                                                     & \textbf{Beispiel}                    \\
     \midrule
@@ -25,6 +28,7 @@
     Mal (×)                   & \texttt{\textbackslash times}                                                           & $ a \times b $                       \\
     Mal (Punkt)               & \texttt{\textbackslash cdot}                                                            & $ a \cdot b $                        \\
     Geteilt (Bruch)           & \texttt{\textbackslash frac\{a\}\{b\}}                                                  & $ \frac{a}{b} $                      \\
+    Doppelbrüche              & \texttt{\textbackslash cfrac\{a\}\{b + \textbackslash cfrac\{2\}\{3\}\}}                & $ \cfrac{a}{b + \cfrac{2}{3}} $      \\
     Geteilt (÷)               & \texttt{\textbackslash div}                                                             & $ a \div b $                         \\
     Prozent                   & \texttt{\%}                                                                             & $ 50\% $                             \\
     Potenz                    & \texttt{a\^{}b}                                                                         & $ a^b $                              \\
