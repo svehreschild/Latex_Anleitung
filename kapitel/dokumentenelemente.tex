@@ -7,7 +7,7 @@ In \LaTeX{} gibt es verschiedene Arten von Listen. Es folgen die wichtigsten Bei
 \subsubsection{Aufzählungen / ungeordnete Listen}
 
 \begin{minipage}{0.58\textwidth}
-    \begin{lstlisting}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{itemize}
     \item Erster Punkt
     \item Zweiter Punkt
@@ -27,7 +27,7 @@ In \LaTeX{} gibt es verschiedene Arten von Listen. Es folgen die wichtigsten Bei
 \subsubsection{Nummerierungen / geordnete Listen}
 
 \begin{minipage}{0.58\textwidth}
-    \begin{lstlisting}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{enumerate}
     \item Erster Punkt
     \item Zweiter Punkt
@@ -49,7 +49,7 @@ Falls die Nummerierung mit römischen Zahlen erfolgen soll, kann dies durch den 
 \subsubsection{Definitionslisten}
 
 \begin{minipage}{0.58\textwidth}
-    \begin{lstlisting}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{description}
     \item[Erster Punkt] Beschreibung 1
     \item[Zweiter Punkt] Beschreibung 2
@@ -69,7 +69,7 @@ Falls die Nummerierung mit römischen Zahlen erfolgen soll, kann dies durch den 
 \subsubsection{Angepasste Listen}
 
 \begin{minipage}{0.58\textwidth}
-    \begin{lstlisting}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{itemize}[label=$\rightarrow$]
     \item Erster Punkt
     \item Zweiter Punkt
@@ -91,7 +91,7 @@ Neben $\rightarrow$ können auch andere Symbole oder Zeichenketten als Aufzählu
 \subsubsection{Mehrspaltige Listen}
 
 \begin{minipage}{0.50\textwidth}
-    \begin{lstlisting}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{multicols}{2}
 \begin{itemize}
     \item Erster Punkt
@@ -129,7 +129,7 @@ Wird in der \textbf{\texttt{equation}}-Umgebung ein \textbf{\texttt{\textbacksla
 Alternativ kann ebenfalls die Kurzform \textbf{\texttt{\textbackslash [ ... \textbackslash ]}} verwendet werden, bei welcher jedoch keine Nummerierung erfolgt.
 
 \begin{minipage}{0.5\textwidth}
-    \begin{lstlisting}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{equation}
     \label{eq:planck}
     E = h \cdot f
@@ -157,7 +157,7 @@ Alternativ kann die Nummerierung unterdrückt werden, indem die \textbf{\texttt{
 Darüber hinaus können die Gleichungsnummern mit \textbf{\texttt{\textbackslash tag\{...\}}} manuell gesetzt oder angepasst werden werden.
 
 \begin{minipage}{0.5\textwidth}
-    \begin{lstlisting}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{equation}
     \tag{Ladung}
     Q = \int I \, dt
@@ -175,7 +175,7 @@ Darüber hinaus können die Gleichungsnummern mit \textbf{\texttt{\textbackslash
 \subsubsection{Mehrzeilige Gleichungen}
 Für mehrzeilige Gleichungen gibt es die \textbf{\texttt{align}}-Umgebung. Mit dem \textbf{\texttt{\&}}-Zeichen wird die Ausrichtung der Gleichungen festgelegt. Mit dem \textbf{\texttt{\textbackslash\textbackslash}}-Zeichen wird eine neue Zeile begonnen. Die Gleichungen werden an den \textbf{\texttt{\&}}-Zeichen ausgerichtet.
 
-\begin{lstlisting}
+\begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{align}
     \label{eq:trig}
     1                 & = \sin^2{(x)} + \cos^2{(x)}     \\
@@ -199,7 +199,7 @@ In der \textbf{\texttt{equation}}-Umgebung kann die Unterumgebung \textbf{\textt
 Umrahmte Gleichungen können in \LaTeX{} mit dem \textbf{\texttt{boxed\{\}}}-Befehl erstellt werden. Dieser kann in den meisten mathematischen Umgebungen verwendet werden.
 
 \begin{minipage}{0.5\textwidth}
-    \begin{lstlisting}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{equation}
     \boxed{
     \begin{aligned}
@@ -244,7 +244,7 @@ Darüber hinaus gibt es noch viele weitere mathematische Symbole, die in der VSC
 Matritzen können in \LaTeX{} mit der \textbf{\texttt{bmatrix}}-Umgebung erstellt werden. Die Spalten werden durch \textbf{\texttt{\&}} und die Zeilen durch \textbf{\texttt{\textbackslash\textbackslash}} getrennt.
 
 \begin{minipage}{0.5\textwidth}
-    \begin{lstlisting}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{equation}
     \begin{bmatrix}
         1 & 2 & 3 \\
@@ -270,7 +270,7 @@ Anstelle der \textbf{\texttt{bmatrix}}-Umgebung können die Umgebungen \textbf{\
 Die Determinante einer Matrix kann mit dem Befehl \textbf{\texttt{\textbackslash det}} gesetzt werden. Die Transponierte einer Matrix kann mit dem Befehl \textbf{\texttt{\textbackslash top}} und die Inverse einer Matrix kann folgendermaßen gesetzt werden:
 
 \begin{minipage}{0.5\textwidth}
-    \begin{lstlisting}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{equation}
     \det
     \begin{bmatrix}
@@ -297,7 +297,7 @@ Die Determinante einer Matrix kann mit dem Befehl \textbf{\texttt{\textbackslash
 Fallunterscheidungen können in \LaTeX{} mit der \textbf{\texttt{cases}}-Umgebung erstellt werden. Die einzelnen Fälle werden durch \textbf{\texttt{\textbackslash\textbackslash}} getrennt und mit \textbf{\texttt{\&}} ausgerichtet.
 
 \begin{minipage}{0.5\textwidth}
-    \begin{lstlisting}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{equation}
     f(x) =
     \begin{cases}
@@ -322,7 +322,7 @@ Fallunterscheidungen können in \LaTeX{} mit der \textbf{\texttt{cases}}-Umgebun
 Gleichungssysteme können in \LaTeX{} mit der \textbf{\texttt{gather}}-Umgebung erstellt werden. Die einzelnen Gleichungen werden durch \textbf{\texttt{\textbackslash\textbackslash}} getrennt.
 
 \begin{minipage}{0.5\textwidth}
-    \begin{lstlisting}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{gather}
     x + y = 1 \\
     2x - y = 3
@@ -338,4 +338,78 @@ Gleichungssysteme können in \LaTeX{} mit der \textbf{\texttt{gather}}-Umgebung 
 \end{minipage}
 
 \subsection{Quellcode}
-Quellcode kann in \LaTeX{} mit der \textbf{\texttt{lstlisting}}-Umgebung eingefügt werden. Dabei können verschiedene Einstellungen vorgenommen werden, um den Quellcode optisch ansprechend darzustellen.
+Quellcode kann in \LaTeX{} mit der \textbf{\texttt{lstlisting}}-Umgebung eingefügt werden. Dabei können verschiedene Einstellungen vorgenommen werden, um den Quellcode optisch ansprechend darzustellen. Es wird das Paket \textbf{\texttt{listings}} mit der Option \textbf{\texttt{pmboxdraw}} benötigt.
+
+Ein Quellcode-Block kann auf folgende Weise eingefügt werden:
+
+\begin{minipage}{0.48\textwidth}
+    \begin{verbatim}
+\begin{lstlisting}[language=Python]
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a)
+        a, b = b, a + b
+\end{lstlisting}
+\end{verbatim}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    \begin{lstlisting}[language=Python]
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a)
+        a, b = b, a + b
+    \end{lstlisting}
+\end{minipage}
+
+Die Sprache des Quellcode wird mit in dem Befehl \textbf{\texttt{\textbackslash begin\{lstlisting\}[language=...]}} angegeben. Es können verschiedene Sprachen wie Python, Java, C++ oder auch \LaTeX{} selbst verwendet werden.
+
+\subsubsection{Einstellungen für Quellcode}
+Die Einstellungen für die Darstellung des Quellcodes können in der Präambel des Dokuments vorgenommen werden.
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\usepackage{listings, pmboxdraw}
+\lstset{
+    language={[LaTeX]TeX},              % Programmiersprache
+    frame=single,                       % Rahmen um den Code
+    numbers=left,                       % Zeilennummern links
+    stepnumber=1,                       % Jede Zeile nummerieren
+    numberstyle=\footnotesize,          % Kleine Zeilennummern
+    basicstyle=\ttfamily,               % Monospace-Schriftart
+    keywordstyle=\color{blue},          % Keywords blau
+    commentstyle=\color{gray},          % Kommentare grau
+    stringstyle=\color{green},          % Strings gruen
+    backgroundcolor=\color{white},      % Hintergrundfarbe
+    showstringspaces=false,             % Keine Leerzeichen in Strings
+    captionpos=b,                        % Position unter dem Code 
+    breaklines=true,                    % Zeilenumbruch
+}
+\end{lstlisting}
+
+\subsubsection{Farbliche Hervorhebung}
+Soll in dem Code ein Zeile \textbf{farblich hervorgehoben} werden, kann dies mit dem Befehl \textbf{\texttt{\textbackslash begin\{lstlisting\}[language=..., emph={x}, emphstyle=\textbackslash color\{red\}]}} erreicht werden. Dabei wird jedes x in dem Code rot hervorgehoben.
+
+\begin{lstlisting}[language=C, emph={x}, emphstyle=\color{red}]
+int main() {
+    int x = 5;
+    printf("X: %d\n", x);
+}
+\end{lstlisting}
+
+\subsubsection{Beschriftung und Referenzierung}
+Gelegentlich ist es gewünscht ein eine Code-Box zu beschriften und sie referenzieren zu können. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash begin\{lstlisting\}[language=C, caption=Beispielcode, label=scr:beispiel]}} erreicht werden. (\autoref{scr:beispiel})
+
+\begin{lstlisting}[language=C, caption=Beispielcode, label=scr:beispiel]
+int bsp() {
+    printf("Das ist ein Beispiel");
+}   
+\end{lstlisting}
+
+\subsubsection{Externe Quellcode-Dateien einbinden}
+In manchen Fällen kann es sinnvoll sein, den Quellcode aus einer externen Datei einzubinden. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash lstinputlisting[Optionen]\{Pfad/zur/Datei.endung\}}} erreicht werden.
+
+\lstinputlisting[language=C, caption=Beispielcode aus externer Datei, label=scr:extern]{anlagen/beispiel.c}
+
+\subsection{Bilder}

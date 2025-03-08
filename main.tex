@@ -42,16 +42,21 @@
 % Quellcode
 \usepackage{listings, pmboxdraw} % Quellcode einbinden und optisch ansprechend rahmen
 \lstset{
-    language=[LaTeX]TeX,        % Programmiersprache
-    frame=single,               % Rahmen um den Code
-    numbers=left,               % Zeilennummern links
-    numberstyle=\footnotesize,  % Kleine Zeilennummern
-    basicstyle=\ttfamily,       % Monospace-Schriftart
-    keywordstyle=\color{blue},  % Keywords blau
-    commentstyle=\color{gray},  % Kommentare grau
-    stringstyle=\color{red},    % Strings rot
-    showstringspaces=false      % Keine Leerzeichen in Strings anzeigen
+    %language={[LaTeX]TeX},              % Programmiersprache
+    frame=single,                       % Rahmen um den Code
+    numbers=left,                       % Zeilennummern links
+    stepnumber=1,                       % Jede Zeile nummerieren
+    numberstyle=\footnotesize,          % Kleine Zeilennummern
+    basicstyle=\ttfamily,               % Monospace-Schriftart
+    keywordstyle=\color{blue},          % Keywords blau
+    commentstyle=\color{gray},          % Kommentare grau
+    stringstyle=\color{green},          % Strings grün
+    backgroundcolor=\color{white},      % Hintergrundfarbe
+    showstringspaces=false,             % Keine Leerzeichen in Strings
+    captionpos=b,                        % Position unter dem Code
+    breaklines=true,                    % Zeilenumbruch
 }
+
 
 % Mathematik
 \usepackage{amsmath}            % Mathematische Symbole, align-Umgebung (&=)

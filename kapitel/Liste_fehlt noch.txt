@@ -1,12 +1,12 @@
-quellcode
+bilder
 %Tabellen, Booktabs, Multicolumn, Multirow, Landscape
 %\\ für neue zeile (Tabellen und Umgebungen)
-
+minipage? -> parallel Darstellung
 
 %\newcommand{cmd}{def} renewcommand (makros)
 
 einheiten mit siunitx
-minipage? -> parallel Darstellung
+
 
 literaturverzeichnis
 zitate
