@@ -125,7 +125,7 @@ Beispiel: $a^2 + b^2 = c^2$ (Syntax: \texttt{\$a\^{}2 + b\^{}2 = c\^{}2\$})
 
 \subsubsection{Abgesetzte Gleichungen}
 Für abgesetzte Gleichungen gibt es die Umgebung \textbf{\texttt{equation}}. Diese setzt die Gleichung zentriert und nummeriert sie.
-Wird in der \textbf{\texttt{equation}}-Umgebung ein \textbf{\texttt{\textbackslash label\{...\}}} Befehl verwendet, kann die Gleichung im Text referenziert werden (\autoref{eq:planck}) (siehe auch \ref{sec:querverweise}).
+Wird in der \textbf{\texttt{equation}}-Umgebung ein \textbf{\texttt{\textbackslash label\{...\}}} Befehl verwendet, kann die Gleichung im Text referenziert werden (\autoref{eq:planck}) (siehe auch: \ref{sec:querverweise}).
 Alternativ kann ebenfalls die Kurzform \textbf{\texttt{\textbackslash [ ... \textbackslash ]}} verwendet werden, bei welcher jedoch keine Nummerierung erfolgt.
 
 \begin{minipage}{0.5\textwidth}
@@ -240,8 +240,8 @@ In \LaTeX{} gibt es viele mathematische Rechenoperatoren und Symbole, die mit fo
 
 Darüber hinaus gibt es noch viele weitere mathematische Symbole, die in der VSC-Umgebung einfach über die \LaTeX{}-Erweiterung eingefügt werden können.
 
-\subsubsection{Matritzen}
-Matritzen können in \LaTeX{} mit der \textbf{\texttt{bmatrix}}-Umgebung erstellt werden. Die Spalten werden durch \textbf{\texttt{\&}} und die Zeilen durch \textbf{\texttt{\textbackslash\textbackslash}} getrennt.
+\subsubsection{Matrizen}
+Matrizen können in \LaTeX{} mit der \textbf{\texttt{bmatrix}}-Umgebung erstellt werden. Die Spalten werden durch \textbf{\texttt{\&}} und die Zeilen durch \textbf{\texttt{\textbackslash\textbackslash}} getrennt.
 
 \begin{minipage}{0.5\textwidth}
     \begin{lstlisting}[language={[LaTeX]TeX}]
@@ -388,7 +388,7 @@ Die Einstellungen für die Darstellung des Quellcodes können in der Präambel d
 }
 \end{lstlisting}
 
-\subsubsection{Farbliche Hervorhebung}
+\subsubsection{Farbliche Hervorhebung im Quellcode}
 Soll in dem Code ein Zeile \textbf{farblich hervorgehoben} werden, kann dies mit dem Befehl \textbf{\texttt{\textbackslash begin\{lstlisting\}[language=..., emph={x}, emphstyle=\textbackslash color\{red\}]}} erreicht werden. Dabei wird jedes x in dem Code rot hervorgehoben.
 
 \begin{lstlisting}[language=C, emph={x}, emphstyle=\color{red}]
@@ -398,8 +398,8 @@ int main() {
 }
 \end{lstlisting}
 
-\subsubsection{Beschriftung und Referenzierung}
-Gelegentlich ist es gewünscht ein eine Code-Box zu beschriften und sie referenzieren zu können. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash begin\{lstlisting\}[language=C, caption=Beispielcode, label=scr:beispiel]}} erreicht werden. (\autoref{scr:beispiel})
+\subsubsection{Beschriftung und Referenzierung des Quellcodes}
+Gelegentlich ist es gewünscht ein eine Code-Box zu beschriften und sie referenzieren zu können. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash begin\{lstlisting\}[language=C, caption=Beispielcode, label=scr:beispiel]}} erreicht werden (\autoref{scr:beispiel}) (siehe auch: \ref{sec:querverweise}).
 
 \begin{lstlisting}[language=C, caption=Beispielcode, label=scr:beispiel]
 int bsp() {
@@ -413,3 +413,146 @@ In manchen Fällen kann es sinnvoll sein, den Quellcode aus einer externen Datei
 \lstinputlisting[language=C, caption=Beispielcode aus externer Datei, label=scr:extern]{anlagen/beispiel.c}
 
 \subsection{Bilder}
+In \LaTeX{} können Bilder auf folgende Weise eingefügt werden:
+Es wird das Paket \textbf{\texttt{graphicx}} benötigt.
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Pfad/zum/Bild.png}
+    \caption{Bildunterschrift}
+    \label{fig:bild}
+\end{figure}
+\end{lstlisting}
+
+Ausschlaggebend für das Inkludieren ist der Befehl \textbf{\texttt{\textbackslash includegraphics[options]\{Pfad/zum/Bild.png\}}}.
+
+Dabei können folgende Optionen verwendet werden:
+
+\subsubsection{Optionen für \texttt{\textbackslash includegraphics}}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Option} & \textbf{Wirkung}               & \textbf{Befehl}                               \\
+        \midrule
+        width           & Breite des Bildes              & \texttt{[width=5cm]}                          \\
+        width           & Breite relativ zum Text        & \texttt{[width=0.5\textbackslash textwidth]}  \\
+        height          & Höhe des Bildes                & \texttt{[height=4cm]}                         \\
+        scale           & Skaliert das Bild              & \texttt{[scale=0.5]}                          \\
+        angle           & Dreht das Bild um einen Winkel & \texttt{[angle=90]}                           \\
+        origin          & Rotationspunkt ändern          & \texttt{[angle=90,origin=Rotationspunkt]}     \\
+        clip            & Schneidet das Bild zu (in pt)  & \texttt{[clip,trim= links unten rechts oben]} \\
+        draft           & Nur einen Platzhalterrahmen    & \texttt{[draft]}                              \\
+        \bottomrule
+    \end{tabular}
+    \caption{Optionen für \texttt{\textbackslash includegraphics} in LaTeX}
+    \label{tab:graphics_options}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{anlagen/bilder/Graph.png}
+    \caption{Sägezahnspannung}
+    \label{fig:sägezahnspannung}
+\end{figure}
+
+Darüber hinaus können Bilder mit dem Befehl \texttt{\textbf{\textbackslash reflectbox\{\textbackslash includegraphics[...]\{Pfad/zum/Bild.png\}\}}} gespiegelt werden.
+
+\subsubsection{Platzierung von Bildern}
+Die Platzierung von Bildern kann mit den folgenden Optionen in \textbf{\texttt{\textbackslash begin\{figure\}[...]}} gesteuert werden.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+        \toprule
+        \textbf{Option} & \textbf{Wirkung}               \\
+        \midrule
+        h               & Hier (here)                    \\
+        t               & Oben (top)                     \\
+        b               & Unten (bottom)                 \\
+        p               & Auf einer eigenen Seite (page) \\
+        H               & Genau hier (here)              \\
+        \bottomrule
+    \end{tabular}
+    \caption{Platzierungsoptionen für Bilder}
+    \label{tab:figure_options}
+\end{table}
+
+Für die H-Positionierungsoption wird das Paket \textbf{\texttt{float}} benötigt.
+
+\subsubsection{Beschriftung und Referenzierung von Bildern}
+Bilder können mit dem Befehl \textbf{\texttt{\textbackslash caption\{Bildunterschrift\}}} beschriftet werden. Mit dem Befehl \textbf{\texttt{\textbackslash label\{fig:bild\}}} wird ein Label gesetzt, auf welches im Text referenziert werden kann (\autoref{fig:sägezahnspannung})(siehe auch: \ref{sec:querverweise}).
+
+\subsubsection{Gerahmte Bilder}
+Bilder können mit dem Befehl \textbf{\texttt{\textbackslash fbox\{\textbackslash includegraphics[...]\{Pfad/zum/Bild.png\}\}}} oder mit dem \textbf{\texttt{\textbackslash shadowbox\{\textbackslash includegraphics[...]\{Pfad/zum/Bild.png\}\}}} gerahmt werden. Für die Schattierung wird das Paket \textbf{\texttt{fancybox}} benötigt.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \fbox{\includegraphics[width=0.9\textwidth]{anlagen/bilder/Graph.png}}
+        \caption{Gerahmtes Bild}
+        \label{fig:gerahmtes_bild}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \shadowbox{\includegraphics[width=0.9\textwidth]{anlagen/bilder/Graph.png}}
+        \caption{Schattiertes Bild}
+        \label{fig:schattiertes_bild}
+    \end{subfigure}
+    \caption{Gerahmte und schattierte Bilder}
+    \label{fig:gerahmte_schattierte_bilder}
+\end{figure}
+
+
+\subsubsection{Parallele Darstellung von Bildern}
+Mehrere Bilder können mit der \textbf{\texttt{subfigure}}-Umgebung in einer \textbf{\texttt{figure}}-Umgebung dargestellt werden. Dabei können die Bilder mit \textbf{\texttt{\textbackslash hfill}} horizontal nebeneinander platziert werden. Darüber hinaus ist die Darstellung von mehreren Bildern in einer \textbf{\texttt{minipage}}-Umgebung möglich (siehe auch: \ref{}).
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{anlagen/bilder/Bild1.jpg}
+        \caption{Bild 1}
+        \label{fig:bild1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{anlagen/bilder/Bild2.jpg}
+        \caption{Bild 2}
+        \label{fig:bild2}
+    \end{subfigure}
+    \caption{Bildunterschrift}
+    \label{fig:bilder}
+\end{lstlisting}
+
+Im folgenden wird das Ergebnis der obigen Codezeilen dargestellt:
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{anlagen/bilder/Bild1.jpg}
+        \caption{Bild 1}
+        \label{fig:bild1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{anlagen/bilder/Bild2.jpg}
+        \caption{Bild 2}
+        \label{fig:bild2}
+    \end{subfigure}
+    \caption{Bildunterschrift}
+    \label{fig:bilder}
+\end{figure}
+
+Besonders praktisch ist die Verwendung der \textbf{\texttt{subfigure}}-Umgebung, um die Bilder mit Untertiteln und Labeln zu versehen, auf die im Text referenziert werden kann (\autoref{fig:bild1}, \autoref{fig:bild2}) und \autoref{fig:bilder}.
+In der \textbf{\texttt{subfigure}}-Umgebung können durch geschicktes Aneinanderreihen auch mehr als zwei Bilder nebeneinander (oder untereinander) dargestellt werden.
+
+
+\subsection{Tabellen}

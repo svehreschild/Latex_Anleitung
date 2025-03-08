@@ -1,7 +1,7 @@
-bilder
 %Tabellen, Booktabs, Multicolumn, Multirow, Landscape
 %\\ für neue zeile (Tabellen und Umgebungen)
-minipage? -> parallel Darstellung
+minipage oder parbox
+-> ref auf parallele Darstellung von Bildern
 
 %\newcommand{cmd}{def} renewcommand (makros)
 
