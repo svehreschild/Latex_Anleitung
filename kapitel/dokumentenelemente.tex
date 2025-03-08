@@ -126,7 +126,7 @@ Beispiel: $a^2 + b^2 = c^2$ (Syntax: \texttt{\$a\^{}2 + b\^{}2 = c\^{}2\$})
 \subsubsection{Abgesetzte Gleichungen}
 Für abgesetzte Gleichungen gibt es die Umgebung \textbf{\texttt{equation}}. Diese setzt die Gleichung zentriert und nummeriert sie.
 Wird in der \textbf{\texttt{equation}}-Umgebung ein \textbf{\texttt{\textbackslash label\{...\}}} Befehl verwendet, kann die Gleichung im Text referenziert werden (\autoref{eq:planck}) (siehe auch \ref{sec:querverweise}).
-Alternativ kann auch die Kurzform \textbf{\texttt{\textbackslash [ ... \textbackslash ]}} verwendet werden, bei welcher jedoch keine Nummerierung erfolgt.
+Alternativ kann ebenfalls die Kurzform \textbf{\texttt{\textbackslash [ ... \textbackslash ]}} verwendet werden, bei welcher jedoch keine Nummerierung erfolgt.
 
 \begin{minipage}{0.5\textwidth}
     \begin{lstlisting}
@@ -152,7 +152,25 @@ Alternativ kann auch die Kurzform \textbf{\texttt{\textbackslash [ ... \textback
         E = h \cdot f
     \]
 \end{minipage}
-Alternativ kann die Nummerierung auch unterdrückt werden, indem die \textbf{\texttt{equation*}}-Umgebung verwendet wird oder in dem der Befehl \textbf{\texttt{\textbackslash nonumber}} eingesetzt wird.
+Alternativ kann die Nummerierung unterdrückt werden, indem die \textbf{\texttt{equation*}}-Umgebung verwendet wird oder in dem der Befehl \textbf{\texttt{\textbackslash nonumber}} eingesetzt wird.
+
+Darüber hinaus können die Gleichungsnummern mit \textbf{\texttt{\textbackslash tag\{...\}}} manuell gesetzt oder angepasst werden werden.
+
+\begin{minipage}{0.5\textwidth}
+    \begin{lstlisting}
+\begin{equation}
+    \tag{Ladung}
+    Q = \int I \, dt
+\end{equation}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \begin{equation}
+        \tag{Ladung}
+        Q = \int I \, dt
+    \end{equation}
+\end{minipage}
 
 \subsubsection{Mehrzeilige Gleichungen}
 Für mehrzeilige Gleichungen gibt es die \textbf{\texttt{align}}-Umgebung. Mit dem \textbf{\texttt{\&}}-Zeichen wird die Ausrichtung der Gleichungen festgelegt. Mit dem \textbf{\texttt{\textbackslash\textbackslash}}-Zeichen wird eine neue Zeile begonnen. Die Gleichungen werden an den \textbf{\texttt{\&}}-Zeichen ausgerichtet.
@@ -173,9 +191,41 @@ Für mehrzeilige Gleichungen gibt es die \textbf{\texttt{align}}-Umgebung. Mit d
     \exp{(j \cdot x)} & = \cos{(x)} + j \cdot \sin{(x)}
 \end{align}
 
-Auch in den \textbf{\texttt{align}}-Umgebungen können die Gleichungen mit \textbf{\texttt{\textbackslash label\{...\}}} versehen werden, um sie im Text referenzieren zu können (\autoref{eq:trig} und \autoref{eq:euler}). Soll die Nummerierung einer einzelnen Gleichung unterdrückt werden, kann dies mit \textbf{\texttt{\textbackslash nonumber}} erreicht werden oder durch das Verwenden von \textbf{\texttt{\textbackslash begin\{align*\}}}.
+In den \textbf{\texttt{align}}-Umgebungen können die Gleichungen mit \textbf{\texttt{\textbackslash label\{...\}}} versehen werden, um sie im Text referenzieren zu können (\autoref{eq:trig} und \autoref{eq:euler}). Soll die Nummerierung einer einzelnen Gleichung unterdrückt werden, kann dies mit \textbf{\texttt{\textbackslash nonumber}} erreicht werden oder durch das Verwenden von \textbf{\texttt{\textbackslash begin\{align*\}}}.
 
-In der \textbf{\texttt{equation}}-Umgebung kann die Unterumgebung \textbf{\texttt{aligned}} verwendet werden, um mehrzeilige Gleichungen mit dem \textbf{\texttt{\&}}-Zeichen auszurichten.
+In der \textbf{\texttt{equation}}-Umgebung kann die Unterumgebung \textbf{\texttt{aligned}} verwendet werden, um mehrzeilige Gleichungen mit dem \textbf{\texttt{\&}}-Zeichen auszurichten. Diese werden standardmäßig nur mir einer Gleichungsnummer versehen.
+
+\subsubsection{Umrahmte Gleichungen}
+Umrahmte Gleichungen können in \LaTeX{} mit dem \textbf{\texttt{boxed\{\}}}-Befehl erstellt werden. Dieser kann in den meisten mathematischen Umgebungen verwendet werden.
+
+\begin{minipage}{0.5\textwidth}
+    \begin{lstlisting}
+\begin{equation}
+    \boxed{
+    \begin{aligned}
+        P &= U \cdot I \\
+        &= I^2 \cdot R \\
+        &= \frac{U^2}{R}
+    \end{aligned}
+    }
+\end{equation}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \begin{equation}
+        \boxed{
+            \begin{aligned}
+                P & = U \cdot I     \\
+                  & = I^2 \cdot R   \\
+                  & = \frac{U^2}{R}
+            \end{aligned}
+        }
+    \end{equation}
+\end{minipage}
+
+
+
 
 \subsubsection{Formatierung in Gleichungen}
 In mathematischen Umgebungen können verschiedene Formatierungen vorgenommen werden. Dazu gehören unter anderem:
@@ -186,7 +236,7 @@ In mathematischen Umgebungen können verschiedene Formatierungen vorgenommen wer
 \subsubsection{Mathematische Symbole}
 In \LaTeX{} gibt es viele mathematische Rechenoperatoren und Symbole, die mit folgenden Befehlen in mathematische Umgebungen eingefügt werden können:
 
-\input{anlagen/tabellen/mathematische_symbole.tex}
+% \input{anlagen/tabellen/mathematische_symbole.tex}
 
 Darüber hinaus gibt es noch viele weitere mathematische Symbole, die in der VSC-Umgebung einfach über die \LaTeX{}-Erweiterung eingefügt werden können.
 
@@ -215,7 +265,7 @@ Matritzen können in \LaTeX{} mit der \textbf{\texttt{bmatrix}}-Umgebung erstell
     \end{equation}
 \end{minipage}
 
-Anstelle der \textbf{\texttt{bmatrix}}-Umgebung können auch die Umgebungen \textbf{\texttt{pmatrix}} (runde Klammern), \textbf{\texttt{Bmatrix}} (geschweifte Klammern), \textbf{\texttt{vmatrix}} (einfache Striche) und \textbf{\texttt{Vmatrix}} (doppelte Striche) verwendet werden.
+Anstelle der \textbf{\texttt{bmatrix}}-Umgebung können die Umgebungen \textbf{\texttt{pmatrix}} (runde Klammern), \textbf{\texttt{Bmatrix}} (geschweifte Klammern), \textbf{\texttt{vmatrix}} (einfache Striche) und \textbf{\texttt{Vmatrix}} (doppelte Striche) verwendet werden.
 
 \subsubsection{Fallunterscheidungen}
 Fallunterscheidungen können in \LaTeX{} mit der \textbf{\texttt{cases}}-Umgebung erstellt werden. Die einzelnen Fälle werden durch \textbf{\texttt{\textbackslash\textbackslash}} getrennt und mit \textbf{\texttt{\&}} ausgerichtet.
@@ -242,4 +292,29 @@ Fallunterscheidungen können in \LaTeX{} mit der \textbf{\texttt{cases}}-Umgebun
     \end{equation}
 \end{minipage}
 
+\subsubsection{Gleichungssysteme}
+Gleichungssysteme können in \LaTeX{} mit der \textbf{\texttt{gather}}-Umgebung erstellt werden. Die einzelnen Gleichungen werden durch \textbf{\texttt{\textbackslash\textbackslash}} getrennt.
+
+\begin{minipage}{0.5\textwidth}
+    \begin{lstlisting}
+\begin{gather}
+    x + y = 1 \\
+    2x - y = 3
+\end{gather}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \begin{gather}
+        x + y = 1 \\
+        2x - y = 3
+    \end{gather}
+\end{minipage}
+
+
+
+
 \subsection{Quellcode}
+
+
+dd
