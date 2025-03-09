@@ -1,5 +1,12 @@
 %Tabellen, Booktabs, Multicolumn, Multirow, Landscape
-%\\ für neue zeile (Tabellen und Umgebungen)
+%\\  für neue zeile (Tabellen und Umgebungen)
+spaltenbreite, mehrzeilige spalten
+website
+->text, zahlen möglich; matheumgebung; bilder; soderzeichen; 
+
+
+
+
 minipage oder parbox
 -> ref auf parallele Darstellung von Bildern
 
@@ -10,3 +17,10 @@ einheiten mit siunitx
 
 literaturverzeichnis
 zitate
+
+
+alte Berichte durchgucken
+
+
+
+
