@@ -383,7 +383,7 @@ Die Einstellungen für die Darstellung des Quellcodes können in der Präambel d
     stringstyle=\color{green},          % Strings gruen
     backgroundcolor=\color{white},      % Hintergrundfarbe
     showstringspaces=false,             % Keine Leerzeichen in Strings
-    captionpos=b,                        % Position unter dem Code 
+    captionpos=b,                       % Position unter dem Code 
     breaklines=true,                    % Zeilenumbruch
 }
 \end{lstlisting}
@@ -556,14 +556,14 @@ In der \textbf{\texttt{subfigure}}-Umgebung können durch geschicktes Aneinander
 
 
 \subsection{Tabellen}
-In \LaTeX{} können Tabellen auf einige Weisen erstellt werden. Die wichtigsten Möglichkeiten und Optionen werden im Folgenden vorgestellt.
+In \LaTeX{} gibt es mehrere Möglichkeiten, Tabellen zu erstellen. Im Folgenden werden die wichtigsten Möglichkeiten und Optionen vorgestellt.
 
 \subsubsection{Einfache Tabelle}
-Eine einfache Tabelle kann mit der \textbf{\texttt{tabular}}-Umgebung erstellt werden. Die Spalten werden durch \textbf{\texttt{\&}} und die Zeilen durch \textbf{\texttt{\textbackslash\textbackslash}} getrennt. Häufig wird die \textbf{\texttt{tabular}}-Umgebung in einer \textbf{\texttt{table}}-Umgebung verwendet, um die Tabelle zu positionieren, zu beschriften und zu referenzieren (siehe auch: \nameref{sec:querverweise}).
+Eine einfache Tabelle kann mit der \textbf{\texttt{tabular}}-Umgebung erstellt werden. Die Spalten werden durch \textbf{\texttt{\&}} und die Zeilen durch \textbf{\texttt{\textbackslash\textbackslash}} getrennt. Häufig wird die \textbf{\texttt{tabular}}-Umgebung innerhalb einer \textbf{\texttt{table}}-Umgebung verwendet, um die Tabelle zu positionieren, zu beschriften und zu referenzieren (siehe auch: \nameref{sec:querverweise}).
 
 Die \textbf{\texttt{table}}-Umgebung kann mit einer Option \textbf{\texttt{[...]}} versehen werden, um die Positionierung zu steuern (siehe auch: \autoref{tab:figure_options}).
 
-Darüber hinaus können die Spalten mit \textbf{\texttt{l}}, \textbf{\texttt{r}} und \textbf{\texttt{c}} für linksbündig, rechtsbündig und zentriert ausgerichtet werden. Mit \textbf{\texttt{\textbackslash hline}} können vertikale Linien eingefügt werden. In dem folgenden Beispiel werden zudem die Möglichkeiten doppelter horizontaler Linien (\textbf{\texttt{\textbackslash hline \textbackslash hline}}) und doppelter vertikaler Linien (\textbf{\texttt{||}}) visualisiert.
+Darüber hinaus können die Spalten mit \textbf{\texttt{l}}, \textbf{\texttt{r}} und \textbf{\texttt{c}} für linksbündig, rechtsbündig und zentriert ausgerichtet werden. Mit \textbf{\texttt{\textbackslash hline}} können vertikale Linien und mit \textbf{\texttt{|}} horizontale Linien eingefügt werden. In dem folgenden Beispiel werden zudem die Möglichkeiten doppelter horizontaler Linien (\textbf{\texttt{\textbackslash hline \textbackslash hline}}) und doppelter vertikaler Linien (\textbf{\texttt{||}}) visualisiert.
 
 \begin{minipage}{0.5\textwidth}
     \begin{lstlisting}[language={[LaTeX]TeX}]
@@ -609,41 +609,192 @@ Formatierungsoptionen können mit dem Befehl \textbf{\texttt{\textbackslash begi
 
 Möglichkeiten sind unter anderem:
 
-
-\textbf{Hier gehts gleich weiter.....}
-
 \begin{table}[h]
     \centering
     \renewcommand{\arraystretch}{1.3} % Erhöhte Zeilenhöhe für bessere Lesbarkeit
     \setlength{\tabcolsep}{8pt} % Abstände zwischen Spalten setzen
-    \rowcolors{2}{gray!20}{white} % Alternierende Zeilenfarben
-
-    \begin{tabular}{p{5cm} p{7cm}}
+    \begin{tabular}{l|l}
         \toprule
-        \rowcolor{gray!40} % Kopfzeilenhintergrund
-        \textbf{Wirkung}                 & \textbf{Befehl}                                                                                         \\
+        \textbf{Wirkung}                       & \textbf{Befehl}                                                      \\
         \midrule
-        Fettgedruckte Spalte             & \{\textbackslash bfseries\}c                                                                            \\
-        Kursiv formatierte Spalte        & \{\textbackslash itshape\}c                                                                             \\
-        Farbige Spalte                   & \{\textbackslash columncolor\{gray!20\}\}c                                                              \\
-        Linksbündige Spalte mit Umbruch  & \{\textbackslash raggedright\textbackslash arraybackslash\}p\{4cm\}                                     \\
-        Zentrierte Spalte mit Umbruch    & \{\textbackslash centering\textbackslash arraybackslash\}p\{4cm\}                                       \\
-        Rechtsbündige Spalte mit Umbruch & \{\textbackslash raggedleft\textbackslash arraybackslash\}p\{4cm\}                                      \\
-        Mathematische Spalte             & \{$\}c<\{$\}                                                                                            \\
-        Mehrzeilige Spalte (Mitte)       & m\{3cm\}                                                                                                \\
-        Mehrzeilige Spalte (Unten)       & b\{3cm\}                                                                                                \\
-        Mehrzeilige Spalte (Oben)        & p\{3cm\}                                                                                                \\
-        Eigene Spaltentypen definieren   & \textbackslash newcolumntype\{X\}\{>\{\textbackslash centering\textbackslash arraybackslash\}p\{3cm\}\} \\
-        Alternierende Zeilenfarben       & \textbackslash rowcolors\{2\}\{gray!20\}\{white\}                                                       \\
-        Größere Zeilenhöhe setzen        & \textbackslash renewcommand\{\textbackslash arraystretch\}\{1.3\}                                       \\
-        Spaltenabstand erhöhen           & \textbackslash setlength\{\textbackslash tabcolsep\}\{8pt\}                                             \\
-        Mehrere Spalten verbinden        & \textbackslash multicolumn\{2\}\{c\}\{Text\}                                                            \\
-        Mehrere Zeilen verbinden         & \textbackslash multirow\{2\}\{*\}\{Text\}                                                               \\
+        Schriftgröße der Spalte                & >\{\textbackslash small\}c                                           \\
+        Fettgedruckte Spalte                   & >\{\textbackslash bfseries\}c                                        \\
+        Kursiv formatierte Spalte              & >\{\textbackslash itshape\}c                                         \\
+        Farbige Spalte (farbe!deckkraft in \%) & >\{\textbackslash columncolor\{gray!20\}\}c                          \\
+        Mathematische Spalte                   & >\{\$\}c<\{\$\}                                                      \\
+        \midrule
+        Mehrzeilige Spalte (Mitte)             & m\{3cm\}                                                             \\
+        Mehrzeilige Spalte (Unten)             & p\{3cm\}                                                             \\
+        Mehrzeilige Spalte (Oben)              & b\{3cm\}                                                             \\
+        Mehrzeilige Spalte (linksbündig)       & >\{\textbackslash raggedright\textbackslash arraybackslash\}m\{4cm\} \\
+        Mehrzeilige Spalte (zentriert)         & >\{\textbackslash centering\textbackslash arraybackslash\}m\{4cm\}   \\
+        Mehrzeilige Spalte (rechtsbündig)      & >\{\textbackslash raggedleft\textbackslash arraybackslash\}m\{4cm\}  \\
         \bottomrule
     \end{tabular}
-
-    \caption{Übersicht aller `array`-Formatierungsoptionen}
+    \caption{Übersicht der array-Formatierungsoptionen}
     \label{tab:array_formatierungen}
 \end{table}
 
+Der Befehl \textbf{\texttt{>\{...\}}} sorgt dafür, dass die Formatierung auf die gesamte Spalte angewendet wird.
 
+Es folgt ein Beispiel, dass die verschiedenen Formatierungsmöglichkeiten fette und kursive Schrift, farbige Hintergründe und mathematische Spalten in einer Tabelle darstellt:
+
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\footnotesize]
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|>{\bfseries}c|>{\itshape}r|>{\columncolor{blue!10}}c|>{$}c<{$}|}
+        \hline
+        Fett & Kursiv & Farbiger Hintergrund & Mathematische \: Spalte                \\
+        \hline
+        name & age    & size                 & E = mc^2                               \\
+        \hline
+        Max  & 25     & 1.80m                & a^2 + b^2 = c^2                        \\
+        \hline
+        Lisa & 30     & 1.75m                & x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+        \hline
+    \end{tabular}
+    \caption{Fett, Kursiv, Farbiger Hintergrund und Mathematisch}
+    \label{tab:formatierte_tabelle}
+\end{table}
+\end{lstlisting}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|>{\bfseries}c|>{\itshape}r|>{\columncolor{blue!10}}c|>{$}c<{$}|}
+        \hline
+        Fett & Kursiv & Farbiger Hintergrund & Mathematische \: Spalte                \\
+        \hline
+        name & age    & size                 & E = mc^2                               \\
+        \hline
+        Max  & 25     & 1.80m                & a^2 + b^2 = c^2                        \\
+        \hline
+        Lisa & 30     & 1.75m                & x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+        \hline
+    \end{tabular}
+    \caption{Fett, Kursiv, Farbiger Hintergrund und Mathematisch}
+    \label{tab:formatierte_tabelle}
+\end{table}
+
+\subsubsection{Spalten mit Zeilenumbruch}
+Es folgt ein Beispiel, dass die verschiedenen Möglichkeiten für Spalten mit Zeilenumbruch aus \autoref{tab:array_formatierungen} darstellt:
+
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\footnotesize]
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|>{\raggedright\arraybackslash}m{5cm}|>{\centering\arraybackslash}p{4cm}|>{\raggedleft\arraybackslash}b{5cm}|}
+        \hline
+        Mittig und linksbundig  &   Unten und zentriert &   Oben und rechtsbundig   \\
+        \hline
+        Dies ist ein langer Text, der linksbundig ausgerichtet ist und umgebrochen wird. & Dies ist ein langer Text, der zentriert ist und am unteren Rand der Zelle ausgerichtet ist. & Dies ist ein langer Text, der rechtsbundig ausgerichtet ist und am oberen Rand der Zelle ausgerichtet ist. \\
+        \hline
+    \end{tabular}
+    \caption{Ausrichtung der Spalten}
+    \label{tab:ausrichtung_spalten}
+\end{table}
+\end{lstlisting}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|>{\raggedright\arraybackslash}m{5cm}|>{\centering\arraybackslash}p{4cm}|>{\raggedleft\arraybackslash}b{5cm}|}
+        \hline
+        \textbf{Mittig und linksbündig}                                                  & \textbf{Unten und zentriert}                                                                & \textbf{Oben und rechtsbündig}                                                                             \\
+        \hline
+        Dies ist ein langer Text, der linksbündig ausgerichtet ist und umgebrochen wird. & Dies ist ein langer Text, der zentriert ist und am unteren Rand der Zelle ausgerichtet ist. & Dies ist ein langer Text, der rechtsbündig ausgerichtet ist und am oberen Rand der Zelle ausgerichtet ist. \\
+        \hline
+    \end{tabular}
+    \caption{Ausrichtung der Spalten}
+    \label{tab:ausrichtung_spalten}
+\end{table}
+
+\subsubsection{Weitere Formatierungsmöglichkeiten}
+In Tabellen können weitere Formatierungsmöglichkeiten vorgenommen werden. Dazu gehören unter anderem:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3} % Erhöhte Zeilenhöhe für bessere Lesbarkeit
+    \setlength{\tabcolsep}{8pt} % Abstände zwischen Spalten setzen
+    \rowcolors{2}{gray!20}{white} % Alternierende Zeilenfarben
+    \begin{tabular}{>{\footnotesize}l|l}
+        \toprule
+        \rowcolor{gray!40} % Kopfzeilenhintergrund
+        \textbf{Wirkung}                          & \textbf{Befehl}                                                                                           \\
+        \midrule
+        Größere Zeilenhöhe setzen (Standard: 1.0) & \textbackslash renewcommand\{\textbackslash arraystretch\}\{...\}                                         \\
+        Spaltenabstand erhöhen (Standard: 6pt)    & \textbackslash setlength\{\textbackslash tabcolsep\}\{...pt\}                                             \\
+        Alternierende Zeilenfarben                & \scriptsize{\textbackslash rowcolors\{Startzeile\}\{Farbe-ungerade!Deckkraft\}\{Farbe-gerade!Deckkraft\}} \\
+        Kopfzeilenhintergrund setzen              & \textbackslash rowcolor\{gray!40\}                                                                        \\
+        \bottomrule
+    \end{tabular}
+    \caption{Weitere Formatierungsmöglichkeiten für Tabellen}
+    \label{tab:weitere_formatierungen}
+\end{table}
+
+Die folgenden Befehle aus \autoref{tab:weitere_formatierungen} können in der Präambel der \texttt{\textbf{\textbackslash begin\{table\}[H]}} Umgebung definiert werden.
+
+Als Beispiel sollen die Formatierungsmöglichkeiten, die beim Erstellen der \autoref{tab:weitere_formatierungen} verwendet wurden, dargestellt werden.
+Der Code für die Präambel sieht wie folgt aus:
+
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small]
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3} % Erhohte Zeilenhohe fur bessere Lesbarkeit
+    \setlength{\tabcolsep}{8pt} % Abstande zwischen Spalten setzen
+    \rowcolors{2}{gray!20}{white} % Alternierende Zeilenfarben
+    \begin{tabular}{>{\footnotesize}l|l}
+        ...
+    \end{tabular}
+    \caption{Weitere Formatierungsmoglichkeiten fur Tabellen}
+    \label{tab:weitere_formatierungen}
+\end{table}
+\end{lstlisting}
+
+
+\subsubsection{Zeilen oder Spalten verbinden}
+Zeilen oder Spalten können in Tabellen mit dem Befehl \newline \textbf{\texttt{\textbackslash multirow\{Anzahl-der-Zeilen\}\{Breite\}\{Inhalt\}}} oder \newline \textbf{\texttt{\textbackslash multicolumn\{Anzahl-der-Spalten\}\{|Ausrichtung|\}\{Inhalt\}}} verbunden werden.
+
+Die Breite von \textbf{\texttt{\textbackslash multirow}} kann entweder in cm oder als \textbf{\texttt{*}} für die automatische Breiteangabe gesetzt werden. Die Ausrichtung von \textbf{\texttt{\textbackslash multicolumn}} kann entweder \textbf{\texttt{l}}, \textbf{\texttt{c}} oder \textbf{\texttt{r}} für linksbündig, zentriert oder rechtsbündig ausgerichtet werden.
+
+Es folgt ein Beispiel, dass das Verbinden von Zeilen und/oder Spalten in einer Tabelle darstellt:
+
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\scriptsize]
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Spalte 1}                        & \textbf{Spalte 2} & \textbf{Spalte 3} \\
+        \hline
+        \multirow{2}{*}{\textbf{Mehrere Zeilen}} & Wert A            & Wert B            \\
+                                                 & Wert C            & Wert D            \\
+        \hline
+        Wert E                          & \multicolumn{2}{c|}{\textbf{Mehrere Spalten}} \\
+        \hline
+        Eintrag 1                                & Eintrag 2         & Eintrag 3         \\
+        \hline
+    \end{tabular}
+    \caption{Beispiel Zeilen oder Spalten verbinden}
+    \label{tab:example_multirow_multicolumn}
+\end{table}
+\end{lstlisting}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Spalte 1}                        & \textbf{Spalte 2}                             & \textbf{Spalte 3} \\
+        \hline
+        \multirow{2}{*}{\textbf{Mehrere Zeilen}} & Wert A                                        & Wert B            \\
+                                                 & Wert C                                        & Wert D            \\
+        \hline
+        Wert E                                   & \multicolumn{2}{c|}{\textbf{Mehrere Spalten}}                     \\
+        \hline
+        Eintrag 1                                & Eintrag 2                                     & Eintrag 3         \\
+        \hline
+    \end{tabular}
+    \caption{Beispiel Zeilen oder Spalten verbinden}
+    \label{tab:example_multirow_multicolumn}
+\end{table}
+
+
+\subsubsection{Einfügen von Bildern in Tabellen}

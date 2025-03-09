@@ -1,8 +1,8 @@
-%Tabellen, Booktabs, Multicolumn, Multirow, Landscape
-%\\  für neue zeile (Tabellen und Umgebungen)
-spaltenbreite, mehrzeilige spalten
+Booktabs
+longtable
+bilder
 website
-->text, zahlen möglich; matheumgebung; bilder; soderzeichen; 
+
 
 
 
