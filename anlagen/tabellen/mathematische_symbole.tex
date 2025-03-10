@@ -1,6 +1,5 @@
 \renewcommand{\arraystretch}{1.5}
 \begin{longtable}{l l l}
-    \\
     % Überschrift für die erste Seite
     \toprule
     \textbf{Operator}         & \textbf{LaTeX-Code}                                                                     & \textbf{Beispiel}                    \\
@@ -12,8 +11,18 @@
     \midrule
     \endhead
 
+
+    % Fußzeile für jede Seite
     \bottomrule
+    \multicolumn{3}{c}{\textit{Fortsetzung auf der nächsten Seite}}
+    \endfoot
+
+    % Letzte Fußzeile der Tabelle
+    \bottomrule
+    \caption{Wichtige Rechenoperatoren und mathematische Symbole}
+    \label{tab:operatoren}
     \endlastfoot
+
 
     Gleichheit                & \texttt{=}                                                                              & $ a = b $                            \\
     Ungleichheit              & \texttt{\textbackslash neq}                                                             & $ a \neq b $                         \\
@@ -82,5 +91,4 @@
     Divergenz                 & \texttt{\textbackslash nabla \textbackslash cdot \textbackslash vec{F}}                 & \( \nabla \cdot \vec{F} \)           \\
     Rotation                  & \texttt{\textbackslash nabla \textbackslash times \textbackslash vec{F}}                & \( \nabla \times \vec{F} \)          \\
     Laplace-Operator          & \texttt{\textbackslash Delta}                                                           & \( \Delta \)                         \\
-    \caption{Wichtige Rechenoperatoren und mathematische Symbole} \label{tab:operatoren}
 \end{longtable}

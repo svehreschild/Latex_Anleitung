@@ -389,7 +389,7 @@ Die Einstellungen für die Darstellung des Quellcodes können in der Präambel d
 \end{lstlisting}
 
 \subsubsection{Farbliche Hervorhebung im Quellcode}
-Soll in dem Code ein Zeile \textbf{farblich hervorgehoben} werden, kann dies mit dem Befehl \textbf{\texttt{\textbackslash begin\{lstlisting\}[language=..., emph={x}, emphstyle=\textbackslash color\{red\}]}} erreicht werden. Dabei wird jedes x in dem Code rot hervorgehoben.
+Soll in dem Code ein Zeile \textbf{farblich hervorgehoben} werden, kann dies mit dem Befehl \textbf{\texttt{\textbackslash begin\{lstlisting\}[language=..., emph=\{x,...\}, emphstyle=\{\textbackslash color\{red\}\}]}} erreicht werden. Dabei wird jedes x in dem Code rot hervorgehoben.
 
 \begin{lstlisting}[language=C, emph={x}, emphstyle=\color{red}]
 int main() {
@@ -748,9 +748,11 @@ Der Code für die Präambel sieht wie folgt aus:
 \end{table}
 \end{lstlisting}
 
+Darüber hinaus können \textbf{eigene Spaltentypen} definiert werden, um die Formatierung von Tabellen zu vereinfachen. Dazu wird der Befehl \textbf{\texttt{\textbackslash newcolumntype\{Spaltentypname\}\{Formatierung\}}} verwendet. In \autoref{tab:array_formatierungen} sind einige Möglichkeiten zur Formatierung von Spalten aufgeführt. Die neu erstellten Spaltentypen können dann in \textbf{\texttt{\textbackslash begin\{tabular\}\{...\}}} verwendet werden.
+
 
 \subsubsection{Zeilen oder Spalten verbinden}
-Zeilen oder Spalten können in Tabellen mit dem Befehl \newline \textbf{\texttt{\textbackslash multirow\{Anzahl-der-Zeilen\}\{Breite\}\{Inhalt\}}} oder \newline \textbf{\texttt{\textbackslash multicolumn\{Anzahl-der-Spalten\}\{|Ausrichtung|\}\{Inhalt\}}} verbunden werden.
+Zeilen oder Spalten können in Tabellen mit dem Befehl \newline \textbf{\texttt{\textbackslash multirow\{Anzahl-der-Zeilen\}\{Breite\}\{Inhalt\}}} oder \newline \textbf{\texttt{\textbackslash multicolumn\{Anzahl-der-Spalten\}\{|Ausrichtung|\}\{Inhalt\}}} verbunden werden. Es wird das Paket \textbf{\texttt{multirow}} benötigt.
 
 Die Breite von \textbf{\texttt{\textbackslash multirow}} kann entweder in cm oder als \textbf{\texttt{*}} für die automatische Breiteangabe gesetzt werden. Die Ausrichtung von \textbf{\texttt{\textbackslash multicolumn}} kann entweder \textbf{\texttt{l}}, \textbf{\texttt{c}} oder \textbf{\texttt{r}} für linksbündig, zentriert oder rechtsbündig ausgerichtet werden.
 
@@ -798,3 +800,124 @@ Es folgt ein Beispiel, dass das Verbinden von Zeilen und/oder Spalten in einer T
 
 
 \subsubsection{Einfügen von Bildern in Tabellen}
+Bilder können in Tabellen mit dem Befehl \textbf{\texttt{\textbackslash includegraphics[...]\{Pfad/zum/Bild.png\}}} eingefügt werden. Dabei können die gleichen Optionen wie bei der normalen Einbindung von Bildern verwendet werden. Besonders praktisch ist die Option \textbf{\texttt{[width=...\textbackslash linewidth]}} um die Breite des Bildes an die Spaltenbreite anzupassen.
+
+\begin{minipage}{0.62\textwidth}
+    \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\scriptsize]
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|>{\centering\arraybackslash}m{4cm}|c|}
+        \hline
+        \textbf{Spalte 1}   &   \textbf{Spalte 2} \\
+        \hline
+        \includegraphics[width=0.8\linewidth]{anlagen/bilder/Graph.png}   &   Text   \\
+        \hline
+    \end{tabular}
+    \caption{Bild in Tabelle}
+    \label{tab:bild_in_tabelle}
+\end{table}
+    \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.34\textwidth}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|>{\centering\arraybackslash}m{3.5cm}|c|}
+            \hline
+            \textbf{Spalte 1}                                               & \textbf{Spalte 2} \\
+            \hline
+            \includegraphics[width=0.8\linewidth]{anlagen/bilder/Graph.png} & Text              \\
+            \hline
+        \end{tabular}
+        \caption{Bild in Tabelle}
+        \label{tab:bild_in_tabelle}
+    \end{table}
+\end{minipage}
+
+\subsubsection{Professionelle Buchtabellen}
+Für professionelle Buchtabellen wird das Paket \textbf{\texttt{booktabs}} benötigt. Es bietet die Möglichkeit, Tabellen mit dezenten Linien zu erstellen.
+
+Die Linien können mit \textbf{\texttt{\textbackslash toprule}}, \textbf{\texttt{\textbackslash midrule}} und \textbf{\texttt{\textbackslash bottomrule}} definiert werden. Mit \newline \textbf{\texttt{\textbackslash cmidrule(Optionen)\{Startspalte-Endspalte\}}} kann eine Linie nur für bestimmte Spalten definiert werden. Die Optionen sind  \textbf{\texttt{l}} für eine links, \textbf{\texttt{r}} für eine rechts und \textbf{\texttt{lr}} für eine links und rechts weich abgeschnittene Linie .
+
+\begin{minipage}{0.70\textwidth}
+    \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small]
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|cr}
+        \toprule
+        \textbf{name} & \textbf{age} & \textbf{size} \\
+        \midrule
+        Max           & 25           & 1,80m         \\
+        \cmidrule(lr){2-3} % Linie nur fur Spalte 2-3
+        Anna          & 22           & 1,65m         \\
+        \midrule[2pt]
+        Gustav        & 30           & 1,75m         \\
+        \addlinespace[10pt] % extra Abstand 
+        Anna          & 35           & 1,85m         \\
+        \bottomrule
+    \end{tabular}
+    \caption{Buchtabelle}
+    \label{tab:booktabs_example}
+\end{table}
+    \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\textwidth}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{l|cr}
+            \toprule
+            \textbf{name} & \textbf{age} & \textbf{size} \\
+            \midrule
+            Max           & 25           & 1,80m         \\
+            \cmidrule(lr){2-3}  % Linie nur für Spalte 2-3
+            Anna          & 22           & 1,65m         \\
+            \midrule[2pt]
+            Gustav        & 30           & 1,75m         \\
+            \addlinespace[10pt] % extra Abstand 
+            Anna          & 35           & 1,85m         \\
+            \bottomrule
+        \end{tabular}
+        \caption{Buchtabelle}
+        \label{tab:booktabs_example}
+    \end{table}
+\end{minipage}
+
+Die dicke der Linien kann mit \textbf{\texttt{\textbackslash midrule[...pt]}} angepasst werden. Ist ein breiterer Abstand zwischen den Linien gewünscht, kann dies mit \textbf{\texttt{\textbackslash addlinespace[...pt]}} erreicht werden.
+
+\subsubsection{Tabellen über mehrere Seiten}
+Tabellen können sich oft über mehrere Seiten erstrecken. Damit ein Seitenumbruch erfolgen kann, wird das Paket \textbf{\texttt{longtable}} benötigt. Seitenumbrüchen können für normale Tabellen und für Buchtabellen ermöglicht werden. Es folgt das in \autoref{tab:operatoren} dargestellte Beispiel:
+
+\begin{lstlisting}[language={[LaTeX]TeX}, emph={\endfirsthead,\endhead,\endfoot,\endlastfoot}, emphstyle={\color{red}}]
+\begin{longtable}{l l l}
+    % Ueberschrift fuer die erste Seite
+    \toprule
+    \textbf{Operator}  &  \textbf{LaTeX-Code}  &  \textbf{Beispiel}  \\
+    \midrule
+    \endfirsthead
+
+    % Ueberschrift fuer alle folgenden Seiten
+    \toprule
+    \textbf{Operator}  &  \textbf{LaTeX-Code}  &  \textbf{Beispiel}  \\
+    \midrule
+    \endhead
+
+    % Fusszeile fuer jede Seite
+    \bottomrule
+    \multicolumn{3}{c}{\textit{Fortsetzung auf der naechsten Seite}}
+    \endfoot
+
+    % Letzte Fusszeile der Tabelle
+    \bottomrule
+    \caption{Wichtige Rechenoperatoren und mathematische Symbole}
+    \label{tab:operatoren}
+    \endlastfoot
+
+    ... 
+    \midrule
+    ... 
+
+\end{longtable}
+    
+\end{lstlisting}
+
