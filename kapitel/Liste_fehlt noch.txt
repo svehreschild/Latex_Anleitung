@@ -1,8 +1,3 @@
-longtable
-
-tabu?
-website
-
 minipage oder parbox
 -> ref auf parallele Darstellung von Bildern
 

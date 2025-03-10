@@ -563,7 +563,10 @@ Eine einfache Tabelle kann mit der \textbf{\texttt{tabular}}-Umgebung erstellt w
 
 Die \textbf{\texttt{table}}-Umgebung kann mit einer Option \textbf{\texttt{[...]}} versehen werden, um die Positionierung zu steuern (siehe auch: \autoref{tab:figure_options}).
 
-Darüber hinaus können die Spalten mit \textbf{\texttt{l}}, \textbf{\texttt{r}} und \textbf{\texttt{c}} für linksbündig, rechtsbündig und zentriert ausgerichtet werden. Mit \textbf{\texttt{\textbackslash hline}} können vertikale Linien und mit \textbf{\texttt{|}} horizontale Linien eingefügt werden. In dem folgenden Beispiel werden zudem die Möglichkeiten doppelter horizontaler Linien (\textbf{\texttt{\textbackslash hline \textbackslash hline}}) und doppelter vertikaler Linien (\textbf{\texttt{||}}) visualisiert.
+Darüber hinaus können die Spalten mit \textbf{\texttt{l}}, \textbf{\texttt{r}} und \textbf{\texttt{c}} für linksbündig, rechtsbündig und zentriert ausgerichtet werden. Mit \textbf{\texttt{\textbackslash hline}} können vertikale Linien und mit \textbf{\texttt{|}} horizontale Linien eingefügt werden.
+Mit \textbf{\texttt{\textbackslash cline\{x-y\}}} können horizontale Linien von Spalte x bis y gezogen werden.
+
+In dem folgenden Beispiel werden zudem die Möglichkeiten doppelter horizontaler Linien (\textbf{\texttt{\textbackslash hline \textbackslash hline}}) und doppelter vertikaler Linien (\textbf{\texttt{||}}) visualisiert.
 
 \begin{minipage}{0.5\textwidth}
     \begin{lstlisting}[language={[LaTeX]TeX}]
@@ -576,6 +579,7 @@ Darüber hinaus können die Spalten mit \textbf{\texttt{l}}, \textbf{\texttt{r}}
         Max  & 25    & 1,80m \\
         \hline
         Anna & 22    & 1,65m \\
+        \cline{2-2}
         Gustav & 30    & 1,75m \\
         \hline
     \end{tabular}
@@ -595,11 +599,51 @@ Darüber hinaus können die Spalten mit \textbf{\texttt{l}}, \textbf{\texttt{r}}
             Max    & 25  & 1,80m \\
             \hline
             Anna   & 22  & 1,65m \\
+            \cline{2-2}
             Gustav & 30  & 1,75m \\
             \hline
         \end{tabular}
         \caption{Einfache Tabelle}
         \label{tab:einfache_tabelle}
+    \end{table}
+\end{minipage}
+
+Mit dem Paket \textbf{\texttt{hhline}} können Linien selektiv gezeichnet werden. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash hhline\{...\}}} erreicht werden.
+Die Optionen sind \textbf{\texttt{|}}, \textbf{\texttt{-}}, \textbf{\texttt{=}} und \textbf{\texttt{\textasciitilde}} für vertikale, horizontale, doppelte horizontale und keine Linien.
+
+\begin{minipage}{0.5\textwidth}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        A & B & C \\
+        \hhline{|=|-|=|} 
+        1 & 2 & 3 \\
+        \hhline{|~|-|~|} 
+        4 & 5 & 6 \\
+        \hhline{|=|=|=|} 
+    \end{tabular}
+    \caption{Tabelle mit hhline}
+    \label{tab:hhline_tabelle}
+\end{table}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            A & B & C \\
+            \hhline{|=|-|=|}
+            1 & 2 & 3 \\
+            \hhline{|~|-|~|}
+            4 & 5 & 6 \\
+            \hhline{|=|=|=|}
+        \end{tabular}
+        \caption{Tabelle mit hhline}
+        \label{tab:hhline_tabelle}
     \end{table}
 \end{minipage}
 
@@ -886,7 +930,7 @@ Die Linien können mit \textbf{\texttt{\textbackslash toprule}}, \textbf{\texttt
 Die dicke der Linien kann mit \textbf{\texttt{\textbackslash midrule[...pt]}} angepasst werden. Ist ein breiterer Abstand zwischen den Linien gewünscht, kann dies mit \textbf{\texttt{\textbackslash addlinespace[...pt]}} erreicht werden.
 
 \subsubsection{Tabellen über mehrere Seiten}
-Tabellen können sich oft über mehrere Seiten erstrecken. Damit ein Seitenumbruch erfolgen kann, wird das Paket \textbf{\texttt{longtable}} benötigt. Seitenumbrüchen können für normale Tabellen und für Buchtabellen ermöglicht werden. Es folgt das in \autoref{tab:operatoren} dargestellte Beispiel:
+Tabellen können sich oft über mehrere Seiten erstrecken. Damit ein Seitenumbruch erfolgen kann, wird das Paket \textbf{\texttt{longtable}} benötigt. Seitenumbrüchen können für normale Tabellen und für Buchtabellen ermöglicht werden. Es folgt die Einstellungen für das in \autoref{tab:operatoren} dargestellte Beispiel:
 
 \begin{lstlisting}[language={[LaTeX]TeX}, emph={\endfirsthead,\endhead,\endfoot,\endlastfoot}, emphstyle={\color{red}}]
 \begin{longtable}{l l l}
@@ -918,6 +962,10 @@ Tabellen können sich oft über mehrere Seiten erstrecken. Damit ein Seitenumbru
     ... 
 
 \end{longtable}
-    
 \end{lstlisting}
 
+
+\subsubsection{Hilfreiche Internetseite}
+Latex Tabellen können auch mit dem Online-Tool \href{https://tablesgenerator.com/latex_tables}{Tables Generator} erstellt werden. Dieses Tool bietet eine grafische Benutzeroberfläche, um Tabellen zu erstellen und den entsprechenden \LaTeX-Code zu generieren. Die genannte Webseite bietet auch die Möglichkeit, Tabellen aus Excel-Dateien zu importieren und den entsprechenden \LaTeX-Code zu generieren.
+
+Eine weitere Internetseite, die die Konvertierung von Tabellen aus Excel-Dateien in \LaTeX-Code ermöglicht, ist \href{https://www.latex-tables.com}{Latex-Tables}.
