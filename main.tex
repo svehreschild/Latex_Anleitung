@@ -109,7 +109,10 @@
 \input{kapitel/uebersicht.tex}
 
 % Literaturverzeichnis
-\bibliographystyle{apalike}  % Stil des Literaturverzeichnisses
+\newpage
+\bibliographystyle{plain}  % Stil des Literaturverzeichnisses
 \bibliography{literatur}   % Verknüpfung mit literatur.bib
+\nocite{*}                  % Alle Einträge aus literatur.bib anzeigen
+\label{sec:literaturverzeichnis}
 
 \end{document}

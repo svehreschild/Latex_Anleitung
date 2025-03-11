@@ -226,6 +226,58 @@ In \autoref{tab:querverweise} wird dies anhand eines Beispiels demonstriert:
 
 Bei den Befehlen (Ausnahme \textbackslash eqref und \textbackslash href) kann ein \textbf{*} verwendet werden um den Hyperlink zu entfernen. Beispiel: \texttt{\textbackslash ref*\{sec:querverweise\}}
 
+
+\subsection{Zitieren}
+\label{sec:zitieren}
+In \LaTeX{} können Zitate und Literaturverweise mit dem Befehl \textbf{\texttt{\textbackslash cite\{Schlüssel\}}} gesetzt werden. Der Schlüssel entspricht dem Namen des Eintrags in der Literaturdatenbank.
+Für das Zitieren wird das Paket \textbf{cite} benötigt.
+
+Es gibt verschiedene Zitierstile, die festgelegt werden können (siehe auch: \nameref{sec:literaturverzeichnis_erklärung}). Im folgenden wird der Stil \textbf{plain} verwendet.
+
+\subsubsection{Einfache Zitate}
+
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
+Mustermann beschreibt dies in seiner Arbeit \cite{buch1}.
+    \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.48\textwidth}
+    Mustermann beschreibt dies in seiner Arbeit \cite{buch1}.
+\end{minipage}
+
+
+\subsubsection{Mehrere Quellen zitieren}
+
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
+Laut Mustermann und Doe \cite{buch1, artikel1} ist ...
+    \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.48\textwidth}
+    Laut Mustermann und Doe \cite{buch1, artikel1} ist ...
+\end{minipage}
+
+
+\subsubsection{Zitate mit Seitenangabe}
+
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
+Laut Mustermann \cite[S. 5]{buch1} ist ...
+    \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.48\textwidth}
+    Laut Mustermann \cite[S. 5]{buch1} ist ...
+\end{minipage}
+
+
+\subsubsection{Quellen nur im Literaturverzeichnis anzeigen}
+Mit dem Befehl \textbf{\texttt{\textbackslash nocite\{Schlüssel\}}} können Einträge aus der Literaturdatenbank (literatur.bib) im Literaturverzeichnis angezeigt werden ohne im Text zitiert zu werden.
+Die Verwendung von \textbf{\texttt{\textbackslash nocite\{*\}}} zeigt alle Einträge an.
+
+
 \subsection{Einheiten mit \texttt{siunitx}}
 
 Das Paket \textbf{siunitx} ermöglicht die einfache und konsistente Darstellung von Einheiten in Texten und Formeln.

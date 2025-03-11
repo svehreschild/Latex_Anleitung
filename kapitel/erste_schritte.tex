@@ -31,10 +31,10 @@ Die Kopf- und Fußzeilen können mit dem Paket \textbf{fancyhdr} besonders elega
 
 Als Position sind die folgenden Angaben möglich:
 \begin{itemize}
-    \item \textbf{C} - zentriert
-    \item \textbf{L} - linksbündig
-    \item \textbf{R} - rechtsbündig
-    \item \textbf{C} / \textbf{L} / \textbf{R} in Kombination mit \textbf{E} oder \textbf{O} für gerade oder ungerade Seitenzahlen möglich
+  \item \textbf{C} - zentriert
+  \item \textbf{L} - linksbündig
+  \item \textbf{R} - rechtsbündig
+  \item \textbf{C} / \textbf{L} / \textbf{R} in Kombination mit \textbf{E} oder \textbf{O} für gerade oder ungerade Seitenzahlen möglich
 \end{itemize}
 
 Ist eine Seitennummerierung in der Form Seite X von Y gewünscht, kann dies mit dem Befehl \textbf{\texttt{\textbackslash fancyfoot[C]\{Seite \textbackslash thepage$\thicksim$von$\thicksim$\textbackslash pageref\{LastPage\}\}}} ermöglicht werden. Hierbei wird das Paket \textbf{lastpage} benötigt.
@@ -45,8 +45,8 @@ Eine Trennlinie zwischen Fußzeile und Dokument, sowie zwischen Kopfzeile und Do
 
 Manchmal ist es gewünscht auf einer Seite keine Kopf- und/oder Fußzeile zu haben. Dies ist möglich mit:
 \begin{itemize}
-    \item \textbf{\texttt{\textbackslash thispagestyle\{empty\}}} - Keine Kopf- oder Fußzeile
-    \item \textbf{\texttt{\textbackslash thispagestyle\{plain\}}} - Normale Fußzeile ohne Kopfzeile
+  \item \textbf{\texttt{\textbackslash thispagestyle\{empty\}}} - Keine Kopf- oder Fußzeile
+  \item \textbf{\texttt{\textbackslash thispagestyle\{plain\}}} - Normale Fußzeile ohne Kopfzeile
 \end{itemize}
 
 \subsection{Erstellen des Inhaltsverzeichnisses (und weiterer Verzeichnisse)}
@@ -54,13 +54,13 @@ Manchmal ist es gewünscht auf einer Seite keine Kopf- und/oder Fußzeile zu hab
 Das Inhaltsverzeichnis wird mit dem Befehl \textbf{\texttt{\textbackslash tableofcontents}} erstellt. Die Tiefe des Inhaltsverzeichnis kann mit dem Befehl \textbf{\texttt{\textbackslash setcounter\{tocdepth\}\{X\}}} festgelegt werden. Dabei steht X für die \underbar{maximale Tiefe} des Inhaltsverzeichnisses und kann folgende Werte annehmen:
 
 \begin{itemize}
-    \item \textbf{0} - Nur \texttt{\textbackslash part\{\}} (nur in \texttt{book} oder \texttt{report})
-    \item \textbf{1} - \texttt{\textbackslash part\{\}} und \texttt{\textbackslash chapter\{\}} (nur in \texttt{book} oder \texttt{report})
-    \item \textbf{2} - \texttt{\textbackslash chapter\{\}} und \texttt{\textbackslash section\{\}}
-    \item \textbf{3} - \texttt{\textbackslash section\{\}} und \texttt{\textbackslash subsection\{\}}
-    \item \textbf{4} - \texttt{\textbackslash subsection\{\}} und \texttt{\textbackslash subsubsection\{\}}
-    \item \textbf{5} - \texttt{\textbackslash subsubsection\{\}} und \texttt{\textbackslash paragraph\{\}}
-    \item \textbf{6} - \texttt{\textbackslash paragraph\{\}} und \texttt{\textbackslash subparagraph\{\}}
+  \item \textbf{0} - Nur \texttt{\textbackslash part\{\}} (nur in \texttt{book} oder \texttt{report})
+  \item \textbf{1} - \texttt{\textbackslash part\{\}} und \texttt{\textbackslash chapter\{\}} (nur in \texttt{book} oder \texttt{report})
+  \item \textbf{2} - \texttt{\textbackslash chapter\{\}} und \texttt{\textbackslash section\{\}}
+  \item \textbf{3} - \texttt{\textbackslash section\{\}} und \texttt{\textbackslash subsection\{\}}
+  \item \textbf{4} - \texttt{\textbackslash subsection\{\}} und \texttt{\textbackslash subsubsection\{\}}
+  \item \textbf{5} - \texttt{\textbackslash subsubsection\{\}} und \texttt{\textbackslash paragraph\{\}}
+  \item \textbf{6} - \texttt{\textbackslash paragraph\{\}} und \texttt{\textbackslash subparagraph\{\}}
 \end{itemize}
 
 Für die Anwendung dieses Befehls ist darauf zu achten, dass der Befehl \textbf{\texttt{\textbackslash setcounter\{tocdepth\}\{X\}}} vor dem Befehl \textbf{\texttt{\textbackslash tableofcontents}} platziert werden muss.
@@ -78,7 +78,8 @@ Mehr zu dem Inkludieren von \LaTeX{}-Dateien ist in Kapitel \ref{sec:einbinden_v
 
 
 \subsection{Literaturverzeichnis}
-In \LaTeX{} kann ein Literaturverzeichnis mit Hilfe von BibTeX erstellt werden.
+\label{sec:literaturverzeichnis_erklärung}
+In \LaTeX{} kann ein \hyperref[sec:literaturverzeichnis]{Literaturverzeichnis} mit Hilfe von BibTeX erstellt werden.
 Zunächst werden die Literaturangaben in einer \textbf{\texttt{.bib}}-Datei (literatur.bib) gespeichert . Vorzugsweise im gleichen Ordner wie die Hauptdatei.
 
 Es folgt ein Beispiel für eine \textbf{\texttt{literatur.bib}}-Datei:
@@ -127,13 +128,15 @@ Es folgt ein Beispiel für eine \textbf{\texttt{literatur.bib}}-Datei:
 Zunächst wird der Stil des Literaturverzeichnisses mit dem Befehl \textbf{\texttt{\textbackslash bibliographystyle\{Stil\}}} festgelegt.
 Es stehen folgende Stile zur Auswahl:
 \begin{itemize}
-    \item \textbf{plain} – Alphabetische Sortierung nach Autoren (Standardstil).
-    \item \textbf{unsrt} – Reihenfolge der Zitierung im Text (nicht alphabetisch).
-    \item \textbf{alpha} – Alphabetische Sortierung nach Autoren, aber mit Kurzreferenzen wie `[Ein05]`.
-    \item \textbf{abbrv} – Wie `plain`, aber mit abgekürzten Vornamen und Titeln.
-    \item \textbf{apalike} – Ähnlich wie APA-Zitierstil (Autor-Jahr statt Nummerierung).
+  \item \textbf{plain} – Alphabetische Sortierung nach Autoren (Standardstil).
+  \item \textbf{unsrt} – Reihenfolge der Zitierung im Text (nicht alphabetisch).
+  \item \textbf{alpha} – Alphabetische Sortierung nach Autoren, aber mit Kurzreferenzen wie `[Ein05]`.
+  \item \textbf{abbrv} – Wie `plain`, aber mit abgekürzten Vornamen und Titeln.
+  \item \textbf{apalike} – Ähnlich wie APA-Zitierstil (Autor-Jahr statt Nummerierung).
 \end{itemize}
 
 Anschließend wird die \textbf{\texttt{.bib}}-Datei mit dem Befehl \textbf{\texttt{\textbackslash bibliography\{Pfad/zur/Datei\}}} eingebunden.
 
-Nun können im Text Zitate eingefügt werden (siehe auch \Nameref{sec:zitieren}).
+Nun können im Text Zitate eingefügt werden (siehe auch: \nameref{sec:zitieren}).
+
+Damit alle Einträge aus der literatur.bib-Datei im Literaturverzeichnis erscheinen, kann der Befehl \textbf{\texttt{\textbackslash nocite\{*\}}} verwendet werden.
