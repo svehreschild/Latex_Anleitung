@@ -228,6 +228,61 @@ Bei den Befehlen (Ausnahme \textbackslash eqref und \textbackslash href) kann ei
 
 \subsection{Einheiten mit \texttt{siunitx}}
 
-Das Paket \textbf{siunitx} ermöglicht die einfache und konsistente Darstellung von Einheiten. Es bietet eine Vielzahl von Optionen und Befehlen, um Einheiten in Text und Formeln korrekt darzustellen.
+Das Paket \textbf{siunitx} ermöglicht die einfache und konsistente Darstellung von Einheiten in Texten und Formeln.
+Werte mit Einheiten können entweder mit dem Befehl \textbf{\texttt{\textbackslash SI\{Wert\}\{\textbackslash Einheit\}}} oder direkt mit \textbf{\texttt{Wert\textbackslash si\{\textbackslash Einheit\}}} gesetzt werden.
 
-\textbf{Hier geht es später weiter}
+\begin{minipage}[c]{0.6\textwidth}
+    \begin{lstlisting}[language={[LaTeX]TeX}, lineskip=2pt]
+8,9 \si{\micro\meter}               
+45 \si{\degreeCelsius}              
+5 \si{\milli\meter\per\second}      
+5 \si{\milli\meter\div\second}      
+5 \si{\frac{\milli\meter}{\second}} 
+\SI{4,2}{\giga\meter\per\minute}    
+    \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.3\textwidth}
+    \begin{itemize}[itemsep=2pt, label=$\rightarrow$]
+        \item 8,9 \si{\micro\meter}
+        \item 45 \si{\degreeCelsius}
+        \item 5 \si{\milli\meter\per\second}
+        \item 5 \si{\milli\meter\div\second}
+        \item 5 \si{\frac{\milli\meter}{\second}}
+        \item \SI{4,2}{\giga\meter\per\minute}
+    \end{itemize}
+\end{minipage}
+
+
+\subsection{Eigene Befehle (Makros)}
+In latex können eigene Befehle definiert werden, um häufig verwendete Befehle oder Texte zu vereinfachen. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash newcommand\{\textbackslash befehl\}[Anzahl-Argumente]\{Definition\}}} erreicht werden.
+
+Darüber hinaus kann mit dem Befehl \textbf{\texttt{\textbackslash renewcommand\{\textbackslash befehl\}[Anzahl-Argumente]\{Definition\}}} ein bereits existierender Befehl überschrieben werden und mit \newline \textbf{\texttt{\textbackslash providecommand\{\textbackslash befehl\}[Anzahl-Argumente]\{Definition\}}} wird der Befehl nur definiert, wenn er noch nicht existiert.
+
+\subsubsection{Makros ohne Argumente}
+
+\begin{minipage}[c]{0.65\textwidth}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
+\newcommand{\meinText}{Das ist ein Beispiel.}
+\meinText
+        \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.3\textwidth}
+    \newcommand{\meinText}{Das ist ein Beispiel.}
+    \meinText
+\end{minipage}
+
+\subsubsection{Makros mit Argumenten}
+
+\begin{minipage}[c]{0.65\textwidth}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
+\newcommand{\quersumme}[3]{Die Summe aus #1, #2 und #3 ist:\newline\[ #1 + #2 + #3 \]}
+\quersumme{5}{6}{9}
+        \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.3\textwidth}
+    \newcommand{\quersumme}[3]{Die Summe aus #1, #2 und #3 ist:\newline\[ #1 + #2 + #3 \]}
+    \quersumme{5}{6}{9}
+\end{minipage}

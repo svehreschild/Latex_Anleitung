@@ -1,7 +1,3 @@
-%\newcommand{cmd}{def} renewcommand (makros)
-
-einheiten mit siunitx
-
 
 literaturverzeichnis
 zitate

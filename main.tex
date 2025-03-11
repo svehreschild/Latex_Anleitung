@@ -44,10 +44,11 @@
 % Quellcode
 \usepackage{listings, pmboxdraw} % Quellcode einbinden und optisch ansprechend rahmen
 \lstset{
-    %language={[LaTeX]TeX},              % Programmiersprache
+    %language={[LaTeX]TeX},             % Programmiersprache
     frame=single,                       % Rahmen um den Code
     numbers=left,                       % Zeilennummern links
     stepnumber=1,                       % Jede Zeile nummerieren
+    lineskip=0pt,                       % Zeilenabstand anpassen
     numberstyle=\footnotesize,          % Kleine Zeilennummern
     basicstyle=\ttfamily,               % Monospace-Schriftart
     keywordstyle=\color{blue},          % Keywords blau
@@ -55,7 +56,7 @@
     stringstyle=\color{green},          % Strings grün
     backgroundcolor=\color{white},      % Hintergrundfarbe
     showstringspaces=false,             % Keine Leerzeichen in Strings
-    captionpos=b,                        % Position unter dem Code
+    captionpos=b,                       % Position unter dem Code
     breaklines=true,                    % Zeilenumbruch
 }
 
