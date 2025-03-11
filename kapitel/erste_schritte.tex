@@ -79,7 +79,9 @@ Mehr zu dem Inkludieren von \LaTeX{}-Dateien ist in Kapitel \ref{sec:einbinden_v
 
 \subsection{Literaturverzeichnis}
 In \LaTeX{} kann ein Literaturverzeichnis mit Hilfe von BibTeX erstellt werden.
-Zunächst werden die Literaturangaben in einer \textbf{\texttt{.bib}}-Datei gespeichert.
+Zunächst werden die Literaturangaben in einer \textbf{\texttt{.bib}}-Datei (literatur.bib) gespeichert . Vorzugsweise im gleichen Ordner wie die Hauptdatei.
+
+Es folgt ein Beispiel für eine \textbf{\texttt{literatur.bib}}-Datei:
 
 \begin{lstlisting}[language={[LaTeX]TeX}, caption={Beispiel für eine \texttt{.bib}-Datei}]
 @book{buch1,
@@ -134,6 +136,4 @@ Es stehen folgende Stile zur Auswahl:
 
 Anschließend wird die \textbf{\texttt{.bib}}-Datei mit dem Befehl \textbf{\texttt{\textbackslash bibliography\{Pfad/zur/Datei\}}} eingebunden.
 
-Anschließen wird das Literaturverzeichnis in die Hauptdatei (main.tex) mit dem Befehl \textbf{\texttt{\textbackslash printbibliography}} eingebunden.
-
-siehe auch ....
+Nun können im Text Zitate eingefügt werden (siehe auch \Nameref{sec:zitieren}).

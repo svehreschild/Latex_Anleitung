@@ -60,7 +60,6 @@
     breaklines=true,                    % Zeilenumbruch
 }
 
-
 % Mathematik
 \usepackage{amsmath}            % Mathematische Symbole, align-Umgebung (&=)
 \usepackage{amssymb}            % Extra Mathe-Symbole (z. B. Mengen, Relationen)
@@ -68,14 +67,13 @@
 \usepackage{bm}                 % Fette Symbole in Matheumgebungen -> \bm{...}
 
 % Literaturverzeichnis
-\usepackage[backend=bibtex, sorting=nyt, urldate=long]{biblatex} % BibTeX-Backend, sortiert nach Name, Jahr, Titel; langes URL-Abrufdatum
+\usepackage{cite}               % Verbessert Zitierstil für BibTeX
 
 % Abkürzungsliste
 \usepackage{acronym} % -> \ac{...} 
 
 % Anhänge
 \usepackage[toc,page]{appendix} % Ermöglicht Anhänge mit eigener Überschrift
-
 
 %-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -109,5 +107,9 @@
 
 % Kapitel in separaten Dateien
 \input{kapitel/uebersicht.tex}
+
+% Literaturverzeichnis
+\bibliographystyle{apalike}  % Stil des Literaturverzeichnisses
+\bibliography{literatur}   % Verknüpfung mit literatur.bib
 
 \end{document}
