@@ -485,7 +485,7 @@ Für die H-Positionierungsoption wird das Paket \textbf{\texttt{float}} benötig
 Bilder können mit dem Befehl \textbf{\texttt{\textbackslash caption\{Bildunterschrift\}}} beschriftet werden. Mit dem Befehl \textbf{\texttt{\textbackslash label\{fig:bild\}}} wird ein Label gesetzt, auf welches im Text referenziert werden kann (\autoref{fig:sägezahnspannung})(siehe auch: \nameref{sec:querverweise}).
 
 \subsubsection{Gerahmte Bilder}
-Bilder können mit dem Befehl \textbf{\texttt{\textbackslash fbox\{\textbackslash includegraphics[...]\{Pfad/zum/Bild.png\}\}}} oder mit dem \textbf{\texttt{\textbackslash shadowbox\{\textbackslash includegraphics[...]\{Pfad/zum/Bild.png\}\}}} gerahmt werden. Für die Schattierung wird das Paket \textbf{\texttt{fancybox}} benötigt.
+Bilder können mit dem Befehl \textbf{\texttt{\textbackslash fbox\{\textbackslash includegraphics[...]\{Pfad/zum/Bild.png\}\}}} oder mit dem \textbf{\texttt{\textbackslash shadowbox\{\textbackslash includegraphics[...]\{Pfad/zum/Bild.png\}\}}} gerahmt werden. Für die Schattierung wird das Paket \textbf{\texttt{fancybox}} benötigt. Siehe auch \autoref{sec:rahmen_und_boxen}.
 
 \begin{figure}[H]
     \centering
@@ -508,7 +508,7 @@ Bilder können mit dem Befehl \textbf{\texttt{\textbackslash fbox\{\textbackslas
 
 
 \subsubsection{Parallele Darstellung von Bildern}
-Mehrere Bilder können mit der \textbf{\texttt{subfigure}}-Umgebung in einer \textbf{\texttt{figure}}-Umgebung dargestellt werden. Dabei können die Bilder mit \textbf{\texttt{\textbackslash hfill}} horizontal nebeneinander platziert werden. Darüber hinaus ist die Darstellung von mehreren Bildern in einer \textbf{\texttt{minipage}}-Umgebung möglich (siehe auch: \ref{}).
+Mehrere Bilder können mit der \textbf{\texttt{subfigure}}-Umgebung in einer \textbf{\texttt{figure}}-Umgebung dargestellt werden. Dabei können die Bilder mit \textbf{\texttt{\textbackslash hfill}} horizontal nebeneinander platziert werden. Darüber hinaus ist die Darstellung von mehreren Bildern in einer \textbf{\texttt{minipage}}-Umgebung möglich (siehe auch: \nameref{sec:minipage}).
 
 \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{figure}[H]
@@ -969,3 +969,105 @@ Tabellen können sich oft über mehrere Seiten erstrecken. Damit ein Seitenumbru
 Latex Tabellen können auch mit dem Online-Tool \href{https://tablesgenerator.com/latex_tables}{Tables Generator} erstellt werden. Dieses Tool bietet eine grafische Benutzeroberfläche, um Tabellen zu erstellen und den entsprechenden \LaTeX-Code zu generieren. Die genannte Webseite bietet auch die Möglichkeit, Tabellen aus Excel-Dateien zu importieren und den entsprechenden \LaTeX-Code zu generieren.
 
 Eine weitere Internetseite, die die Konvertierung von Tabellen aus Excel-Dateien in \LaTeX-Code ermöglicht, ist \href{https://www.latex-tables.com}{Latex-Tables}.
+
+
+\subsection{Mehrspaltige Layouts}
+
+\subsubsection{Minipage}
+\label{sec:minipage}
+Mit der \textbf{\texttt{minipage}}-Umgebung können mehrspaltige Layouts erstellt werden.
+Die grundlegende Syntax ist:
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{minipage}[Ausrichtung]{Breite}
+    Inhalt
+\end{minipage}
+\end{lstlisting}
+
+Als Ausrichtung können folgende Optionen verwendet werden. Die Verwendung einer Ausrichtung ist allerdings optional (Standard: [c]):
+
+\begin{description}
+    \item[c] zentriert
+    \item[t] an oberer Kante ausgerichtet
+    \item[b] an unterer Kante ausgerichtet
+\end{description}
+
+Die Breite kann in cm, mm, pt oder als \texttt{...\textbackslash textwidth} angegeben werden.
+
+Minipages werden in der Regel verwendet um Text und/oder Objekte nebeneinander platzieren zu können.
+Allerdings ist zu beachten, dass in einer \textbf{\texttt{minipage}}-Umgebung \textbf{keine Gleitobjekte} wie \texttt{figure} oder \texttt{table} verwendet werden können. Daher müssen Captions mit \textbf{\texttt{\textbackslash captionof\{...\}}} erstellt werden.
+
+Eine Ausnahme bilden Gleitobjekte in Verbindung mit der \textbf{\texttt{[H]}}-Ausrichtung.
+
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small]
+\begin{minipage}[c]{0.45\textwidth}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Wert 1} & \textbf{Wert 2} \\
+            \hline
+            1               & 2               \\
+            3               & 4               \\
+            \hline
+        \end{tabular}
+        \caption{Beispiel Tabelle}
+        \label{tab:beispiel_tabelle}
+    \end{table}
+    Dies ist eine Tabelle, in der einige Daten aufgefuhrt sind.
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.45\textwidth}
+    Es folgt ein Bild, welches eine verrauschte Sagezahnspannung darstellt.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{anlagen/bilder/Graph.png}
+        \caption{Verrauschte Sagezahnspannung}
+        \label{fig:verrauschte_saegezahnspannung}
+    \end{figure}
+\end{minipage}\end{lstlisting}
+
+\begin{minipage}[c]{0.45\textwidth}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Wert 1} & \textbf{Wert 2} \\
+            \hline
+            1               & 2               \\
+            3               & 4               \\
+            \hline
+        \end{tabular}
+        \caption{Beispiel Tabelle}
+        \label{tab:beispiel_tabelle}
+    \end{table}
+    Dies ist eine Tabelle, in der einige Daten aufgeführt sind.
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.45\textwidth}
+    Es folgt ein Bild, welches eine verrauschte Sägezahnspannung darstellt.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{anlagen/bilder/Graph.png}
+        \caption{Verrauschte Sägezahnspannung}
+        \label{fig:verrauschte_saegezahnspannung}
+    \end{figure}
+\end{minipage}
+
+\subsubsection{Parbox}
+Mit dem Befehl \textbf{\texttt{\textbackslash parbox[Ausrichtung]\{Breite\}\{Inhalt\}}} kann Text in einer Box platziert werden:
+Die Boxen lassen sich mit einem Rahmen anschließen (siehe auch: \autoref{sec:rahmen_und_boxen}).
+
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small]
+\fbox{\parbox[t]{0.3\textwidth}{Dies ist ein Beispieltext, der in einer Box platziert wurde.}}
+\hfill
+\parbox[t]{0.3\textwidth}{Dies ist ein zweiter Beispieltext, der in einer Box platziert wurde.}
+\hfill
+\colorbox{red!20}{\parbox[t]{0.3\textwidth}{Dies ist ein dritter Beispieltext, der in einer Box platziert wurde.}}
+\end{lstlisting}
+
+\fbox{\parbox[t]{0.3\textwidth}{Dies ist ein Beispieltext, der in einer Box platziert wurde.}}
+\hfill
+\parbox[t]{0.3\textwidth}{Dies ist ein zweiter Beispieltext, der in einer Box platziert wurde.}
+\hfill
+\colorbox{red!20}{\parbox[t]{0.3\textwidth}{Dies ist ein dritter Beispieltext, der in einer Box platziert wurde.}}
+

@@ -1,6 +1,3 @@
-minipage oder parbox
--> ref auf parallele Darstellung von Bildern
-
 %\newcommand{cmd}{def} renewcommand (makros)
 
 einheiten mit siunitx

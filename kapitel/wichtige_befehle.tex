@@ -48,17 +48,21 @@ Für diese Varianten wird das Paket \textbf{xcolor} benötigt. Darüberhinaus is
 
 
 \subsubsection{Rahmen und Boxen}
+\label{sec:rahmen_und_boxen}
 Textpassagen können mit folgenden Befehlen in Rahmen oder Boxen gesetzt werden:
-
 \begin{table}[H]
     \centering
     \begin{tabular}{lll}
         \toprule
-        \textbf{Befehl}                                  & \textbf{Wirkung}                 & \textbf{Darstellung}   \\
+        \textbf{Befehl}                                            & \textbf{Wirkung}                          & \textbf{Darstellung}          \\
         \midrule
-        \texttt{\textbackslash fbox\{Text\}}             & Rahmen um den Text               & \fbox{Text}            \\
-        \texttt{\textbackslash framebox(45,10)\{Text\}}  & Box mit fester Breite und Höhe   & \framebox(45,10){Text} \\
-        \texttt{\textbackslash colorbox\{cyan\}\{Text\}} & Farbige Box mit Hintergrundfarbe & \colorbox{cyan}{Text}  \\
+        \texttt{\textbackslash fbox\{Text\}}                       & Rahmen um den Text                        & \fbox{Text}                   \\
+        \texttt{\textbackslash framebox(45,10)\{Text\}}            & Box mit fester Breite und Höhe            & \framebox(45,10){Text}        \\
+        \texttt{\textbackslash colorbox\{cyan\}\{Text\}}           & Farbige Box mit Hintergrundfarbe (xcolor) & \colorbox{cyan}{Text}         \\
+        \texttt{\textbackslash fcolorbox\{red\}\{yellow\}\{Text\}} & Farbige Box mit Rahmen (xcolor)           & \fcolorbox{red}{yellow}{Text} \\
+        \texttt{\textbackslash shadowbox\{Text\}}                  & Box mit Schatten (fancybox)               & \shadowbox{Text}              \\
+        \texttt{\textbackslash doublebox\{Text\}}                  & Box mit doppeltem Rahmen (fancybox)       & \doublebox{Text}              \\
+        \texttt{\textbackslash ovalbox\{Text\}}                    & Ovale Box (fancybox)                      & \ovalbox{Text}                \\
         \bottomrule
     \end{tabular}
     \caption{Rahmen und Boxen}
