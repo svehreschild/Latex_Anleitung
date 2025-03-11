@@ -965,6 +965,49 @@ Tabellen können sich oft über mehrere Seiten erstrecken. Damit ein Seitenumbru
 \end{longtable}
 \end{lstlisting}
 
+\subsubsection{Tabellen mit farbigen Zellen}
+Tabellenzellen können mit dem Paket \textbf{\texttt{xcolor}} farbig gestaltet werden
+
+Der Befehl \textbf{\texttt{\textbackslash cellcolor\{Farbe!Deckkraft\}}} färbt die Zelle ein. Der Befehl \textbf{\texttt{\textbackslash rowcolor\{Farbe!Deckkraft\}}} färbt die gesamte Zeile ein. Soll nur die Schrift farbig sein, kann der Befehl \textbf{\texttt{\textbackslash textcolor\{Farbe\}}} verwendet werden (siehe auch: \ref{sec:schriftfarbe}).
+
+\begin{minipage}{0.69\textwidth}
+    \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small]
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \rowcolor{gray!40} % Kopfzeilenhintergrund
+        \textbf{Spalte 1} & \textbf{Spalte 2} & \textbf{Spalte 3} \\
+        \hline
+        \cellcolor{red!25} Wert A & Wert B & Wert C \\
+        \hline
+        Wert D & \cellcolor{green!25} Wert E & \textcolor{yellow!90}{Wert F} \\
+        \hline
+    \end{tabular}
+    \caption{Tabellen mit farbigen Zellen}
+    \label{tab:farbige_zellen}
+\end{table}
+    \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.29\textwidth}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \rowcolor{gray!40} % Kopfzeilenhintergrund
+            \textbf{Spalte 1}         & \textbf{Spalte 2}           & \textbf{Spalte 3}             \\
+            \hline
+            \cellcolor{red!25} Wert A & Wert B                      & Wert C                        \\
+            \hline
+            Wert D                    & \cellcolor{green!25} Wert E & \textcolor{yellow!90}{Wert F} \\
+            \hline
+        \end{tabular}
+        \caption{Tabellen mit farbigen Zellen}
+        \label{tab:farbige_zellen}
+    \end{table}
+\end{minipage}
+
 
 \subsubsection{Hilfreiche Internetseite}
 Latex Tabellen können auch mit dem Online-Tool \href{https://tablesgenerator.com/latex_tables}{Tables Generator} erstellt werden. Dieses Tool bietet eine grafische Benutzeroberfläche, um Tabellen zu erstellen und den entsprechenden \LaTeX-Code zu generieren. Die genannte Webseite bietet auch die Möglichkeit, Tabellen aus Excel-Dateien zu importieren und den entsprechenden \LaTeX-Code zu generieren.
