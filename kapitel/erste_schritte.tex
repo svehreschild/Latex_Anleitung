@@ -76,3 +76,64 @@ Ich persönlich strukturiere meine \LaTeX{}-Dateien in einem eigenen Ordner (kap
 
 Mehr zu dem Inkludieren von \LaTeX{}-Dateien ist in Kapitel \ref{sec:einbinden_von_latex_dateien} zu finden.
 
+
+\subsection{Literaturverzeichnis}
+In \LaTeX{} kann ein Literaturverzeichnis mit Hilfe von BibTeX erstellt werden.
+Zunächst werden die Literaturangaben in einer \textbf{\texttt{.bib}}-Datei gespeichert.
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption={Beispiel für eine \texttt{.bib}-Datei}]
+@book{buch1,
+  author    = {Anna Beispiel and Bernd Mustermann and Carla Demo},
+  title     = {Fortgeschrittene LaTeX-Techniken},
+  publisher = {Beispiel-Verlag},
+  year      = {2018}
+}
+
+@article{artikel1,
+  author  = {John Doe},
+  title   = {Eine neue Theorie zur Typografie},
+  journal = {Journal fur Wissenschaftliche Typografie},
+  volume  = {12},
+  number  = {3},
+  pages   = {45-67},
+  year    = {2015}
+}
+
+@inproceedings{konferenz1,
+  author    = {Jane Smith and Paul Example},
+  title     = {Typografische Verbesserungen mit LaTeX},
+  booktitle = {Proceedings der Konferenz fur Dokumentenverarbeitung},
+  pages     = {123-130},
+  year      = {2022}
+}
+
+@misc{web1,
+  author    = {Overleaf},
+  title     = {LaTeX-Wiki},
+  year      = {2025},
+  note      = {URL: \url{https://www.overleaf.com/learn/latex} (abgerufen am 10. Marz 2025)}
+}
+
+@phdthesis{thesis1,
+  author  = {Alex Student},
+  title   = {Untersuchungen zur mathematischen Satztechnik},
+  school  = {Universitat Beispielstadt},
+  year    = {2023}
+}
+\end{lstlisting}
+
+Zunächst wird der Stil des Literaturverzeichnisses mit dem Befehl \textbf{\texttt{\textbackslash bibliographystyle\{Stil\}}} festgelegt.
+Es stehen folgende Stile zur Auswahl:
+\begin{itemize}
+    \item \textbf{plain} – Alphabetische Sortierung nach Autoren (Standardstil).
+    \item \textbf{unsrt} – Reihenfolge der Zitierung im Text (nicht alphabetisch).
+    \item \textbf{alpha} – Alphabetische Sortierung nach Autoren, aber mit Kurzreferenzen wie `[Ein05]`.
+    \item \textbf{abbrv} – Wie `plain`, aber mit abgekürzten Vornamen und Titeln.
+    \item \textbf{apalike} – Ähnlich wie APA-Zitierstil (Autor-Jahr statt Nummerierung).
+\end{itemize}
+
+Anschließend wird die \textbf{\texttt{.bib}}-Datei mit dem Befehl \textbf{\texttt{\textbackslash bibliography\{Pfad/zur/Datei\}}} eingebunden.
+
+Anschließen wird das Literaturverzeichnis in die Hauptdatei (main.tex) mit dem Befehl \textbf{\texttt{\textbackslash printbibliography}} eingebunden.
+
+siehe auch ....
