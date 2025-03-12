@@ -1,15 +1,20 @@
 \section{Wichtige Befehle}
 \subsection{Kommentare}
-Kommentare werden in \LaTeX{} mit einem Prozentzeichen eingeleitet. Alles, was nach dem Prozentzeichen in der selben Zeile steht, wird von \LaTeX{} ignoriert. Mehrzeilige Kommentare sind mit den Befehlen \textbf{\texttt{\textbackslash begin\{comment\}}} und \textbf{\texttt{\textbackslash end\{comment\}}} möglich. Dafür wird das Paket \textbf{comment} benötigt.
+Kommentare werden in \LaTeX{} mit einem Prozentzeichen eingeleitet. Alles, was nach dem Prozentzeichen in der selben Zeile steht, wird von \LaTeX{} ignoriert. Mehrzeilige Kommentare sind mit den Befehlen \textbf{\texttt{\textbackslash begin\{comment\}}} und \textbf{\texttt{\textbackslash end\{comment\}}} möglich. Dafür wird das Paket \textbf{comment} benötigt. Funktional identisch ist der Befehl \textbf{\texttt{\textbackslash iffalse ... \textbackslash fi}}.
 
 \begin{lstlisting}[language={[LaTeX]TeX}]
-    % Dies ist ein einzeiliger Kommentar
-    Text ohne Kommentar.
+% Dies ist ein einzeiliger Kommentar
+Text ohne Kommentar.
     
-    \begin{comment}
-    Dies ist ein
-    langer Kommentarblock
-    \end{comment}
+\begin{comment}
+Dies ist ein
+langer Kommentarblock
+\end{comment}
+
+\iffalse
+Dies ist ein
+langer Kommentarblock
+\fi
 \end{lstlisting}
 
 \subsection{Textformatierung}
@@ -35,8 +40,8 @@ Es ist zu beachten, dass \textbf{\texttt{\textbackslash lowercase\{\}}} und \tex
 Die Schriftfarbe kann auf folgende drei Arten geändert werden:
 
 \begin{itemize}
-    \item \textbf{\texttt{\textbackslash textcolor\{red\}\{Roter Text\}}}
-          \hspace{2.83cm} --- \hspace{1cm} \textcolor{red}{Roter Text}
+    \item \textbf{\texttt{\textbackslash textcolor\{red!80\}\{Roter Text\}}}
+          \hspace{2.26cm} --- \hspace{1cm} \textcolor{red!80}{Roter Text}
 
     \item \textbf{\texttt{\textbackslash textcolor[rgb]\{0,0.5,1\}\{RGB-Farbe\}}}
           \hspace{1.35cm} --- \hspace{1cm} \textcolor[rgb]{0,0.5,1}{RGB-Farbe}
@@ -46,6 +51,8 @@ Die Schriftfarbe kann auf folgende drei Arten geändert werden:
 \end{itemize}
 
 Für diese Varianten wird das Paket \textbf{xcolor} benötigt. Darüberhinaus ist zu beachten, dass textcolor einen auf 1 normierten RGB-Wert erwartet.
+
+Nach dem \textbf{\texttt{!}} kann ein Wert zwischen 0 und 100 angegeben werden, um die Deckkraft (Farbintensität) zu steuern.
 
 
 \subsubsection{Rahmen und Boxen}
@@ -101,7 +108,7 @@ Der vertikale Abstand kann mit den folgenden Befehlen geändert werden:
 Die Priorität \textbf{[prio]} gibt an, wie wichtig der Abstand ist. 4 ist der höchste Wert.
 
 Eine weitere Möglichkeit, vertikalen Abstand zu erzeugen, ist die Verwendung von Leerzeilen. Diese erzeugen (genau) einen neuen Absatz und somit vertikalen Abstand.
-Darüber hinaus kann \texttt{\textbackslash stretch\{X\}} als Argument an \texttt{\textbackslash vspace} übergeben werden, um flexiblen vertikalen Abstand zu erzeugen. Der Wert von \texttt{X} gibt dabei an, wie viel Teile (Verhältnis) des verfügbaren Platzes der Abstand einnehmen soll.
+Darüber hinaus kann \textbf{\texttt{\textbackslash stretch\{X\}}} als Argument an \texttt{\textbackslash vspace} übergeben werden, um flexiblen vertikalen Abstand zu erzeugen. Der Wert von \texttt{X} gibt dabei an, wie viel Teile (Verhältnis) des verfügbaren Platzes der Abstand einnehmen soll.
 
 \subsubsection{Horizontaler Abstand}
 Der horizontale Abstand kann mit den folgenden Befehlen geändert werden:
@@ -109,7 +116,7 @@ Der horizontale Abstand kann mit den folgenden Befehlen geändert werden:
 \input{anlagen/tabellen/abstand_horizontal.tex}
 
 Eine weitere Möglichkeit, horizontalen Abstand zu erzeugen, ist die Verwendung von Leerzeichen. Diese erzeugen (genau) ein Leerzeichen und somit horizontalen Abstand.
-Darüber hinaus kann \texttt{\textbackslash stretch\{X\}} als Argument an \texttt{\textbackslash hspace} übergeben werden, um flexiblen horizontalen Abstand zu erzeugen. Der Wert von \texttt{X} gibt dabei an, wie viel Teile (Verhältnis) des verfügbaren Platzes der Abstand einnehmen soll.
+Darüber hinaus kann \textbf{\texttt{\textbackslash stretch\{X\}}} als Argument an \texttt{\textbackslash hspace} übergeben werden, um flexiblen horizontalen Abstand zu erzeugen. Der Wert von \texttt{X} gibt dabei an, wie viel Teile (Verhältnis) des verfügbaren Platzes der Abstand einnehmen soll.
 
 Ein em ist die Breite des Großbuchstaben M in der aktuellen Schriftart und ein pt entspricht etwa 0.35 mm.
 

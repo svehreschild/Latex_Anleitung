@@ -1,6 +1,9 @@
 \section{Dokumentenelemente}
 Neben dem Text gibt es noch weitere Elemente, die in einem Dokument vorkommen können. Dazu gehören unter anderem Bilder, Tabellen, Listen und Quellcode. In diesem Kapitel werden die wichtigsten Elemente vorgestellt.
 
+Bei den folgenden Listen ist es möglich weitere Optionen zu setzen. Dazu werden Optionen in eckigen Klammern angegeben.
+Wichtige Optionen sind beispielsweise: \textbf{\texttt{leftmargin=...}} für das setzen des linken Randes oder \textbf{\texttt{itemsep=...}} für den Abstand zwischen den einzelnen Elementen.
+
 \subsection{Listen}
 In \LaTeX{} gibt es verschiedene Arten von Listen. Es folgen die wichtigsten Beispiele.
 
@@ -460,7 +463,7 @@ Dabei können folgende Optionen verwendet werden:
 
 Darüber hinaus können Bilder mit dem Befehl \texttt{\textbf{\textbackslash reflectbox\{\textbackslash includegraphics[...]\{Pfad/zum/Bild.png\}\}}} gespiegelt werden.
 
-\subsubsection{Platzierung von Bildern}
+\subsubsection{Platzierung von Bildern (Tabellen) und ähnlichen Elementen}
 Die Platzierung von Bildern kann mit den folgenden Optionen in \textbf{\texttt{\textbackslash begin\{figure\}[...]}} gesteuert werden.
 
 \begin{table}[H]
@@ -479,6 +482,7 @@ Die Platzierung von Bildern kann mit den folgenden Optionen in \textbf{\texttt{\
     \caption{Platzierungsoptionen für Bilder, Tabellen und ähnliche Elemente}
     \label{tab:figure_options}
 \end{table}
+Die Optionen können auch kombiniert werden. Ein \textbf{\texttt{!}} vor der Option bewirkt, dass die Einschränkungen für die Platzierungsregeln automatisiert gelockert werden.
 
 Für die H-Positionierungsoption wird das Paket \textbf{\texttt{float}} benötigt.
 
@@ -529,6 +533,7 @@ Mehrere Bilder können mit der \textbf{\texttt{subfigure}}-Umgebung in einer \te
     \end{subfigure}
     \caption{Bildunterschrift}
     \label{fig:bilder}
+\end{figure}
 \end{lstlisting}
 
 Im folgenden wird das Ergebnis der obigen Codezeilen dargestellt:
@@ -965,6 +970,24 @@ Tabellen können sich oft über mehrere Seiten erstrecken. Damit ein Seitenumbru
 \end{longtable}
 \end{lstlisting}
 
+\subsubsection{Anpassung breiter Tabellen}
+Häufig sind Tabellen zu breit für die Seite. Solche Tabellen können mit dem Befehl \textbf{\texttt{\textbackslash resizebox\{Breite\}\{Höhe\}\{...\}}} angepasst werden. Die Breite/Höhe kann in cm, mm, pt oder als relative Breite/Höhe \texttt{...\textbackslash textwidth} oder \texttt{...\textbackslash linewidth} angegeben werden.
+
+Soll die Proportion der Tabelle beibehalten werden, kann die Höhe mit \texttt{!} angegeben werden. Die Tabelle wird dann proportional zur Breite skaliert.
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{...}
+            ... 
+        \end{tabular}
+    }
+\end{table}
+    \end{lstlisting}
+
+Der \texttt{resizebox}-Befehl kann auch für andere Objekte angewendet werden, wie z.B. Bilder oder Texte.
+
 \subsubsection{Tabellen mit farbigen Zellen}
 Tabellenzellen können mit dem Paket \textbf{\texttt{xcolor}} farbig gestaltet werden
 
@@ -1115,3 +1138,78 @@ Die Boxen lassen sich mit einem Rahmen anschließen (siehe auch: \autoref{sec:ra
 \hfill
 \colorbox{red!20}{\parbox[t]{0.3\textwidth}{Dies ist ein dritter Beispieltext, der in einer Box platziert wurde.}}
 
+\subsubsection{Multicols}
+Mit der \textbf{\texttt{multicols}}-Umgebung können mehrspaltige Layouts erstellt werden. Die Anzahl der Spalten wird als Argument übergeben.
+
+In der \textbf{\texttt{multicols}}-Umgebung wird der Text automatisch in die Spalten aufgeteilt. Soll ein manueller Spaltenumbruch erfolgen, kann der Befehl \textbf{\texttt{\textbackslash columnbreak}} verwendet werden. Gleitobjekte wie \texttt{figure} oder \texttt{table} können nicht in der \textbf{\texttt{multicols}}-Umgebung verwendet werden. Eine Ausnahme bilden Gleitobjekte in Verbindung mit der \textbf{\texttt{[H]}}-Ausrichtung.
+
+\begin{minipage}[c]{0.58\textwidth}
+    \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small]
+\begin{multicols}{2} % 2 Spalten
+    Was passiert, wenn ich diesen Absatz einfach ohne jeglichen Sinn schreibe?,
+    \columnbreak
+    fragte sich der Autor und begann zu tippen. 
+    Die Worter flossen unaufhaltsam uber das Blatt, als hatte die Tastatur ein Eigenleben.
+\end{multicols}
+    \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.38\textwidth}
+    \begin{multicols}{2} % 2 Spalten
+        Was passiert, wenn ich diesen Absatz einfach ohne jeglichen Sinn schreibe?,
+        \columnbreak
+        fragte sich der Autor und begann zu tippen.
+        Die Wörter flossen unaufhaltsam über das Blatt, als hätte die Tastatur ein Eigenleben.
+    \end{multicols}
+\end{minipage}
+
+Ein Beispiel für die Verwendung der \textbf{\texttt{multicols}}-Umgebung mit mathematischen Formeln folgt:
+
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small]
+\begin{multicols}{3}  % 3 Spalten
+    \begin{equation}
+        E = mc^2
+    \end{equation}
+    \begin{equation}
+            F = ma
+    \end{equation}
+    \begin{equation}
+        a^2 + b^2 = c^2
+    \end{equation}
+    \begin{equation}
+        \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}
+    \end{equation}
+    \begin{equation}
+        \nabla \times \mathbf{B} = \mu_0 \mathbf{J}
+    \end{equation}
+    \begin{equation}
+        PV = nRT
+    \end{equation}
+\end{multicols}
+\end{lstlisting}
+
+\begin{multicols}{3}  % 3 Spalten
+    \begin{equation}
+        E = mc^2
+    \end{equation}
+
+    \begin{equation}
+        F = ma
+    \end{equation}
+
+    \begin{equation}
+        a^2 + b^2 = c^2
+    \end{equation}
+
+    \begin{equation}
+        \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}
+    \end{equation}
+
+    \begin{equation}
+        \nabla \times \mathbf{B} = \mu_0 \mathbf{J}
+    \end{equation}
+
+    \begin{equation}
+        PV = nRT
+    \end{equation}
+\end{multicols}
