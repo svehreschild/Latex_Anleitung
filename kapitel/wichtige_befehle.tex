@@ -1,6 +1,7 @@
+\newpage
 \section{Wichtige Befehle}
 \subsection{Kommentare}
-Kommentare werden in \LaTeX{} mit einem Prozentzeichen eingeleitet. Alles, was nach dem Prozentzeichen in der selben Zeile steht, wird von \LaTeX{} ignoriert. Mehrzeilige Kommentare sind mit den Befehlen \textbf{\texttt{\textbackslash begin\{comment\}}} und \textbf{\texttt{\textbackslash end\{comment\}}} möglich. Dafür wird das Paket \textbf{comment} benötigt. Funktional identisch ist der Befehl \textbf{\texttt{\textbackslash iffalse ... \textbackslash fi}}.
+Kommentare werden in \LaTeX{} mit einem Prozentzeichen eingeleitet. Alles, was nach dem Prozentzeichen in der selben Zeile steht, wird von \LaTeX{} ignoriert. Mehrzeilige Kommentare sind mit der \texttt{\textbf{comment}}-Umgebung möglich. Dafür wird das Paket \textbf{comment} benötigt. Funktional identisch ist der Befehl \textbf{\texttt{\textbackslash iffalse ... \textbackslash fi}}.
 
 \begin{lstlisting}[language={[LaTeX]TeX}]
 % Dies ist ein einzeiliger Kommentar
@@ -23,8 +24,10 @@ Die Schriftgröße kann mit den folgenden Befehlen geändert werden:
 
 \input{anlagen/tabellen/schriftgrößen.tex}
 
-Durch Verwendung von geschweiften Klammern kann der Befehl auf einen Textbereich angewendet werden:
+Durch Verwendung von geschweiften Klammern kann der Befehl auf einen eingeschränkten Textbereich angewendet werden:
 Beispiel: \textbf{\texttt{\{\textbackslash large großer Text\}}}
+
+\newpage
 
 \subsubsection{Schriftstil}
 Der Schriftstil kann mit den folgenden Befehlen geändert werden:
@@ -32,12 +35,11 @@ Der Schriftstil kann mit den folgenden Befehlen geändert werden:
 \input{anlagen/tabellen/schriftstil.tex}
 
 Die Schriftstile können mit den Schriftgrößen kombiniert und mit anderen Schriftstilen überlagert werden.
-Es ist zu beachten, dass \textbf{\texttt{\textbackslash lowercase\{\}}} und \textbf{\texttt{\textbackslash uppercase\{\}}} zu Problemen mit Umlauten führen können.
-
+Es ist zu beachten, dass \textbf{\texttt{\textbackslash lowercase\{\}}} und \textbf{\texttt{\textbackslash uppercase\{\}}} zu Problemen mit Umlauten führen können, daher ist die Verwendung von \textbf{\texttt{\textbackslash MakeUppercase\{\}}} und \textbf{\texttt{\textbackslash MakeLowercase\{\}}} zu empfehlen.
 
 \subsubsection{Schriftfarbe}
 \label{sec:schriftfarbe}
-Die Schriftfarbe kann auf folgende drei Arten geändert werden:
+Die Schriftfarbe kann auf folgende Arten geändert werden:
 
 \begin{itemize}
     \item \textbf{\texttt{\textbackslash textcolor\{red!80\}\{Roter Text\}}}
@@ -50,14 +52,14 @@ Die Schriftfarbe kann auf folgende drei Arten geändert werden:
           \hspace{0.8cm} --- \hspace{1cm} \textcolor[HTML]{00FF00}{Hex-Farbcode}
 \end{itemize}
 
-Für diese Varianten wird das Paket \textbf{xcolor} benötigt. Darüberhinaus ist zu beachten, dass textcolor einen auf 1 normierten RGB-Wert erwartet.
+Für diese Varianten wird das Paket \textbf{xcolor} benötigt. Darüber hinaus ist zu beachten, dass \textbf{\texttt{\textbackslash textcolor[rgb]\{...\}}} einen RGB-Wert im Intervall $[0,1]$ (statt $[0,255]$) erwartet.
 
 Nach dem \textbf{\texttt{!}} kann ein Wert zwischen 0 und 100 angegeben werden, um die Deckkraft (Farbintensität) zu steuern.
 
 
 \subsubsection{Rahmen und Boxen}
 \label{sec:rahmen_und_boxen}
-Textpassagen können mit folgenden Befehlen in Rahmen oder Boxen gesetzt werden:
+Textpassagen Bilder, Tabellen und andere ähnliche Objekte können mit folgenden Befehlen in Rahmen bzw. Boxen gesetzt werden:
 \begin{table}[H]
     \centering
     \begin{tabular}{lll}
@@ -99,16 +101,18 @@ Einige Zeichen, wie \textbf{\%}, \textbf{\#}, \textbf{\&}, \textbf{\_} und \text
 
 Für einige Zeichen gibt es auch spezielle Befehle, die eine Darstellung unabhängig von der Funktion des Zeichens ermöglichen. Beispiele sind \textbf{\textbackslash textbackslash} für den Backslash \textbf{\textbackslash}, \textbf{\textbackslash textasciitilde} für die Tilde \textbf{\textasciitilde} und \textbf{\textbackslash textasciicircum} für das Zirkumflex \textbf{\textasciicircum}.
 
+
 \subsection{Abstandsformatierung}
 \subsubsection{Vertikaler Abstand}
 Der vertikale Abstand kann mit den folgenden Befehlen geändert werden:
 
 \input{anlagen/tabellen/abstand_vertikal.tex}
 
-Die Priorität \textbf{[prio]} gibt an, wie wichtig der Abstand ist. 4 ist der höchste Wert.
+Die Priorität \textbf{[prio]} gibt an, wie wichtig der Umbruch ist (4 ist der höchste Wert).
 
 Eine weitere Möglichkeit, vertikalen Abstand zu erzeugen, ist die Verwendung von Leerzeilen. Diese erzeugen (genau) einen neuen Absatz und somit vertikalen Abstand.
-Darüber hinaus kann \textbf{\texttt{\textbackslash stretch\{X\}}} als Argument an \texttt{\textbackslash vspace} übergeben werden, um flexiblen vertikalen Abstand zu erzeugen. Der Wert von \texttt{X} gibt dabei an, wie viel Teile (Verhältnis) des verfügbaren Platzes der Abstand einnehmen soll.
+
+Darüber hinaus kann \textbf{\texttt{\textbackslash stretch\{X\}}} als Argument an \textbf{\texttt{\textbackslash vspace}} übergeben werden, um flexiblen vertikalen Abstand zu erzeugen. Der Wert von \texttt{X} gibt dabei an, wie viel Teile (Verhältnis) des verfügbaren Platzes der Abstand einnehmen soll.
 
 \subsubsection{Horizontaler Abstand}
 Der horizontale Abstand kann mit den folgenden Befehlen geändert werden:
@@ -116,6 +120,7 @@ Der horizontale Abstand kann mit den folgenden Befehlen geändert werden:
 \input{anlagen/tabellen/abstand_horizontal.tex}
 
 Eine weitere Möglichkeit, horizontalen Abstand zu erzeugen, ist die Verwendung von Leerzeichen. Diese erzeugen (genau) ein Leerzeichen und somit horizontalen Abstand.
+
 Darüber hinaus kann \textbf{\texttt{\textbackslash stretch\{X\}}} als Argument an \texttt{\textbackslash hspace} übergeben werden, um flexiblen horizontalen Abstand zu erzeugen. Der Wert von \texttt{X} gibt dabei an, wie viel Teile (Verhältnis) des verfügbaren Platzes der Abstand einnehmen soll.
 
 Ein em ist die Breite des Großbuchstaben M in der aktuellen Schriftart und ein pt entspricht etwa 0.35 mm.
@@ -124,15 +129,16 @@ Ein em ist die Breite des Großbuchstaben M in der aktuellen Schriftart und ein 
 In \LaTeX{} können Texte und Objekte zentriert werden. Dafür gibt es die folgenden Befehle:
 \begin{table}[H]
     \centering
+    \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{lp{6cm}c}
         \toprule
-        \textbf{Befehl} & \textbf{Funktion}                                              \\
+        \textbf{Befehl} & \textbf{Funktion}                  \\
         \midrule
         \texttt{\textbackslash begin\{center\} ... \textbackslash end\{center\}}
-                        & Zentriert alles im Block (Text, Bilder, Tabellen, Formeln)     \\
+                        & Zentriert alles im Block           \\
 
         \texttt{\textbackslash centering}
-                        & Zentriert innerhalb einer Umgebung (Tabellen, Bilder, Formeln) \\
+                        & Zentriert innerhalb einer Umgebung \\
         \bottomrule
     \end{tabular}
     \caption{Möglichkeiten zur Zentrierung}
@@ -146,6 +152,7 @@ Häufig ist es notwendig und sinnvoll, den \LaTeX{}-Code in mehrere Dateien aufz
 Für das Einbinden gibt es folgende Befehle:
 \begin{table}[H]
     \centering
+    \renewcommand{\arraystretch}{1.1}
     \begin{tabular}{lccc}
         \toprule
         \textbf{Befehl}                                       & \textbf{Seitenumbruch} \\
@@ -161,7 +168,6 @@ Für das Einbinden gibt es folgende Befehle:
 
 Es ist zu beachten, dass der Befehl \texttt{\textbackslash include} in bereits inkludierten Dateien fehleranfällig sein kann und daher vermieden werden sollte.
 
-
 \subsection{Einbinden von PDF-Dateien}
 \label{sec:einbinden_von_pdf_dateien}
 PDF-Dateien können in \LaTeX{}-Dokumente eingebunden werden. Dafür wird das Paket \textbf{pdfpages} benötigt. Die Einbindung erfolgt mit dem Befehl \textbf{\texttt{\textbackslash includepdf\{Pfad/zur/Datei.pdf\}}}. Es können auch nur bestimmte Seiten eingebunden werden mit der Option \textbf{\texttt{\textbackslash includepdf[pages=\{...\}]\{Pfad/zur/Datei.pdf\}}}.
@@ -172,43 +178,25 @@ Jedes \LaTeX{}-Dokument hat eine Hierarchie, die durch die folgende Befehle defi
 
 \input{anlagen/tabellen/hierachie.tex}
 Die Nummerierung der Ebenen erfolgt automatisch bis zur Ebene \textbf{subsubsection} (X=3).
-Mit dem Befehl \textbf{\texttt{\textbackslash setcounter\{secnumdepth\}\{X\}}} kann die Nummerierungstiefe angepasst werden. Das X entspricht der Nummerierungstiefe:
+Mit dem Befehl \textbf{\texttt{\textbackslash setcounter\{secnumdepth\}\{X\}}} kann die Nummerierungstiefe angepasst werden. Das X entspricht der Nummerierungstiefe (siehe \autoref{tab:secnumdepth}).
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{cll}
-        \toprule
-        \textbf{Wert (X)} & \textbf{Maximal nummerierte Ebene}                        \\
-        \midrule
-        -1                & Keine Nummerierung                                        \\
-        0                 & Nur \texttt{\textbackslash part\{\}}                      \\
-        1                 & Bis \texttt{\textbackslash chapter\{\}}                   \\
-        2                 & Bis \texttt{\textbackslash section\{\}}                   \\
-        3                 & Bis \texttt{\textbackslash subsection\{\}} (Standardwert) \\
-        4                 & Bis \texttt{\textbackslash subsubsection\{\}}             \\
-        5                 & Bis \texttt{\textbackslash paragraph\{\}}                 \\
-        6                 & Bis \texttt{\textbackslash subparagraph\{\}}              \\
-        \bottomrule
-    \end{tabular}
-    \caption{Nummerierungstiefe mit \texttt{secnumdepth}}
-    \label{tab:secnumdepth}
-\end{table}
 
 Die Hierarchie-Ebenen sind auch im Inhaltsverzeichnis sichtbar und können dort mit \textbf{\texttt{\textbackslash setcounter\{tocdepth\}\{X\}}} angepasst werden (siehe auch \ref{sec:inhaltsverzeichnis}).
 
 In manchen Fällen ist es erwünscht, eine Ebene nicht zu nummerieren und auch nicht im Inhaltsverzeichnis aufzuführen. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash section*\{Überschrift\}}} erreicht werden.
 
-Soll die Ebene zwar im Inhaltsverzeichnis erscheinen, aber nicht nummeriert werden, kann der Befehl \textbf{\texttt{\textbackslash addcontentsline\{toc\}\{section\}\{Überschrift\}}} nach der jeweiligen section mit (*) verwendet werden.
+Soll die Ebene zwar im Inhaltsverzeichnis erscheinen, aber nicht nummeriert werden, kann der Befehl \textbf{\texttt{\textbackslash addcontentsline\{toc\}\{section\}\{Überschrift\}}} nach der jeweiligen section mit * verwendet werden.
 
 Falls im Inhaltsverzeichnis eine andere Überschrift als im Text erscheinen soll, kann der Befehl \textbf{\texttt{\textbackslash section[Kurztitel]\{ausführlicher Titel\}}} verwendet werden. Der Text in den eckigen Klammern wird im Inhaltsverzeichnis angezeigt, der Text in den geschweiften Klammern im Text als Überschrift.
 
-In Berichten werden in der Regel nur die Ebenen \textbf{section} bis \textbf{subsubsection} verwendet:
+In Berichten werden in der Regel nur die Ebenen \textbf{section} bis \textbf{subsubsection} verwendet. Für diese Hierarchieebenen folgen nun Beispiele:
 \section*{1 \hspace{0.15cm} section}
 
 \subsection*{1.1 \hspace{0.15cm} subsection}
 
 \subsubsection*{1.1.1 \hspace{0.15cm} subsubsection}
 
+\newpage
 
 \subsection{Querverweise (Label und Referenzen)}
 \label{sec:querverweise}
@@ -217,7 +205,7 @@ Dafür werden Labels an den gewünschten Stellen im Dokument gesetzt und an ande
 
 \textbf{Labels} können mit dem Befehl \textbf{\texttt{\textbackslash label\{name\}}} gesetzt werden. Der Name kann frei gewählt werden, sollte aber eindeutig sein. Hilfreich ist die konventionelle Benennung, \textbf{fig:} für Bilder, \textbf{tab:} für Tabellen, \textbf{sec:} für Abschnitte und \textbf{eq:} für Formeln.
 
-\textbf{Referenzen} können mit dem Befehl \textbf{\texttt{\textbackslash ref\{name\}}} gesetzt werden. Der Name entspricht dem Label, auf das verwiesen werden soll.
+\textbf{Referenzen} können mit dem Befehl \textbf{\texttt{\textbackslash ref\{name\}}} gesetzt werden. Der Name entspricht dem des Label, auf das verwiesen werden soll.
 
 Mit dem Befehl \textbf{\texttt{\textbackslash pageref\{name\}}} kann auf die Seitenzahl des Labels verwiesen werden.
 
@@ -283,7 +271,7 @@ Laut Mustermann \cite[S. 5]{buch1} ist ...
 
 \subsubsection{Quellen nur im Literaturverzeichnis anzeigen}
 Mit dem Befehl \textbf{\texttt{\textbackslash nocite\{Schlüssel\}}} können Einträge aus der Literaturdatenbank (literatur.bib) im Literaturverzeichnis angezeigt werden ohne im Text zitiert zu werden.
-Die Verwendung von \textbf{\texttt{\textbackslash nocite\{*\}}} zeigt alle Einträge an.
+Die Verwendung von \textbf{\texttt{\textbackslash nocite\{*\}}} zeigt alle Einträge der Literaturdatenbank im Literaturverzeichnis an.
 
 
 \subsection{Einheiten mit \texttt{siunitx}}
@@ -298,7 +286,7 @@ Werte mit Einheiten können entweder mit dem Befehl \textbf{\texttt{\textbacksla
 5 \si{\milli\meter\per\second}      
 5 \si{\milli\meter\div\second}      
 5 \si{\frac{\milli\meter}{\second}} 
-\SI{4,2}{\giga\meter\per\minute}    
+\SI{44444,2}{\giga\meter\per\minute}    
     \end{lstlisting}
 \end{minipage}
 \hfill
@@ -309,15 +297,17 @@ Werte mit Einheiten können entweder mit dem Befehl \textbf{\texttt{\textbacksla
         \item 5 \si{\milli\meter\per\second}
         \item 5 \si{\milli\meter\div\second}
         \item 5 \si{\frac{\milli\meter}{\second}}
-        \item \SI{4,2}{\giga\meter\per\minute}
+        \item \SI{44444,2}{\giga\meter\per\minute}
     \end{itemize}
 \end{minipage}
+
+In der Präambel des Dokuments kann mit \texttt{\textbf{\textbackslash sisetup\{output-decimal-marker = \{,\}\}}} das Dezimaltrennzeichen global auf ein Komma und ggf. mit \textbf{\texttt{\textbackslash sisetup\{group-separator = \{.\}\}}} das Gruppentrennzeichen auf einen Punkt gesetzt werden.
 
 
 \subsection{Eigene Befehle (Makros)}
 In latex können eigene Befehle definiert werden, um häufig verwendete Befehle oder Texte zu vereinfachen. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash newcommand\{\textbackslash befehl\}[Anzahl-Argumente]\{Definition\}}} erreicht werden.
 
-Darüber hinaus kann mit dem Befehl \textbf{\texttt{\textbackslash renewcommand\{\textbackslash befehl\}[Anzahl-Argumente]\{Definition\}}} ein bereits existierender Befehl überschrieben werden und mit \newline \textbf{\texttt{\textbackslash providecommand\{\textbackslash befehl\}[Anzahl-Argumente]\{Definition\}}} wird der Befehl nur definiert, wenn er noch nicht existiert.
+Darüber hinaus kann mit \textbf{\texttt{\textbackslash renewcommand\{\textbackslash befehl\}[Anzahl-Argumente]\{Definition\}}} ein bereits existierender Befehl überschrieben werden und mit \newline \textbf{\texttt{\textbackslash providecommand\{\textbackslash befehl\}[Anzahl-Argumente]\{Definition\}}} wird der Befehl nur definiert, wenn er noch nicht existiert.
 
 \subsubsection{Makros ohne Argumente}
 
