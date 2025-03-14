@@ -1,11 +1,9 @@
 \section{Dokumentenelemente}
 
-\textbf{\large \textcolor{red}{Hier geht es nächstes Mal weiter! Davor ist alles fertig geprüft}}
-
-Neben dem Text gibt es noch weitere Elemente, die in einem Dokument vorkommen können. Dazu gehören unter anderem Bilder, Tabellen, Listen und Quellcode. In diesem Kapitel werden die wichtigsten Elemente vorgestellt.
+Neben dem Text gibt es noch weitere Elemente, die in einem Dokument vorkommen können. Dazu gehören unter anderem Bilder, Tabellen, Listen, Quellcode und ähnliche Elemente. In diesem Kapitel werden die wichtigsten Elemente vorgestellt.
 
 Bei den folgenden Listen ist es möglich weitere Optionen zu setzen. Dazu werden Optionen in eckigen Klammern angegeben.
-Wichtige Optionen sind beispielsweise: \textbf{\texttt{leftmargin=...}} für das setzen des linken Randes oder \textbf{\texttt{itemsep=...}} für den Abstand zwischen den einzelnen Elementen.
+Wichtige Optionen sind z.B.: \textbf{\texttt{leftmargin=...}} für das setzen des linken Randes oder \textbf{\texttt{itemsep=...}} für den Abstand zwischen den einzelnen Elementen.
 
 \subsection{Listen}
 In \LaTeX{} gibt es verschiedene Arten von Listen. Es folgen die wichtigsten Beispiele.
@@ -92,7 +90,7 @@ Falls die Nummerierung mit römischen Zahlen erfolgen soll, kann dies durch den 
     \end{itemize}
 \end{minipage}
 
-Neben $\rightarrow$ können auch andere Symbole oder Zeichenketten als Aufzählungszeichen verwendet werden. Es ist allerdings darauf zu achten ggf. (\$) für Objekte aus der Mathematikumgebung zu verwenden. Vorstellbar wären beispielsweise ein Haken $\checkmark$ (\$\textbackslash checkmark\$) oder ein Kreuz $\times$ (\$\textbackslash times\$). Es wird das Paket \texttt{enumitem} benötigt.
+Neben $\rightarrow$ können auch andere Symbole oder Zeichenketten als Aufzählungszeichen verwendet werden. Es ist allerdings darauf zu achten ggf. \texttt{\$} für Objekte aus der Mathematikumgebung zu verwenden. Vorstellbar wären beispielsweise ein Haken $\checkmark$ (\texttt{\$\textbackslash checkmark\$}) oder ein Kreuz $\times$ (\texttt{\$\textbackslash times\$}). Es wird das Paket \texttt{enumitem} benötigt.
 
 \subsubsection{Mehrspaltige Listen}
 
@@ -123,11 +121,11 @@ Neben $\rightarrow$ können auch andere Symbole oder Zeichenketten als Aufzählu
 Mit der Umgebung \texttt{multicols} können mehrspaltige Listen erstellt werden. Die Anzahl der Spalten wird als Argument in geschweiften Klammern übergeben. Es wird das Paket \texttt{multicol} benötigt.
 
 \subsection{Gleichungen / Mathematikumgebungen}
-In \LaTeX{} gibt es verschiedene Umgebungen, um mathematische Formeln zu setzen. Die wichtigsten Aspekte zu den mathematischen Umgebungen werden im Folgenden vorgestellt.
+In \LaTeX{} gibt es verschiedene Umgebungen, um mathematische Formeln zu verwenden. Die wichtigsten Aspekte zu den mathematischen Umgebungen werden im Folgenden vorgestellt.
 
 \subsubsection{Inline-Gleichungen}
-In einem Text können mathematische Formeln direkt eingebettet werden. Dazu wird der Text in zwei Dollarzeichen (\$) eingeschlossen.
-Beispiel: $a^2 + b^2 = c^2$ (Syntax: \texttt{\$a\^{}2 + b\^{}2 = c\^{}2\$})
+In einem Text können mathematische Formeln direkt eingebettet werden. Dazu wird der Text in zwei Dollarzeichen \texttt{\textbf{\$}} eingeschlossen.
+Beispiel: $a^{2} + b^{2} = c^{2}$ (Syntax: \texttt{\$a\textasciicircum\{2\} + b\textasciicircum\{2\} = c\textasciicircum\{2\}\$})
 
 \subsubsection{Abgesetzte Gleichungen}
 Für abgesetzte Gleichungen gibt es die Umgebung \textbf{\texttt{equation}}. Diese setzt die Gleichung zentriert und nummeriert sie.
@@ -178,6 +176,8 @@ Darüber hinaus können die Gleichungsnummern mit \textbf{\texttt{\textbackslash
     \end{equation}
 \end{minipage}
 
+\newpage
+
 \subsubsection{Mehrzeilige Gleichungen}
 Für mehrzeilige Gleichungen gibt es die \textbf{\texttt{align}}-Umgebung. Mit dem \textbf{\texttt{\&}}-Zeichen wird die Ausrichtung der Gleichungen festgelegt. Mit dem \textbf{\texttt{\textbackslash\textbackslash}}-Zeichen wird eine neue Zeile begonnen. Die Gleichungen werden an den \textbf{\texttt{\&}}-Zeichen ausgerichtet.
 
@@ -197,9 +197,9 @@ Für mehrzeilige Gleichungen gibt es die \textbf{\texttt{align}}-Umgebung. Mit d
     \exp{(j \cdot x)} & = \cos{(x)} + j \cdot \sin{(x)}
 \end{align}
 
-In den \textbf{\texttt{align}}-Umgebungen können die Gleichungen mit \textbf{\texttt{\textbackslash label\{...\}}} versehen werden, um sie im Text referenzieren zu können (\autoref{eq:trig} und \autoref{eq:euler}). Soll die Nummerierung einer einzelnen Gleichung unterdrückt werden, kann dies mit \textbf{\texttt{\textbackslash nonumber}} erreicht werden oder durch das Verwenden von \textbf{\texttt{\textbackslash begin\{align*\}}}.
+In den \textbf{\texttt{align}}-Umgebungen können die Gleichungen separat mit \textbf{\texttt{\textbackslash label\{...\}}} versehen werden, um sie im Text referenzieren zu können (\autoref{eq:trig} und \autoref{eq:euler}). Soll die Nummerierung einer einzelnen Gleichung unterdrückt werden, kann dies mit \textbf{\texttt{\textbackslash nonumber}} erreicht werden. Durch das Verwenden von \textbf{\texttt{\textbackslash begin\{align*\}}} werden alle Gleichungen in der Umgebung nicht nummeriert.
 
-In der \textbf{\texttt{equation}}-Umgebung kann die Unterumgebung \textbf{\texttt{aligned}} verwendet werden, um mehrzeilige Gleichungen mit dem \textbf{\texttt{\&}}-Zeichen auszurichten. Diese werden standardmäßig nur mir einer Gleichungsnummer versehen.
+In der \textbf{\texttt{equation}}-Umgebung kann die Unterumgebung \textbf{\texttt{aligned}} verwendet werden, um mehrzeilige Gleichungen mit dem \textbf{\texttt{\&}}-Zeichen auszurichten. Diese werden standardmäßig nur mir einer einzelnen Gleichungsnummer versehen.
 
 \subsubsection{Umrahmte Gleichungen}
 Umrahmte Gleichungen können in \LaTeX{} mit dem \textbf{\texttt{boxed\{\}}}-Befehl erstellt werden. Dieser kann in den meisten mathematischen Umgebungen verwendet werden.
@@ -230,21 +230,21 @@ Umrahmte Gleichungen können in \LaTeX{} mit dem \textbf{\texttt{boxed\{\}}}-Bef
     \end{equation}
 \end{minipage}
 
-
-
+\newpage
 
 \subsubsection{Formatierung in Gleichungen}
 In mathematischen Umgebungen können verschiedene Formatierungen vorgenommen werden. Dazu gehören unter anderem:
 
 \input{anlagen/tabellen/formatierung_matheumgebung.tex}
 
+\vspace{0.5cm}
 
 \subsubsection{Mathematische Symbole}
 In \LaTeX{} gibt es viele mathematische Rechenoperatoren und Symbole, die mit folgenden Befehlen in mathematische Umgebungen eingefügt werden können:
 
 \input{anlagen/tabellen/mathematische_symbole.tex}
 
-Darüber hinaus gibt es noch viele weitere mathematische Symbole, die in der VSC-Umgebung einfach über die \LaTeX{}-Erweiterung eingefügt werden können.
+Darüber hinaus gibt es noch viele weitere mathematische Symbole, die in visual-studio-code einfach über die \LaTeX{}-Erweiterung eingefügt werden können.
 
 \subsubsection{Matrizen}
 Matrizen können in \LaTeX{} mit der \textbf{\texttt{bmatrix}}-Umgebung erstellt werden. Die Spalten werden durch \textbf{\texttt{\&}} und die Zeilen durch \textbf{\texttt{\textbackslash\textbackslash}} getrennt.
@@ -273,7 +273,7 @@ Matrizen können in \LaTeX{} mit der \textbf{\texttt{bmatrix}}-Umgebung erstellt
 
 Anstelle der \textbf{\texttt{bmatrix}}-Umgebung können die Umgebungen \textbf{\texttt{pmatrix}} (runde Klammern), \textbf{\texttt{Bmatrix}} (geschweifte Klammern), \textbf{\texttt{vmatrix}} (einfache Striche) und \textbf{\texttt{Vmatrix}} (doppelte Striche) verwendet werden.
 
-Die Determinante einer Matrix kann mit dem Befehl \textbf{\texttt{\textbackslash det}} gesetzt werden. Die Transponierte einer Matrix kann mit dem Befehl \textbf{\texttt{\textbackslash top}} und die Inverse einer Matrix kann folgendermaßen gesetzt werden:
+Die Determinante einer Matrix kann mit dem Befehl \textbf{\texttt{\textbackslash det}} gesetzt werden. Die Transponierte einer Matrix kann mit dem Befehl \textbf{\texttt{\textasciicircum\{\textbackslash top\}}} und die Inverse einer Matrix kann kann mit \textbf{\texttt{\textasciicircum\{-1\}}} gesetzt werden:
 
 \begin{minipage}{0.5\textwidth}
     \begin{lstlisting}[language={[LaTeX]TeX}]
@@ -343,6 +343,9 @@ Gleichungssysteme können in \LaTeX{} mit der \textbf{\texttt{gather}}-Umgebung 
     \end{gather}
 \end{minipage}
 
+Die \texttt{gather}-Umgebung setzt die Gleichungen zentriert und nummeriert untereinander, aber richtet sie nicht aus. Alternativ kann die \texttt{align}-Umgebung verwendet werden, um die Gleichungen auszurichten.
+
+
 \subsection{Quellcode}
 Quellcode kann in \LaTeX{} mit der \textbf{\texttt{lstlisting}}-Umgebung eingefügt werden. Dabei können verschiedene Einstellungen vorgenommen werden, um den Quellcode optisch ansprechend darzustellen. Es wird das Paket \textbf{\texttt{listings}} mit der Option \textbf{\texttt{pmboxdraw}} benötigt.
 
@@ -370,33 +373,37 @@ def fibonacci(n):
     \end{lstlisting}
 \end{minipage}
 
-Die Sprache des Quellcode wird mit in dem Befehl \textbf{\texttt{\textbackslash begin\{lstlisting\}[language=...]}} angegeben. Es können verschiedene Sprachen wie Python, Java, C++ oder auch \LaTeX{} selbst verwendet werden.
+Die Sprache des Quellcode wird mit in dem Befehl \textbf{\texttt{\textbackslash begin\{lstlisting\}[language=...]}} angegeben. Es können verschiedene Sprachen wie Python, Java, C++ oder auch \LaTeX{} ([language={[LaTeX]TeX}]) selbst verwendet werden.
+
+\newpage
 
 \subsubsection{Einstellungen für Quellcode}
-Die Einstellungen für die Darstellung des Quellcodes können in der Präambel des Dokuments vorgenommen werden.
+Die Einstellungen für die Darstellung des Quellcodes können in der Präambel des Dokuments vorgenommen werden. Es folgt ein Beispiel für die Einstellungen dieses Dokuments:
 
 \begin{lstlisting}[language={[LaTeX]TeX}]
 \usepackage{listings, pmboxdraw}
 \lstset{
-    language={[LaTeX]TeX},              % Programmiersprache
-    frame=single,                       % Rahmen um den Code
-    numbers=left,                       % Zeilennummern links
-    stepnumber=1,                       % Jede Zeile nummerieren
-    lineskip=0pt,                       % Zeilenabstand anpassen
-    numberstyle=\footnotesize,          % Kleine Zeilennummern
-    basicstyle=\ttfamily,               % Monospace-Schriftart
-    keywordstyle=\color{blue},          % Keywords blau
-    commentstyle=\color{gray},          % Kommentare grau
-    stringstyle=\color{green},          % Strings gruen
-    backgroundcolor=\color{white},      % Hintergrundfarbe
-    showstringspaces=false,             % Keine Leerzeichen in Strings
-    captionpos=b,                       % Position unter dem Code 
-    breaklines=true,                    % Zeilenumbruch
+    language={[LaTeX]TeX},                  % Programmiersprache
+    frame=single,                           % Rahmen um den Code
+    numbers=left,                           % Zeilennummern links
+    stepnumber=1,                           % Jede Zeile nummerieren
+    lineskip=0pt,                           % Zeilenabstand anpassen
+    numberstyle=\normalsize\footnotesize,   % Kleine Zeilennummern
+    basicstyle=\ttfamily,                   % Monospace-Schriftart
+    keywordstyle=\color{blue},              % Keywords blau
+    commentstyle=\color{gray},              % Kommentare grau
+    stringstyle=\color{green},              % Strings gruen
+    backgroundcolor=\color{white},          % Hintergrundfarbe
+    showstringspaces=false,                 % Keine Leerzeichen in Strings
+    captionpos=b,                           % Position unter dem Code 
+    breaklines=true,                        % Zeilenumbruch
 }
 \end{lstlisting}
 
+In manchen Fällen sollen für einzelne Code-Blöcke abweichende Einstellungen vorgenommen werden. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash begin\{lstlisting\}[Optionen]}} erreicht werden.
+
 \subsubsection{Farbliche Hervorhebung im Quellcode}
-Soll in dem Code ein Zeile \textbf{farblich hervorgehoben} werden, kann dies mit dem Befehl \textbf{\texttt{\textbackslash begin\{lstlisting\}[language=..., emph=\{x,...\}, emphstyle=\{\textbackslash color\{red\}\}]}} erreicht werden. Dabei wird jedes x in dem Code rot hervorgehoben.
+Soll in dem Code eine (oder mehrere) Textpassagen oder Befehle \textbf{farblich hervorgehoben} werden, kann dies mit dem Befehl \textbf{\texttt{\textbackslash begin\{lstlisting\}[language=..., emph=\{x,...\}, emphstyle=\{\textbackslash color\{red\}\}]}} erreicht werden. Dabei wird jedes x in dem Code rot hervorgehoben.
 
 \begin{lstlisting}[language=C, emph={x}, emphstyle=\color{red}]
 int main() {
@@ -414,10 +421,13 @@ int bsp() {
 }   
 \end{lstlisting}
 
+\newpage
+
 \subsubsection{Externe Quellcode-Dateien einbinden}
 In manchen Fällen kann es sinnvoll sein, den Quellcode aus einer externen Datei einzubinden. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash lstinputlisting[Optionen]\{Pfad/zur/Datei.endung\}}} erreicht werden.
 
-\lstinputlisting[language=C, caption=Beispielcode aus externer Datei, label=scr:extern]{anlagen/beispiel.c}
+\lstinputlisting[language=C, caption=Beispielcode aus externer Datei, label=scr:extern, basicstyle=\small\ttfamily]{anlagen/beispiel.c}
+
 
 \subsection{Bilder}
 In \LaTeX{} können Bilder auf folgende Weise eingefügt werden:
@@ -426,11 +436,20 @@ Es wird das Paket \textbf{\texttt{graphicx}} benötigt.
 \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{Pfad/zum/Bild.png}
-    \caption{Bildunterschrift}
-    \label{fig:bild}
+    \includegraphics[width=0.5\textwidth]{anlagen/bilder/Graph.png}
+    \caption{Sagezahnspannung}
+    \label{fig:sagezahnspannung}
 \end{figure}
 \end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{anlagen/bilder/Graph.png}
+    \caption{Sägezahnspannung}
+    \label{fig:sägezahnspannung}
+\end{figure}
+
+Bilder können mit dem Befehl \textbf{\texttt{\textbackslash caption\{Bildunterschrift\}}} beschriftet werden. Mit dem Befehl \textbf{\texttt{\textbackslash label\{fig:bild\}}} wird ein Label gesetzt, auf welches im Text referenziert werden kann (\autoref{fig:sägezahnspannung})(siehe auch: \nameref{sec:querverweise}).
 
 Ausschlaggebend für das Inkludieren ist der Befehl \textbf{\texttt{\textbackslash includegraphics[options]\{Pfad/zum/Bild.png\}}}.
 
@@ -457,17 +476,10 @@ Dabei können folgende Optionen verwendet werden:
     \label{tab:graphics_options}
 \end{table}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{anlagen/bilder/Graph.png}
-    \caption{Sägezahnspannung}
-    \label{fig:sägezahnspannung}
-\end{figure}
-
 Darüber hinaus können Bilder mit dem Befehl \texttt{\textbf{\textbackslash reflectbox\{\textbackslash includegraphics[...]\{Pfad/zum/Bild.png\}\}}} gespiegelt werden.
 
-\subsubsection{Platzierung von Bildern (Tabellen) und ähnlichen Elementen}
-Die Platzierung von Bildern kann mit den folgenden Optionen in \textbf{\texttt{\textbackslash begin\{figure\}[...]}} gesteuert werden.
+\subsubsection{Platzierung von Bildern (und anderen Gleitobjekten)}
+Die Platzierung von Gleitobjekten kann mit den folgenden Optionen in \textbf{\texttt{\textbackslash begin\{figure\}[...]}} gesteuert werden.
 
 \begin{table}[H]
     \centering
@@ -489,8 +501,7 @@ Die Optionen können auch kombiniert werden. Ein \textbf{\texttt{!}} vor der Opt
 
 Für die H-Positionierungsoption wird das Paket \textbf{\texttt{float}} benötigt.
 
-\subsubsection{Beschriftung und Referenzierung von Bildern}
-Bilder können mit dem Befehl \textbf{\texttt{\textbackslash caption\{Bildunterschrift\}}} beschriftet werden. Mit dem Befehl \textbf{\texttt{\textbackslash label\{fig:bild\}}} wird ein Label gesetzt, auf welches im Text referenziert werden kann (\autoref{fig:sägezahnspannung})(siehe auch: \nameref{sec:querverweise}).
+\newpage
 
 \subsubsection{Gerahmte Bilder}
 Bilder können mit dem Befehl \textbf{\texttt{\textbackslash fbox\{\textbackslash includegraphics[...]\{Pfad/zum/Bild.png\}\}}} oder mit dem \textbf{\texttt{\textbackslash shadowbox\{\textbackslash includegraphics[...]\{Pfad/zum/Bild.png\}\}}} gerahmt werden. Für die Schattierung wird das Paket \textbf{\texttt{fancybox}} benötigt. Siehe auch \autoref{sec:rahmen_und_boxen}.
@@ -499,14 +510,14 @@ Bilder können mit dem Befehl \textbf{\texttt{\textbackslash fbox\{\textbackslas
     \centering
     \begin{subfigure}{0.45\textwidth}
         \centering
-        \fbox{\includegraphics[width=0.9\textwidth]{anlagen/bilder/Graph.png}}
+        \fbox{\includegraphics[width=0.7\textwidth]{anlagen/bilder/Graph.png}}
         \caption{Gerahmtes Bild}
         \label{fig:gerahmtes_bild}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.45\textwidth}
         \centering
-        \shadowbox{\includegraphics[width=0.9\textwidth]{anlagen/bilder/Graph.png}}
+        \shadowbox{\includegraphics[width=0.7\textwidth]{anlagen/bilder/Graph.png}}
         \caption{Schattiertes Bild}
         \label{fig:schattiertes_bild}
     \end{subfigure}
@@ -518,53 +529,35 @@ Bilder können mit dem Befehl \textbf{\texttt{\textbackslash fbox\{\textbackslas
 \subsubsection{Parallele Darstellung von Bildern}
 Mehrere Bilder können mit der \textbf{\texttt{subfigure}}-Umgebung in einer \textbf{\texttt{figure}}-Umgebung dargestellt werden. Dabei können die Bilder mit \textbf{\texttt{\textbackslash hfill}} horizontal nebeneinander platziert werden. Darüber hinaus ist die Darstellung von mehreren Bildern in einer \textbf{\texttt{minipage}}-Umgebung möglich (siehe auch: \nameref{sec:minipage}).
 
-\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle= \small\ttfamily]
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.45\textwidth}
         \centering
-        \includegraphics[width=0.9\textwidth]{anlagen/bilder/Bild1.jpg}
-        \caption{Bild 1}
-        \label{fig:bild1}
+        \fbox{\includegraphics[width=0.7\textwidth]{anlagen/bilder/Graph.png}}
+        \caption{Gerahmtes Bild}
+        \label{fig:gerahmtes_bild}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.45\textwidth}
         \centering
-        \includegraphics[width=0.9\textwidth]{anlagen/bilder/Bild2.jpg}
-        \caption{Bild 2}
-        \label{fig:bild2}
+        \shadowbox{\includegraphics[width=0.7\textwidth]{anlagen/bilder/Graph.png}}
+        \caption{Schattiertes Bild}
+        \label{fig:schattiertes_bild}
     \end{subfigure}
-    \caption{Bildunterschrift}
-    \label{fig:bilder}
+    \caption{Gerahmte und schattierte Bilder}
+    \label{fig:gerahmte_schattierte_bilder}
 \end{figure}
 \end{lstlisting}
 
-Im folgenden wird das Ergebnis der obigen Codezeilen dargestellt:
+Besonders praktisch ist die Verwendung der \textbf{\texttt{subfigure}}-Unterumgebung, um die Bilder mit Untertiteln und Labeln zu versehen, auf die im Text referenziert werden kann (\autoref{fig:gerahmtes_bild}, \autoref{fig:schattiertes_bild}) und \autoref{fig:gerahmte_schattierte_bilder}.
+Mit Hilfe der \textbf{\texttt{subfigure}}-Umgebung können durch geschicktes Aneinanderreihen auch mehr als zwei Bilder nebeneinander (oder untereinander) dargestellt werden.
 
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=0.9\textwidth]{anlagen/bilder/Bild1.jpg}
-        \caption{Bild 1}
-        \label{fig:bild1}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=0.9\textwidth]{anlagen/bilder/Bild2.jpg}
-        \caption{Bild 2}
-        \label{fig:bild2}
-    \end{subfigure}
-    \caption{Bildunterschrift}
-    \label{fig:bilder}
-\end{figure}
-
-Besonders praktisch ist die Verwendung der \textbf{\texttt{subfigure}}-Umgebung, um die Bilder mit Untertiteln und Labeln zu versehen, auf die im Text referenziert werden kann (\autoref{fig:bild1}, \autoref{fig:bild2}) und \autoref{fig:bilder}.
-In der \textbf{\texttt{subfigure}}-Umgebung können durch geschicktes Aneinanderreihen auch mehr als zwei Bilder nebeneinander (oder untereinander) dargestellt werden.
-
+\newpage
 
 \subsection{Tabellen}
+\textcolor{red}{\LARGE hier geht es weiter}
+
 In \LaTeX{} gibt es mehrere Möglichkeiten, Tabellen zu erstellen. Im Folgenden werden die wichtigsten Möglichkeiten und Optionen vorgestellt.
 
 \subsubsection{Einfache Tabelle}
@@ -662,7 +655,7 @@ Formatierungsoptionen können mit dem Befehl \textbf{\texttt{\textbackslash begi
 
 Möglichkeiten sind unter anderem:
 
-\begin{table}[h]
+\begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.3} % Erhöhte Zeilenhöhe für bessere Lesbarkeit
     \setlength{\tabcolsep}{8pt} % Abstände zwischen Spalten setzen
@@ -692,7 +685,7 @@ Der Befehl \textbf{\texttt{>\{...\}}} sorgt dafür, dass die Formatierung auf di
 
 Es folgt ein Beispiel, dass die verschiedenen Formatierungsmöglichkeiten fette und kursive Schrift, farbige Hintergründe und mathematische Spalten in einer Tabelle darstellt:
 
-\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\footnotesize]
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\footnotesize\ttfamily]
 \begin{table}[H]
     \centering
     \begin{tabular}{|>{\bfseries}c|>{\itshape}r|>{\columncolor{blue!10}}c|>{$}c<{$}|}
@@ -731,7 +724,7 @@ Es folgt ein Beispiel, dass die verschiedenen Formatierungsmöglichkeiten fette 
 \subsubsection{Spalten mit Zeilenumbruch}
 Es folgt ein Beispiel, dass die verschiedenen Möglichkeiten für Spalten mit Zeilenumbruch aus \autoref{tab:array_formatierungen} darstellt:
 
-\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\footnotesize]
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\footnotesize\ttfamily]
 \begin{table}[H]
     \centering
     \begin{tabular}{|>{\raggedright\arraybackslash}m{5cm}|>{\centering\arraybackslash}p{4cm}|>{\raggedleft\arraybackslash}b{5cm}|}
@@ -787,7 +780,7 @@ Die folgenden Befehle aus \autoref{tab:weitere_formatierungen} können in der Pr
 Als Beispiel sollen die Formatierungsmöglichkeiten, die beim Erstellen der \autoref{tab:weitere_formatierungen} verwendet wurden, dargestellt werden.
 Der Code für die Präambel sieht wie folgt aus:
 
-\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small]
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small\ttfamily]
 \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.3} % Erhohte Zeilenhohe fur bessere Lesbarkeit
@@ -811,20 +804,20 @@ Die Breite von \textbf{\texttt{\textbackslash multirow}} kann entweder in cm ode
 
 Es folgt ein Beispiel, dass das Verbinden von Zeilen und/oder Spalten in einer Tabelle darstellt:
 
-\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\scriptsize]
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\footnotesize\ttfamily]
 \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5}
     \begin{tabular}{|c|c|c|}
         \hline
-        \textbf{Spalte 1}                        & \textbf{Spalte 2} & \textbf{Spalte 3} \\
+        \textbf{Spalte 1}               & \textbf{Spalte 2} & \textbf{Spalte 3}        \\
         \hline
-        \multirow{2}{*}{\textbf{Mehrere Zeilen}} & Wert A            & Wert B            \\
-                                                 & Wert C            & Wert D            \\
+        \multirow{2}{*}{\textbf{Mehrere Zeilen}} & Wert A            & Wert B          \\
+                                        & Wert C            & Wert D                   \\
         \hline
-        Wert E                          & \multicolumn{2}{c|}{\textbf{Mehrere Spalten}} \\
+        Wert E                          & \multicolumn{2}{c|}{\textbf{Mehrere Spalten}}\\
         \hline
-        Eintrag 1                                & Eintrag 2         & Eintrag 3         \\
+        Eintrag 1                       & Eintrag 2         & Eintrag 3                \\
         \hline
     \end{tabular}
     \caption{Beispiel Zeilen oder Spalten verbinden}
@@ -856,7 +849,7 @@ Es folgt ein Beispiel, dass das Verbinden von Zeilen und/oder Spalten in einer T
 Bilder können in Tabellen mit dem Befehl \textbf{\texttt{\textbackslash includegraphics[...]\{Pfad/zum/Bild.png\}}} eingefügt werden. Dabei können die gleichen Optionen wie bei der normalen Einbindung von Bildern verwendet werden. Besonders praktisch ist die Option \textbf{\texttt{[width=...\textbackslash linewidth]}} um die Breite des Bildes an die Spaltenbreite anzupassen.
 
 \begin{minipage}{0.62\textwidth}
-    \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\scriptsize]
+    \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\scriptsize\ttfamily]
 \begin{table}[H]
     \centering
     \begin{tabular}{|>{\centering\arraybackslash}m{4cm}|c|}
@@ -893,7 +886,7 @@ Für professionelle Buchtabellen wird das Paket \textbf{\texttt{booktabs}} benö
 Die Linien können mit \textbf{\texttt{\textbackslash toprule}}, \textbf{\texttt{\textbackslash midrule}} und \textbf{\texttt{\textbackslash bottomrule}} definiert werden. Mit \newline \textbf{\texttt{\textbackslash cmidrule(Optionen)\{Startspalte-Endspalte\}}} kann eine Linie nur für bestimmte Spalten definiert werden. Die Optionen sind  \textbf{\texttt{l}} für eine links, \textbf{\texttt{r}} für eine rechts und \textbf{\texttt{lr}} für eine links und rechts weich abgeschnittene Linie .
 
 \begin{minipage}{0.70\textwidth}
-    \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small]
+    \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small\ttfamily]
 \begin{table}[H]
     \centering
     \begin{tabular}{l|cr}
@@ -997,7 +990,7 @@ Tabellenzellen können mit dem Paket \textbf{\texttt{xcolor}} farbig gestaltet w
 Der Befehl \textbf{\texttt{\textbackslash cellcolor\{Farbe!Deckkraft\}}} färbt die Zelle ein. Der Befehl \textbf{\texttt{\textbackslash rowcolor\{Farbe!Deckkraft\}}} färbt die gesamte Zeile ein. Soll nur die Schrift farbig sein, kann der Befehl \textbf{\texttt{\textbackslash textcolor\{Farbe\}}} verwendet werden (siehe auch: \ref{sec:schriftfarbe}).
 
 \begin{minipage}{0.69\textwidth}
-    \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small]
+    \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small\ttfamily]
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|}
@@ -1068,7 +1061,7 @@ Allerdings ist zu beachten, dass in einer \textbf{\texttt{minipage}}-Umgebung \t
 
 Eine Ausnahme bilden Gleitobjekte in Verbindung mit der \textbf{\texttt{[H]}}-Ausrichtung.
 
-\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small]
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small\ttfamily]
 \begin{minipage}[c]{0.45\textwidth}
     \begin{table}[H]
         \centering
@@ -1127,7 +1120,7 @@ Eine Ausnahme bilden Gleitobjekte in Verbindung mit der \textbf{\texttt{[H]}}-Au
 Mit dem Befehl \textbf{\texttt{\textbackslash parbox[Ausrichtung]\{Breite\}\{Inhalt\}}} kann Text in einer Box platziert werden:
 Die Boxen lassen sich mit einem Rahmen anschließen (siehe auch: \autoref{sec:rahmen_und_boxen}).
 
-\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small]
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small\ttfamily]
 \fbox{\parbox[t]{0.3\textwidth}{Dies ist ein Beispieltext, der in einer Box platziert wurde.}}
 \hfill
 \parbox[t]{0.3\textwidth}{Dies ist ein zweiter Beispieltext, der in einer Box platziert wurde.}
@@ -1147,7 +1140,7 @@ Mit der \textbf{\texttt{multicols}}-Umgebung können mehrspaltige Layouts erstel
 In der \textbf{\texttt{multicols}}-Umgebung wird der Text automatisch in die Spalten aufgeteilt. Soll ein manueller Spaltenumbruch erfolgen, kann der Befehl \textbf{\texttt{\textbackslash columnbreak}} verwendet werden. Gleitobjekte wie \texttt{figure} oder \texttt{table} können nicht in der \textbf{\texttt{multicols}}-Umgebung verwendet werden. Eine Ausnahme bilden Gleitobjekte in Verbindung mit der \textbf{\texttt{[H]}}-Ausrichtung.
 
 \begin{minipage}[c]{0.58\textwidth}
-    \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small]
+    \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small\ttfamily]
 \begin{multicols}{2} % 2 Spalten
     Was passiert, wenn ich diesen Absatz einfach ohne jeglichen Sinn schreibe?,
     \columnbreak
@@ -1168,7 +1161,7 @@ In der \textbf{\texttt{multicols}}-Umgebung wird der Text automatisch in die Spa
 
 Ein Beispiel für die Verwendung der \textbf{\texttt{multicols}}-Umgebung mit mathematischen Formeln folgt:
 
-\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small]
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small\ttfamily]
 \begin{multicols}{3}  % 3 Spalten
     \begin{equation}
         E = mc^2
