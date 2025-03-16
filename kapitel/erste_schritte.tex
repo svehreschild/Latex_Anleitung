@@ -32,10 +32,10 @@ Die Kopf- und Fußzeilen können mit dem Paket \textbf{fancyhdr} besonders elega
 
 Als Position sind die folgenden Angaben möglich:
 \begin{itemize}
-    \item \textbf{C} - zentriert
-    \item \textbf{L} - linksbündig
-    \item \textbf{R} - rechtsbündig
-    \item \textbf{C} / \textbf{L} / \textbf{R} in Kombination mit \textbf{E} oder \textbf{O} für gerade oder ungerade Seitenzahlen möglich
+  \item \textbf{C} - zentriert
+  \item \textbf{L} - linksbündig
+  \item \textbf{R} - rechtsbündig
+  \item \textbf{C} / \textbf{L} / \textbf{R} in Kombination mit \textbf{E} oder \textbf{O} für gerade oder ungerade Seitenzahlen möglich
 \end{itemize}
 
 Ist eine Seitennummerierung in der Form Seite X von Y gewünscht, kann dies mit dem Befehl \textbf{\texttt{\textbackslash fancyfoot[C]\{Seite \textbackslash thepage$\thicksim$von$\thicksim$\textbackslash pageref\{LastPage\}\}}} ermöglicht werden. Hierbei wird das Paket \textbf{lastpage} benötigt.
@@ -46,8 +46,8 @@ Eine Trennlinie zwischen Fußzeile und Dokument, sowie zwischen Kopfzeile und Do
 
 Manchmal ist es gewünscht auf einer Seite keine Kopf- und/oder Fußzeile zu haben. Dies ist möglich mit:
 \begin{itemize}
-    \item \textbf{\texttt{\textbackslash thispagestyle\{empty\}}} - Keine Kopf- oder Fußzeile
-    \item \textbf{\texttt{\textbackslash thispagestyle\{plain\}}} - Normale Fußzeile ohne Kopfzeile
+  \item \textbf{\texttt{\textbackslash thispagestyle\{empty\}}} - Keine Kopf- oder Fußzeile
+  \item \textbf{\texttt{\textbackslash thispagestyle\{plain\}}} - Normale Fußzeile ohne Kopfzeile
 \end{itemize}
 
 \newpage
@@ -57,23 +57,23 @@ Manchmal ist es gewünscht auf einer Seite keine Kopf- und/oder Fußzeile zu hab
 Das Inhaltsverzeichnis wird mit dem Befehl \textbf{\texttt{\textbackslash tableofcontents}} erstellt. Die Tiefe des Inhaltsverzeichnis kann mit dem Befehl \textbf{\texttt{\textbackslash setcounter\{tocdepth\}\{X\}}} festgelegt werden. Dabei steht X für die \underbar{maximale Tiefe} des Inhaltsverzeichnisses und kann folgende Werte annehmen:
 
 \begin{table}[H]
-    \centering
-    \begin{tabular}{cll}
-        \toprule
-        \textbf{Wert (X)} & \textbf{Maximal nummerierte Ebene}                        \\
-        \midrule
-        -1                & Keine Nummerierung                                        \\
-        0                 & Nur \texttt{\textbackslash part\{\}}                      \\
-        1                 & Bis \texttt{\textbackslash chapter\{\}}                   \\
-        2                 & Bis \texttt{\textbackslash section\{\}}                   \\
-        3                 & Bis \texttt{\textbackslash subsection\{\}} (Standardwert) \\
-        4                 & Bis \texttt{\textbackslash subsubsection\{\}}             \\
-        5                 & Bis \texttt{\textbackslash paragraph\{\}}                 \\
-        6                 & Bis \texttt{\textbackslash subparagraph\{\}}              \\
-        \bottomrule
-    \end{tabular}
-    \caption{Nummerierungstiefe mit \texttt{secnumdepth}}
-    \label{tab:secnumdepth}
+  \centering
+  \begin{tabular}{cll}
+    \toprule
+    \textbf{Wert (X)} & \textbf{Maximal nummerierte Ebene}                        \\
+    \midrule
+    -1                & Keine Nummerierung                                        \\
+    0                 & Nur \texttt{\textbackslash part\{\}}                      \\
+    1                 & Bis \texttt{\textbackslash chapter\{\}}                   \\
+    2                 & Bis \texttt{\textbackslash section\{\}}                   \\
+    3                 & Bis \texttt{\textbackslash subsection\{\}} (Standardwert) \\
+    4                 & Bis \texttt{\textbackslash subsubsection\{\}}             \\
+    5                 & Bis \texttt{\textbackslash paragraph\{\}}                 \\
+    6                 & Bis \texttt{\textbackslash subparagraph\{\}}              \\
+    \bottomrule
+  \end{tabular}
+  \caption{Nummerierungstiefe mit \texttt{secnumdepth}}
+  \label{tab:secnumdepth}
 \end{table}
 
 Für die Anwendung dieses Befehls ist darauf zu achten, dass \textbf{\texttt{\textbackslash setcounter\{tocdepth\}\{X\}}} vor \textbf{\texttt{\textbackslash tableofcontents}} platziert werden muss.
@@ -90,12 +90,51 @@ Ich persönlich strukturiere meine \LaTeX{}-Dateien in einem eigenen Ordner (kap
 
 \subsection{Abkürzungsverzeichnis}
 \label{sec:abkuerzungsverzeichnis_erklärung}
+In \LaTeX{} kann ein Abkürzungsverzeichnis mit Hilfe des Pakets \textbf{acronym} erstellt werden.
+
+\subsubsection{Erstellen der Abkürzungen}
+Abkürzungen werden in der \texttt{\textbf{acronym}}-Umgebung definiert. Dabei wird der Befehl \newline \textbf{\texttt{\textbackslash acro\{Abkürzung\}\{Definition\}}} verwendet.
+Damit die Übersichtlichkeit gewahrt bleibt, werden die Abkürzungen (inklusive \texttt{acronym}-Umgebung) in einer separaten Datei (abkuerzungen.tex) erstellt und in das Hauptdokument (main.tex) eingebunden.
+
+Ein Beispiel für ein Abkürzungsverzeichnis folgt:
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\section*{Abkurzungsverzeichnis}
+\label{sec:abkuerzungsverzeichnis}
+\begin{acronym}
+  \acro{URL}{Uniform Resource Locator}
+  \acro{USB}{Universal Serial Bus}
+  \acro{GPS}{Global Positioning System}
+  \acro{z.B.}{zum Beispiel}
+\end{acronym}
+\end{lstlisting}
 
 
+\subsubsection{Verwenden der Abkürzungen}
+Um eine Abkürzung im Text zu verwenden gibt es folgende Befehle:
 
-Die \ac{API} wird häufig verwendet.
+\begin{table}[H]
+  \centering
+  \begin{tabular}{>{\bfseries}cll}
+    \toprule
+    \textbf{Befehl}                 & \textbf{Beschreibung}               & \textbf{Beispiel} \\
+    \midrule
+    \textbackslash ac\{Abkürzung\}  & Abkürzung im Text (erster Aufruf)   & \ac{URL}          \\
+    \textbackslash ac\{Abkürzung\}  & Abkürzung im Text (weitere Aufrufe) & \ac{URL}          \\
+    \textbackslash acl\{Abkürzung\} & Vollständige Form ohne Abkürzung    & \acl{URL}         \\
+    \textbackslash acf\{Abkürzung\} & Ausgabe wie erster Aufruf           & \acf{URL}         \\
+    \textbackslash acs\{Abkürzung\} & Nur Abkürzung (auch erster Aufruf)  & \acs{USB}         \\
+    \textbackslash acp\{Abkürzung\} & Abkürzung im Plural                 & \acp{URL}         \\
+    \bottomrule
+  \end{tabular}
+  \caption{Befehle zum Verwenden von Abkürzungen im Text}
+  \label{tab:acronyms_usage}
+\end{table}
 
-.................................................................................................
+Alle Abkürzungen enthalten einen Link zum Abkürzungsverzeichnis, damit der Leser dort die Definition nachschlagen kann.
+
+\subsubsection{Einbinden des Abkürzungsverzeichnisses}
+Das Abkürzungsverzeichnis wird automatisch an der Stelle eingefügt, an der die \texttt{\textbf{acronym}}-Umgebung definiert wurde. Im Abkürzungsverzeichnis werden die Abkürzungen mit einem Link zur ersten Verwendung im Text versehen (falls eine vorhanden ist).
 
 
 \subsection{Literaturverzeichnis}
@@ -152,11 +191,11 @@ Es folgt ein Beispiel für eine \textbf{\texttt{literatur.bib}}-Datei:
 Zunächst wird der Stil des Literaturverzeichnisses mit dem Befehl \textbf{\texttt{\textbackslash bibliographystyle\{Stil\}}} festgelegt.
 Es stehen folgende Stile zur Auswahl:
 \begin{itemize}
-    \item \textbf{plain} – Alphabetische Sortierung nach Autoren (Standardstil).
-    \item \textbf{unsrt} – Reihenfolge der Zitierung im Text (nicht alphabetisch).
-    \item \textbf{alpha} – Alphabetische Sortierung nach Autoren, aber mit Kurzreferenzen wie `[Ein05]`.
-    \item \textbf{abbrv} – Wie `plain`, aber mit abgekürzten Vornamen und Titeln.
-    \item \textbf{apalike} – Ähnlich wie APA-Zitierstil (Autor-Jahr statt Nummerierung).
+  \item \textbf{plain} – Alphabetische Sortierung nach Autoren (Standardstil).
+  \item \textbf{unsrt} – Reihenfolge der Zitierung im Text (nicht alphabetisch).
+  \item \textbf{alpha} – Alphabetische Sortierung nach Autoren, aber mit Kurzreferenzen wie `[Ein05]`.
+  \item \textbf{abbrv} – Wie `plain`, aber mit abgekürzten Vornamen und Titeln.
+  \item \textbf{apalike} – Ähnlich wie APA-Zitierstil (Autor-Jahr statt Nummerierung).
 \end{itemize}
 
 Anschließend wird die \textbf{\texttt{.bib}}-Datei mit dem Befehl \textbf{\texttt{\textbackslash bibliography\{Pfad/zur/Datei\}}} eingebunden.
