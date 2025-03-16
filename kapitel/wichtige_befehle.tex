@@ -1,11 +1,9 @@
-\newpage
 \section{Wichtige Befehle}
 \subsection{Kommentare}
 Kommentare werden in \LaTeX{} mit einem Prozentzeichen eingeleitet. Alles, was nach dem Prozentzeichen in der selben Zeile steht, wird von \LaTeX{} ignoriert. Mehrzeilige Kommentare sind mit der \texttt{\textbf{comment}}-Umgebung möglich. Dafür wird das Paket \textbf{comment} benötigt. Funktional identisch ist der Befehl \textbf{\texttt{\textbackslash iffalse ... \textbackslash fi}}.
 
 \begin{lstlisting}[language={[LaTeX]TeX}]
 % Dies ist ein einzeiliger Kommentar
-Text ohne Kommentar.
     
 \begin{comment}
 Dies ist ein
@@ -27,8 +25,6 @@ Die Schriftgröße kann mit den folgenden Befehlen geändert werden:
 Durch Verwendung von geschweiften Klammern kann der Befehl auf einen eingeschränkten Textbereich angewendet werden:
 Beispiel: \textbf{\texttt{\{\textbackslash large großer Text\}}}
 
-\newpage
-
 \subsubsection{Schriftstil}
 Der Schriftstil kann mit den folgenden Befehlen geändert werden:
 
@@ -36,6 +32,8 @@ Der Schriftstil kann mit den folgenden Befehlen geändert werden:
 
 Die Schriftstile können mit den Schriftgrößen kombiniert und mit anderen Schriftstilen überlagert werden.
 Es ist zu beachten, dass \textbf{\texttt{\textbackslash lowercase\{\}}} und \textbf{\texttt{\textbackslash uppercase\{\}}} zu Problemen mit Umlauten führen können, daher ist die Verwendung von \textbf{\texttt{\textbackslash MakeUppercase\{\}}} und \textbf{\texttt{\textbackslash MakeLowercase\{\}}} zu empfehlen.
+
+\newpage
 
 \subsubsection{Schriftfarbe}
 \label{sec:schriftfarbe}
@@ -101,6 +99,7 @@ Einige Zeichen, wie \textbf{\%}, \textbf{\#}, \textbf{\&}, \textbf{\_} und \text
 
 Für einige Zeichen gibt es auch spezielle Befehle, die eine Darstellung unabhängig von der Funktion des Zeichens ermöglichen. Beispiele sind \textbf{\textbackslash textbackslash} für den Backslash \textbf{\textbackslash}, \textbf{\textbackslash textasciitilde} für die Tilde \textbf{\textasciitilde} und \textbf{\textbackslash textasciicircum} für das Zirkumflex \textbf{\textasciicircum}.
 
+\newpage
 
 \subsection{Abstandsformatierung}
 \subsubsection{Vertikaler Abstand}
@@ -172,6 +171,7 @@ Es ist zu beachten, dass der Befehl \texttt{\textbackslash include} in bereits i
 \label{sec:einbinden_von_pdf_dateien}
 PDF-Dateien können in \LaTeX{}-Dokumente eingebunden werden. Dafür wird das Paket \textbf{pdfpages} benötigt. Die Einbindung erfolgt mit dem Befehl \textbf{\texttt{\textbackslash includepdf\{Pfad/zur/Datei.pdf\}}}. Es können auch nur bestimmte Seiten eingebunden werden mit der Option \textbf{\texttt{\textbackslash includepdf[pages=\{...\}]\{Pfad/zur/Datei.pdf\}}}.
 
+\newpage
 
 \subsection{Dokumentenhierarchie}
 Jedes \LaTeX{}-Dokument hat eine Hierarchie, die durch die folgende Befehle definiert wird:
@@ -196,7 +196,6 @@ In Berichten werden in der Regel nur die Ebenen \textbf{section} bis \textbf{sub
 
 \subsubsection*{1.1.1 \hspace{0.15cm} subsubsection}
 
-\newpage
 
 \subsection{Querverweise (Label und Referenzen)}
 \label{sec:querverweise}

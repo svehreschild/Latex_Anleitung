@@ -5,6 +5,8 @@ Neben dem Text gibt es noch weitere Elemente, die in einem Dokument vorkommen k�
 Bei den folgenden Listen ist es möglich weitere Optionen zu setzen. Dazu werden Optionen in eckigen Klammern angegeben.
 Wichtige Optionen sind z.B.: \textbf{\texttt{leftmargin=...}} für das setzen des linken Randes oder \textbf{\texttt{itemsep=...}} für den Abstand zwischen den einzelnen Elementen.
 
+\newpage
+
 \subsection{Listen}
 In \LaTeX{} gibt es verschiedene Arten von Listen. Es folgen die wichtigsten Beispiele.
 
@@ -197,7 +199,9 @@ Für mehrzeilige Gleichungen gibt es die \textbf{\texttt{align}}-Umgebung. Mit d
     \exp{(j \cdot x)} & = \cos{(x)} + j \cdot \sin{(x)}
 \end{align}
 
-In den \textbf{\texttt{align}}-Umgebungen können die Gleichungen separat mit \textbf{\texttt{\textbackslash label\{...\}}} versehen werden, um sie im Text referenzieren zu können (\autoref{eq:trig} und \autoref{eq:euler}). Soll die Nummerierung einer einzelnen Gleichung unterdrückt werden, kann dies mit \textbf{\texttt{\textbackslash nonumber}} erreicht werden. Durch das Verwenden von \textbf{\texttt{\textbackslash begin\{align*\}}} werden alle Gleichungen in der Umgebung nicht nummeriert.
+In den \textbf{\texttt{align}}-Umgebungen können die Gleichungen separat mit \textbf{\texttt{\textbackslash label\{...\}}} versehen werden, um sie im Text referenzieren zu können (\autoref{eq:trig} und \autoref{eq:euler}).
+
+Soll die Nummerierung einer einzelnen Gleichung unterdrückt werden, kann dies mit \textbf{\texttt{\textbackslash nonumber}} erreicht werden. Durch das Verwenden von \textbf{\texttt{\textbackslash begin\{align*\}}} werden alle Gleichungen in der Umgebung nicht nummeriert.
 
 In der \textbf{\texttt{equation}}-Umgebung kann die Unterumgebung \textbf{\texttt{aligned}} verwendet werden, um mehrzeilige Gleichungen mit dem \textbf{\texttt{\&}}-Zeichen auszurichten. Diese werden standardmäßig nur mir einer einzelnen Gleichungsnummer versehen.
 
@@ -436,7 +440,7 @@ Es wird das Paket \textbf{\texttt{graphicx}} benötigt.
 \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{anlagen/bilder/Graph.png}
+    \includegraphics[width=0.4\textwidth]{anlagen/bilder/Graph.png}
     \caption{Sagezahnspannung}
     \label{fig:sagezahnspannung}
 \end{figure}
@@ -444,7 +448,7 @@ Es wird das Paket \textbf{\texttt{graphicx}} benötigt.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{anlagen/bilder/Graph.png}
+    \includegraphics[width=0.4\textwidth]{anlagen/bilder/Graph.png}
     \caption{Sägezahnspannung}
     \label{fig:sägezahnspannung}
 \end{figure}
@@ -609,10 +613,9 @@ In dem folgenden Beispiel werden zudem die Möglichkeiten doppelter horizontaler
     \end{table}
 \end{minipage}
 
-\textcolor{red}{\Large Hier gehts weiter}
 
 Mit dem Paket \textbf{\texttt{hhline}} können Linien selektiv gezeichnet werden. Dies kann mit dem Befehl \textbf{\texttt{\textbackslash hhline\{...\}}} erreicht werden.
-Die Optionen sind \textbf{\texttt{|}}, \textbf{\texttt{-}}, \textbf{\texttt{=}} und \textbf{\texttt{\textasciitilde}} für vertikale, horizontale, doppelte horizontale und keine Linien.
+Die Optionen sind \textbf{\texttt{-}}, \textbf{\texttt{=}} und \textbf{\texttt{\textasciitilde}} für horizontale, doppelte horizontale und keine Linien.
 
 \begin{minipage}{0.5\textwidth}
     \begin{lstlisting}[language={[LaTeX]TeX}]
@@ -776,7 +779,9 @@ In Tabellen können weitere Formatierungsmöglichkeiten vorgenommen werden. Dazu
     \label{tab:weitere_formatierungen}
 \end{table}
 
-Die folgenden Befehle aus \autoref{tab:weitere_formatierungen} können in der Präambel der \texttt{\textbf{\textbackslash begin\{table\}[H]}} Umgebung definiert werden.
+Diese Befehle können in der Präambel der \texttt{\textbf{\textbackslash begin\{table\}[H]}} Umgebung definiert werden.
+
+\newpage
 
 Als Beispiel sollen die Formatierungsmöglichkeiten, die beim Erstellen der \autoref{tab:weitere_formatierungen} verwendet wurden, dargestellt werden.
 Der Code für die Präambel sieht wie folgt aus:
@@ -794,6 +799,8 @@ Der Code für die Präambel sieht wie folgt aus:
     \label{tab:weitere_formatierungen}
 \end{table}
 \end{lstlisting}
+
+\vspace{0.4cm}
 
 Darüber hinaus können \textbf{eigene Spaltentypen} definiert werden, um die Formatierung von Tabellen zu vereinfachen. Dazu wird der Befehl \textbf{\texttt{\textbackslash newcolumntype\{Spaltentypname\}\{Formatierung\}}} verwendet. In \autoref{tab:array_formatierungen} sind einige Möglichkeiten zur Formatierung von Spalten aufgeführt. Die neu erstellten Spaltentypen können dann in \textbf{\texttt{\textbackslash begin\{tabular\}\{...\}}} verwendet werden.
 
@@ -828,19 +835,21 @@ Es folgt ein Beispiel, dass das Verbinden von Zeilen und/oder Spalten in einer T
 
 \begin{table}[H]
     \centering
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{|c|c|c|}
-        \hline
-        \textbf{Spalte 1}                        & \textbf{Spalte 2}                             & \textbf{Spalte 3} \\
-        \hline
-        \multirow{2}{*}{\textbf{Mehrere Zeilen}} & Wert A                                        & Wert B            \\
-                                                 & Wert C                                        & Wert D            \\
-        \hline
-        Wert E                                   & \multicolumn{2}{c|}{\textbf{Mehrere Spalten}}                     \\
-        \hline
-        Eintrag 1                                & Eintrag 2                                     & Eintrag 3         \\
-        \hline
-    \end{tabular}
+    \resizebox{6.5cm}{!}{
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{Spalte 1}                        & \textbf{Spalte 2}                             & \textbf{Spalte 3} \\
+            \hline
+            \multirow{2}{*}{\textbf{Mehrere Zeilen}} & Wert A                                        & Wert B            \\
+                                                     & Wert C                                        & Wert D            \\
+            \hline
+            Wert E                                   & \multicolumn{2}{c|}{\textbf{Mehrere Spalten}}                     \\
+            \hline
+            Eintrag 1                                & Eintrag 2                                     & Eintrag 3         \\
+            \hline
+        \end{tabular}
+    }
     \caption{Beispiel Zeilen oder Spalten verbinden}
     \label{tab:example_multirow_multicolumn}
 \end{table}
@@ -883,6 +892,7 @@ Bilder können in Tabellen mit dem Befehl \textbf{\texttt{\textbackslash include
 
 \subsubsection{Professionelle Buchtabellen}
 Für professionelle Buchtabellen wird das Paket \textbf{\texttt{booktabs}} benötigt. Es bietet die Möglichkeit, Tabellen mit dezenten Linien zu erstellen.
+Beispiele für die Verwendung von \textbf{\texttt{booktabs}} sind in \autoref{tab:weitere_formatierungen} und \autoref{tab:array_formatierungen} zu finden.
 
 Die Linien können mit \textbf{\texttt{\textbackslash toprule}}, \textbf{\texttt{\textbackslash midrule}} und \textbf{\texttt{\textbackslash bottomrule}} definiert werden. Mit \newline \textbf{\texttt{\textbackslash cmidrule(Optionen)\{Startspalte-Endspalte\}}} kann eine Linie nur für bestimmte Spalten definiert werden. Die Optionen sind  \textbf{\texttt{l}} für eine links, \textbf{\texttt{r}} für eine rechts und \textbf{\texttt{lr}} für eine links und rechts weich abgeschnittene Linie .
 
@@ -930,7 +940,11 @@ Die Linien können mit \textbf{\texttt{\textbackslash toprule}}, \textbf{\texttt
     \end{table}
 \end{minipage}
 
-Die dicke der Linien kann mit \textbf{\texttt{\textbackslash midrule[...pt]}} angepasst werden. Ist ein breiterer Abstand zwischen den Linien gewünscht, kann dies mit \textbf{\texttt{\textbackslash addlinespace[...pt]}} erreicht werden.
+Die dicke der Linien kann mit \textbf{\texttt{\textbackslash midrule[...pt]}} angepasst werden.
+
+Ein breiterer Abstand zwischen den Linien kann mit \textbf{\texttt{\textbackslash addlinespace[...pt]}} eingefügt werden.
+
+\newpage
 
 \subsubsection{Tabellen über mehrere Seiten}
 Tabellen können sich oft über mehrere Seiten erstrecken. Damit ein Seitenumbruch erfolgen kann, wird das Paket \textbf{\texttt{longtable}} benötigt. Seitenumbrüchen können für normale Tabellen und für Buchtabellen ermöglicht werden. Es folgt die Einstellungen für das in \autoref{tab:operatoren} dargestellte Beispiel:
@@ -980,6 +994,8 @@ Soll die Proportion der Tabelle beibehalten werden, kann die Höhe mit \texttt{!
             ... 
         \end{tabular}
     }
+    \caption{...}
+    \label{...}
 \end{table}
     \end{lstlisting}
 
@@ -988,7 +1004,9 @@ Der \texttt{resizebox}-Befehl kann auch für andere Objekte angewendet werden, w
 \subsubsection{Tabellen mit farbigen Zellen}
 Tabellenzellen können mit dem Paket \textbf{\texttt{xcolor}} farbig gestaltet werden
 
-Der Befehl \textbf{\texttt{\textbackslash cellcolor\{Farbe!Deckkraft\}}} färbt die Zelle ein. Der Befehl \textbf{\texttt{\textbackslash rowcolor\{Farbe!Deckkraft\}}} färbt die gesamte Zeile ein. Soll nur die Schrift farbig sein, kann der Befehl \textbf{\texttt{\textbackslash textcolor\{Farbe\}}} verwendet werden (siehe auch: \ref{sec:schriftfarbe}).
+Der Befehl \textbf{\texttt{\textbackslash cellcolor\{Farbe!Deckkraft\}}} färbt die Zelle und der Befehl \textbf{\texttt{\textbackslash rowcolor\{Farbe!Deckkraft\}}} färbt die gesamte Zeile ein.
+
+Soll nur die Schrift farbig sein, kann der Befehl \textbf{\texttt{\textbackslash textcolor\{Farbe\}}} verwendet werden (siehe auch: \ref{sec:schriftfarbe}).
 
 \begin{minipage}{0.69\textwidth}
     \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small\ttfamily]
@@ -1030,7 +1048,7 @@ Der Befehl \textbf{\texttt{\textbackslash cellcolor\{Farbe!Deckkraft\}}} färbt 
 
 
 \subsubsection{Hilfreiche Internetseite}
-Latex Tabellen können auch mit dem Online-Tool \href{https://tablesgenerator.com/latex_tables}{Tables Generator} erstellt werden. Dieses Tool bietet eine grafische Benutzeroberfläche, um Tabellen zu erstellen und den entsprechenden \LaTeX-Code zu generieren. Die genannte Webseite bietet auch die Möglichkeit, Tabellen aus Excel-Dateien zu importieren und den entsprechenden \LaTeX-Code zu generieren.
+Latex Tabellen können auch mit dem Online-Tool \href{https://tablesgenerator.com/latex_tables}{Tables Generator} erstellt werden. Dieses Tool bietet eine grafische Benutzeroberfläche, um Tabellen zu erstellen und den entsprechenden \LaTeX-Code zu generieren. Die genannte Webseite bietet auch die Möglichkeit, Tabellen aus Excel-Dateien zu importieren und in den entsprechenden \LaTeX-Code umzuwandeln.
 
 Eine weitere Internetseite, die die Konvertierung von Tabellen aus Excel-Dateien in \LaTeX-Code ermöglicht, ist \href{https://www.latex-tables.com}{Latex-Tables}.
 
@@ -1055,12 +1073,15 @@ Als Ausrichtung können folgende Optionen verwendet werden. Die Verwendung einer
     \item[b] an unterer Kante ausgerichtet
 \end{description}
 
+\vspace{0.3cm}
+
 Die Breite kann in cm, mm, pt oder als \texttt{...\textbackslash textwidth} angegeben werden.
 
 Minipages werden in der Regel verwendet um Text und/oder Objekte nebeneinander platzieren zu können.
 Allerdings ist zu beachten, dass in einer \textbf{\texttt{minipage}}-Umgebung \textbf{keine Gleitobjekte} wie \texttt{figure} oder \texttt{table} verwendet werden können. Daher müssen Captions mit \textbf{\texttt{\textbackslash captionof\{...\}}} erstellt werden.
-
 Eine Ausnahme bilden Gleitobjekte in Verbindung mit der \textbf{\texttt{[H]}}-Ausrichtung.
+
+Es folgt ein Beispiel, dass eine Tabelle und ein Bild nebeneinander platziert:
 
 \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small\ttfamily]
 \begin{minipage}[c]{0.45\textwidth}
@@ -1119,7 +1140,7 @@ Eine Ausnahme bilden Gleitobjekte in Verbindung mit der \textbf{\texttt{[H]}}-Au
 
 \subsubsection{Parbox}
 Mit dem Befehl \textbf{\texttt{\textbackslash parbox[Ausrichtung]\{Breite\}\{Inhalt\}}} kann Text in einer Box platziert werden:
-Die Boxen lassen sich mit einem Rahmen anschließen (siehe auch: \autoref{sec:rahmen_und_boxen}).
+Die Boxen lassen sich optional mit einem Rahmen umschließen (siehe auch: \autoref{sec:rahmen_und_boxen}).
 
 \begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small\ttfamily]
 \fbox{\parbox[t]{0.3\textwidth}{Dies ist ein Beispieltext, der in einer Box platziert wurde.}}
