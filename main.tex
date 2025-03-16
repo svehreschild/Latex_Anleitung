@@ -72,7 +72,7 @@
 \usepackage{cite}               % Verbessert Zitierstil für BibTeX
 
 % Abkürzungsliste
-\usepackage{acronym} % -> \ac{...} 
+\usepackage{acronym}            % Ermöglicht die Erstellung einer Abkürzungsliste
 
 % Anhänge
 \usepackage[toc,page]{appendix} % Ermöglicht Anhänge mit eigener Überschrift
@@ -105,6 +105,13 @@
 \newpage
 \listoftables
 \listoffigures
+
+% Abkürzungsverzeichnis
+\section*{Abkürzungsverzeichnis}
+\begin{acronym}
+    \acro{API}{Application Programming Interface}
+\end{acronym}
+
 \newpage
 
 % Kapitel in separaten Dateien
