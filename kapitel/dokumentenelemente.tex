@@ -436,6 +436,7 @@ In manchen Fällen kann es sinnvoll sein, den Quellcode aus einer externen Datei
 \subsection{Bilder}
 In \LaTeX{} können Bilder auf folgende Weise eingefügt werden:
 Es wird das Paket \textbf{\texttt{graphicx}} benötigt.
+Das Inkludieren funktioniert nur für Bilder im Format \textbf{JPG}, \textbf{PNG} und \textbf{PDF}. Für andere Formate (\textbf{HEIC}, \textbf{SVG}) muss das Bild in ein unterstütztes Format konvertiert werden. Dies kann manuell oder mit Hilfe von Paketen, wie \textbf{\texttt{svg}}, erfolgen.
 
 \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{figure}[H]
@@ -452,6 +453,8 @@ Es wird das Paket \textbf{\texttt{graphicx}} benötigt.
     \caption{Sägezahnspannung}
     \label{fig:sägezahnspannung}
 \end{figure}
+
+\newpage
 
 Bilder können mit dem Befehl \textbf{\texttt{\textbackslash caption\{Bildunterschrift\}}} beschriftet werden. Mit dem Befehl \textbf{\texttt{\textbackslash label\{fig:bild\}}} wird ein Label gesetzt, auf welches im Text referenziert werden kann (\autoref{fig:sägezahnspannung})(siehe auch: \nameref{sec:querverweise}).
 
@@ -976,6 +979,8 @@ Tabellen können sich oft über mehrere Seiten erstrecken. Damit ein Seitenumbru
 
     ... 
     \midrule
+    Potenz   &    \texttt{a\^{}b}     &    $ a^b $    \\
+    Index    &    \texttt{a\_\{b\}}   &    $ a_b $    \\
     ... 
 
 \end{longtable}

@@ -2,7 +2,7 @@
 \subsection{Kommentare}
 Kommentare werden in \LaTeX{} mit einem Prozentzeichen eingeleitet. Alles, was nach dem Prozentzeichen in der selben Zeile steht, wird von \LaTeX{} ignoriert. Mehrzeilige Kommentare sind mit der \texttt{\textbf{comment}}-Umgebung möglich. Dafür wird das Paket \textbf{comment} benötigt. Funktional identisch ist der Befehl \textbf{\texttt{\textbackslash iffalse ... \textbackslash fi}}.
 
-\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small\ttfamily]
 % Dies ist ein einzeiliger Kommentar
     
 \begin{comment}
@@ -202,9 +202,9 @@ In Berichten werden in der Regel nur die Ebenen \textbf{section} bis \textbf{sub
 \LaTeX{} bietet ein automatisches Querverweis-System, welches es ermöglicht, auf Kapitel, Abschnitte, Bilder, Tabellen, Formeln und andere Elemente im Dokument zu verweisen.
 Dafür werden Labels an den gewünschten Stellen im Dokument gesetzt und an anderer Stelle mit Referenzen darauf verwiesen.
 
-\textbf{Labels} können mit dem Befehl \textbf{\texttt{\textbackslash label\{name\}}} gesetzt werden. Der Name kann frei gewählt werden, sollte aber eindeutig sein. Hilfreich ist die konventionelle Benennung, \textbf{fig:} für Bilder, \textbf{tab:} für Tabellen, \textbf{sec:} für Abschnitte und \textbf{eq:} für Formeln.
+\underline{\textbf{Labels}} können mit dem Befehl \textbf{\texttt{\textbackslash label\{name\}}} gesetzt werden. Der Name kann frei gewählt werden, sollte aber eindeutig sein. Hilfreich ist die konventionelle Benennung, \textbf{fig:} für Bilder, \textbf{tab:} für Tabellen, \textbf{sec:} für Abschnitte und \textbf{eq:} für Formeln.
 
-\textbf{Referenzen} können mit dem Befehl \textbf{\texttt{\textbackslash ref\{name\}}} gesetzt werden. Der Name entspricht dem des Label, auf das verwiesen werden soll.
+\underline{\textbf{Referenzen}} können mit dem Befehl \textbf{\texttt{\textbackslash ref\{name\}}} gesetzt werden. Der Name entspricht dem des Label, auf das verwiesen werden soll.
 
 Mit dem Befehl \textbf{\texttt{\textbackslash pageref\{name\}}} kann auf die Seitenzahl des Labels verwiesen werden.
 
@@ -216,7 +216,7 @@ Mit dem Befehl \textbf{\texttt{\textbackslash hyperref[name]\{eigener Kommentar\
 
 Mit \textbf{\texttt{\textbackslash href\{URL\}\{Text\}}} kann ein Link zu einer URL gesetzt werden.
 
-In \autoref{tab:querverweise} wird dies anhand eines Beispiels demonstriert:
+In \autoref{tab:querverweise} wird dies durch ein Beispiel demonstriert:
 \input{anlagen/tabellen/quellenverweise}
 
 Bei den Befehlen (Ausnahme \textbackslash eqref und \textbackslash href) kann ein \textbf{*} verwendet werden um den Hyperlink zu entfernen. Beispiel: \texttt{\textbackslash ref*\{sec:querverweise\}}

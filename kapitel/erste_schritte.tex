@@ -38,7 +38,7 @@ Als Position sind die folgenden Angaben möglich:
   \item \textbf{C} / \textbf{L} / \textbf{R} in Kombination mit \textbf{E} oder \textbf{O} für gerade oder ungerade Seitenzahlen möglich
 \end{itemize}
 
-Ist eine Seitennummerierung in der Form Seite X von Y gewünscht, kann dies mit dem Befehl \textbf{\texttt{\textbackslash fancyfoot[C]\{Seite \textbackslash thepage$\thicksim$von$\thicksim$\textbackslash pageref\{LastPage\}\}}} ermöglicht werden. Hierbei wird das Paket \textbf{lastpage} benötigt.
+Ist eine Seitennummerierung in der Form Seite X von Y gewünscht, kann dies mit dem Befehl \textbf{\texttt{\textbackslash fancyfoot[C]\{Seite \textbackslash thepage$\thicksim$von$\thicksim$\textbackslash pageref*\{LastPage\}\}}} ermöglicht werden. Hierbei wird das Paket \textbf{lastpage} benötigt.
 
 Soll die Kopfzeile den aktuellen \textbackslash section\{\} Namen anzeigen, kann dies mit dem Befehl \\ \textbf{\texttt{\textbackslash fancyhead[R]\{\{\textbackslash leftmark\}\}}} erreicht werden.
 
@@ -139,10 +139,12 @@ Das Abkürzungsverzeichnis wird automatisch an der Stelle eingefügt, an der die
 
 \subsection{Literaturverzeichnis}
 \label{sec:literaturverzeichnis_erklärung}
-In \LaTeX{} kann ein \hyperref[sec:literaturverzeichnis]{Literaturverzeichnis} mit Hilfe von BibTeX erstellt werden.
+In \LaTeX{} kann ein \hyperref[sec:literaturverzeichnis]{Literaturverzeichnis} mit Hilfe von \textbf{BibTeX} erstellt werden.
+Alternativ kann \textbf{biblatex} oder \textbf{natbib} verwendet werden.
 
 \subsubsection{Erstellen einer \textbf{\texttt{.bib}}-Datei}
 Zunächst werden die Literaturangaben in einer \textbf{\texttt{.bib}}-Datei (literatur.bib) gespeichert. Vorzugsweise im gleichen Ordner wie die Hauptdatei.
+Die möglichen \textbf{Eintragstypen} wurden \href{https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex#Taking_another_look_at_.bib_files}{hier} zusammen geführt.
 
 Es folgt ein Beispiel für eine \textbf{\texttt{literatur.bib}}-Datei:
 
@@ -189,7 +191,7 @@ Es folgt ein Beispiel für eine \textbf{\texttt{literatur.bib}}-Datei:
 
 \subsubsection{Einbinden des Literaturverzeichnisses}
 Zunächst wird der Stil des Literaturverzeichnisses mit dem Befehl \textbf{\texttt{\textbackslash bibliographystyle\{Stil\}}} festgelegt.
-Es stehen folgende Stile zur Auswahl:
+Es stehen folgende Stile zur Auswahl (siehe auch: \href{https://www.overleaf.com/learn/latex/Bibtex_bibliography_styles}{overleaf-bibtex-styles}):
 \begin{itemize}
   \item \textbf{plain} – Alphabetische Sortierung nach Autoren (Standardstil).
   \item \textbf{unsrt} – Reihenfolge der Zitierung im Text (nicht alphabetisch).

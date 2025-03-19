@@ -89,7 +89,7 @@
 % Kopf- und Fußzeilen
 \pagestyle{fancy}                                    % Aktiviert individuelle Kopf- und Fußzeilen
 \fancyfoot{}                                         % Löscht alle Standard-Fußzeilen
-\fancyfoot[C]{Seite \thepage~von~\pageref{LastPage}} % Fußzeile mit "Seite X von Y"     % Praktisch auch:[RO,LE]
+\fancyfoot[C]{Seite \thepage~von~\pageref*{LastPage}} % Fußzeile mit "Seite X von Y"     % Praktisch auch:[RO,LE]
 \fancyfoot[R]{Simon Vehreschild}                     % Rechte Seite: Autorname
 \fancyfoot[L]{\LaTeX{} Anleitung}                    % Linke Seite: Dokumentname#
 \renewcommand{\footrulewidth}{0.4pt}                 % Linie über der Fußzeile
