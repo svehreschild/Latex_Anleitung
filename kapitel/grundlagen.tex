@@ -21,9 +21,15 @@ Im folgenden werden zwei Varianten zur Verwendung von \LaTeX{} vorgestellt:
 
 \subsubsection{Visual Studio Code mit TeX Live}
 \label{sec:visual_studio_code_mit_tex_live}
-Visual Studio Code ist ein kostenloser, quelloffener Code-Editor von Microsoft, der viele Funktionen für die Entwicklung von Software bietet. Mit der Erweiterung \texttt{LaTeX Workshop} kann Visual Studio Code auch zum Erstellen von \LaTeX{}-Dokumenten verwendet werden. Die Software kann \href{https://code.visualstudio.com/Download}{hier} beim Hersteller heruntergeladen werden.
+Visual Studio Code ist bekannt als ein kostenloser, quelloffener Code-Editor, der viele Funktionen für die Entwicklung von Software bietet und mit Versionskontrollsystemen wie Git kompatibel ist. Mit der Erweiterung \texttt{LaTeX Workshop} kann Visual Studio Code auch zum Erstellen von \LaTeX{}-Dokumenten verwendet werden.
 
-Die Erweiterung \texttt{LaTeX Workshop} kann über den \texttt{Extensions}-Tab in Visual Studio Code installiert werden.
+
+Damit später in Visual Studio Code \LaTeX{}-Dokumente erstellt und bearbeitet werden können, muss zunächst eine \LaTeX{}-Distribution installiert werden. In diesem Beispiel wird \texttt{TeX Live} verwendet, da es plattformübergreifend verfügbar ist. Der Download von \texttt{TeX Live} kann \href{https://www.tug.org/texlive/}{hier} gestartet werden. Es ist sinnvoll eine Vollständige Installation durchzuführen, um alle benötigten Pakete und Programme zu installieren.
+
+Visual Studio Code kann \href{https://code.visualstudio.com/Download}{hier} beim Hersteller heruntergeladen werden.
+
+Die Erweiterung \texttt{LaTeX Workshop} wird über das \texttt{Extensions}-Tab in Visual Studio Code installiert:
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{anlagen/bilder/Latex_Workshop_Ext.pdf}
@@ -31,52 +37,32 @@ Die Erweiterung \texttt{LaTeX Workshop} kann über den \texttt{Extensions}-Tab i
     \label{fig:visual_studio_code_latex_workshop}
 \end{figure}
 
-Tex Live .....
-später in VSC einbinden
+Sobald \texttt{LaTeX Workshop} installiert ist, erscheint ein \TeX{} Button an der linken Seite des Visual Studio Code Fensters. Mit einem Klick auf den Button wird ein speziell für \LaTeX{}-Dokumente angepasstes Menü geöffnet, das viele Funktionen zur Verfügung stellt, die das Erstellen von \LaTeX{}-Dokumenten erleichtern. Dort ist das Kompilieren des Dokuments, sowie das Anzeigen der PDF-Datei möglich.
 
+Nun muss geprüft werden, ob der Dateipfade zu der \LaTeX{}-Distribution \texttt{TeX Live} in Visual Studio Code korrekt hinterlegt ist.
+Dazu kann ein einfaches \LaTeX{}-Dokument erstellt werden, das den folgenden Code enthält:
 
+\begin{minipage}{0.5\textwidth}
+    \begin{lstlisting}[language=TeX]
+\documentclass{article}
+\begin{document}
+    Hello, World!
+\end{document}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\parbox[b]{0.45\textwidth}{Wenn das Dokument ohne Fehler kompiliert werden kann, ist der Pfad korrekt hinterlegt.}
 
+Normalerweise wird der Dateipfad automatisch erkannt, wenn \texttt{TeX Live} korrekt installiert ist. Sollte dies nicht der Fall gibt es \href{https://github.com/James-Yu/LaTeX-Workshop/wiki/Install#setting-path-environment-variable}{hier} einige Hilfestellungen.
 
-
-
-
-
-
-
-
-
-
-ggf. latexindent
+Zusätzlich ist die Visual Studio Code Erweiterung \texttt{latexindent} empfehlenswert, um den Code automatisch zu formatieren. Die Erweiterung kann über den \texttt{Extensions}-Tab in Visual Studio Code installiert werden.
 
 
 \subsubsection{Overleaf}
 \label{sec:overleaf}
+Ein weiteres Tool zur Erstellung von \LaTeX{}-Dokumenten ist \texttt{Overleaf}. Dies ist ein Online-\LaTeX{}-Editor, der es ermöglicht, \LaTeX{}-Dokumente direkt im Browser zu erstellen und zu bearbeiten. Der Vorteil von \texttt{Overleaf} ist, dass keine Installation einer \LaTeX{}-Distribution notwendig ist und die Dokumente online gespeichert werden. ...
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Kostenfreie Variante ...
 
 
 
