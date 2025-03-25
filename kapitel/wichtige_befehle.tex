@@ -227,7 +227,7 @@ Bei den Befehlen (Ausnahme \textbackslash eqref und \textbackslash href) kann ei
 In \LaTeX{} können Zitate und Literaturverweise mit dem Befehl \textbf{\texttt{\textbackslash cite\{Schlüssel\}}} gesetzt werden. Der Schlüssel entspricht dem Namen des Eintrags in der Literaturdatenbank.
 Für das Zitieren wird das Paket \textbf{cite} benötigt.
 
-Es gibt verschiedene Zitierstile, die festgelegt werden können (siehe auch: \nameref{sec:literaturverzeichnis_erklärung}). Im folgenden wird der Stil \textbf{plain} verwendet.
+Es gibt verschiedene Zitierstile, die festgelegt werden können (siehe auch: \nameref{sec:literaturverzeichnis_erklärung}). Im folgenden wird der Stil \textbf{IEEEtran} verwendet.
 
 \subsubsection{Einfache Zitate}
 
@@ -267,10 +267,53 @@ Laut Mustermann \cite[S. 5]{buch1} ist ...
     Laut Mustermann \cite[S. 5]{buch1} ist ...
 \end{minipage}
 
+\newpage
+
+\subsubsection{lange Zitate}
+Mit der \textbf{quote}-Umgebung können lange Zitate in einem eigenen Absatz dargestellt werden.
+
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{quote}
+    "Dies ist ein langes Zitat."
+    \cite{buch1}
+\end{quote}
+    \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{quote}
+        "Dies ist ein langes Zitat"
+        \cite{buch1}
+    \end{quote}
+\end{minipage}
 
 \subsubsection{Quellen nur im Literaturverzeichnis anzeigen}
 Mit dem Befehl \textbf{\texttt{\textbackslash nocite\{Schlüssel\}}} können Einträge aus der Literaturdatenbank (literatur.bib) im Literaturverzeichnis angezeigt werden ohne im Text zitiert zu werden.
 Die Verwendung von \textbf{\texttt{\textbackslash nocite\{*\}}} zeigt alle Einträge der Literaturdatenbank im Literaturverzeichnis an.
+
+\subsubsection{Direktes Zitieren}
+Bei dem direkten Zitieren wird eine Passage wörtlich übernommen und in Anführungszeichen gesetzt.
+
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{quote}
+    "Dies ist ein direktes Zitat."
+    \cite{buch1}
+\end{quote}
+    \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{quote}
+        "Dies ist ein direktes Zitat."
+        \cite{buch1}
+    \end{quote}
+\end{minipage}
+
+\subsubsection{Indirektes Zitieren}
+
+
 
 
 \subsection{Einheiten mit \texttt{siunitx}}
