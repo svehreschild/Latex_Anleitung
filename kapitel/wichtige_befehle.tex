@@ -25,6 +25,7 @@ Die Schriftgröße kann mit den folgenden Befehlen geändert werden:
 Durch Verwendung von geschweiften Klammern kann der Befehl auf einen eingeschränkten Textbereich angewendet werden:
 Beispiel: \textbf{\texttt{\{\textbackslash large großer Text\}}}
 
+\newpage
 \subsubsection{Schriftstil}
 Der Schriftstil kann mit den folgenden Befehlen geändert werden:
 
@@ -33,7 +34,6 @@ Der Schriftstil kann mit den folgenden Befehlen geändert werden:
 Die Schriftstile können mit den Schriftgrößen kombiniert und mit anderen Schriftstilen überlagert werden.
 Es ist zu beachten, dass \textbf{\texttt{\textbackslash lowercase\{\}}} und \textbf{\texttt{\textbackslash uppercase\{\}}} zu Problemen mit Umlauten führen können, daher ist die Verwendung von \textbf{\texttt{\textbackslash MakeUppercase\{\}}} und \textbf{\texttt{\textbackslash MakeLowercase\{\}}} zu empfehlen.
 
-\newpage
 
 \subsubsection{Schriftfarbe}
 \label{sec:schriftfarbe}
@@ -99,7 +99,6 @@ Einige Zeichen, wie \textbf{\%}, \textbf{\#}, \textbf{\&}, \textbf{\_} und \text
 
 Für einige Zeichen gibt es auch spezielle Befehle, die eine Darstellung unabhängig von der Funktion des Zeichens ermöglichen. Beispiele sind \textbf{\textbackslash textbackslash} für den Backslash \textbf{\textbackslash}, \textbf{\textbackslash textasciitilde} für die Tilde \textbf{\textasciitilde} und \textbf{\textbackslash textasciicircum} für das Zirkumflex \textbf{\textasciicircum}.
 
-\newpage
 
 \subsection{Abstandsformatierung}
 \subsubsection{Vertikaler Abstand}
@@ -171,7 +170,6 @@ Es ist zu beachten, dass der Befehl \texttt{\textbackslash include} in bereits i
 \label{sec:einbinden_von_pdf_dateien}
 PDF-Dateien können in \LaTeX{}-Dokumente eingebunden werden. Dafür wird das Paket \textbf{pdfpages} benötigt. Die Einbindung erfolgt mit dem Befehl \textbf{\texttt{\textbackslash includepdf\{Pfad/zur/Datei.pdf\}}}. Es können auch nur bestimmte Seiten eingebunden werden mit der Option \textbf{\texttt{\textbackslash includepdf[pages=\{...\}]\{Pfad/zur/Datei.pdf\}}}.
 
-\newpage
 
 \subsection{Dokumentenhierarchie}
 Jedes \LaTeX{}-Dokument hat eine Hierarchie, die durch die folgende Befehle definiert wird:
@@ -196,6 +194,7 @@ In Berichten werden in der Regel nur die Ebenen \textbf{section} bis \textbf{sub
 
 \subsubsection*{1.1.1 \hspace{0.15cm} subsubsection}
 
+\newpage
 
 \subsection{Querverweise}
 \label{sec:querverweise}
@@ -267,7 +266,6 @@ Laut Mustermann \cite[S. 5]{buch1} ist ...
     Laut Mustermann \cite[S. 5]{buch1} ist ...
 \end{minipage}
 
-\newpage
 
 \subsubsection{lange Zitate}
 Mit der \textbf{quote}-Umgebung können lange Zitate in einem eigenen Absatz dargestellt werden.
@@ -275,7 +273,8 @@ Mit der \textbf{quote}-Umgebung können lange Zitate in einem eigenen Absatz dar
 \begin{minipage}[c]{0.48\textwidth}
     \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{quote}
-    "Dies ist ein langes Zitat."
+    Dies ist ein langes Zitat. 
+    Uber mehrere Zeilen.
     \cite{buch1}
 \end{quote}
     \end{lstlisting}
@@ -283,7 +282,8 @@ Mit der \textbf{quote}-Umgebung können lange Zitate in einem eigenen Absatz dar
 \hfill
 \begin{minipage}[c]{0.48\textwidth}
     \begin{quote}
-        "Dies ist ein langes Zitat"
+        Dies ist ein langes Zitat.
+        Über mehrere Zeilen.
         \cite{buch1}
     \end{quote}
 \end{minipage}
@@ -293,7 +293,7 @@ Mit dem Befehl \textbf{\texttt{\textbackslash nocite\{Schlüssel\}}} können Ein
 Die Verwendung von \textbf{\texttt{\textbackslash nocite\{*\}}} zeigt alle Einträge der Literaturdatenbank im Literaturverzeichnis an.
 
 \subsubsection{Direktes Zitieren}
-Bei dem direkten Zitieren wird eine Passage wörtlich übernommen und in Anführungszeichen gesetzt.
+Bei dem direkten Zitieren wird eine Passage \textbf{wörtlich übernommen} und \textbf{in Anführungszeichen} gesetzt.
 
 \begin{minipage}[c]{0.48\textwidth}
     \begin{lstlisting}[language={[LaTeX]TeX}]
@@ -311,9 +311,29 @@ Bei dem direkten Zitieren wird eine Passage wörtlich übernommen und in Anführ
     \end{quote}
 \end{minipage}
 
+Falls ein Teil des Zitates ausgelassen werden soll, ist dies mit \textbf{\texttt{[...]}} möglich.
+
+Es ist zu beachten, dass lange direkte Zitate in wissenschaftlichen Arbeiten unprofessionell wirken und daher vermieden werden sollten. Direkte Zitate eignen sich nur für kurze und prägnante Aussagen, wie zum Beispiel Definitionen.
+
+Bei direkten Zitaten, die länger als drei Zeilen sind, ist es üblich, den Text einzurücken.
+
 \subsubsection{Indirektes Zitieren}
+Bei dem indirekten Zitieren wird eine Passage \textbf{in eigenen Worten wiedergegeben} (paraphrasieren). Es ist wichtig, dass die Aussage des Autors korrekt und nicht wörtlich wiedergegeben wird.
+Darüber hinaus sind mehrere Quellenangaben möglich um die Aussage stärker zu untermauern, wenn die Aussagen der Quellen übereinstimmen.
 
+\begin{minipage}[c]{0.55\textwidth}
+    \begin{lstlisting}[language={[LaTeX]TeX}]
+Laut Mustermann \cite{buch1} ist ...
 
+Legosteine sind Bausteine, die stapelbar sind \cite{buch1}.
+    \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.38\textwidth}
+    Laut Mustermann \cite{buch1} ist ...
+
+    Legosteine sind Bausteine, die stapelbar sind \cite{buch1}.
+\end{minipage}
 
 
 \subsection{Einheiten mit \texttt{siunitx}}

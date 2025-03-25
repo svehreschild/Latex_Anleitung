@@ -1,3 +1,4 @@
+\newpage
 \section{Dokumentenelemente}
 
 Neben dem Text gibt es noch weitere Elemente, die in einem Dokument vorkommen können. Dazu gehören unter anderem Bilder, Tabellen, Listen, Quellcode und ähnliche Elemente. In diesem Kapitel werden die wichtigsten Elemente vorgestellt.
@@ -5,7 +6,6 @@ Neben dem Text gibt es noch weitere Elemente, die in einem Dokument vorkommen k�
 Bei den folgenden Listen ist es möglich weitere Optionen zu setzen. Dazu werden Optionen in eckigen Klammern angegeben.
 Wichtige Optionen sind z.B.: \textbf{\texttt{leftmargin=...}} für das setzen des linken Randes oder \textbf{\texttt{itemsep=...}} für den Abstand zwischen den einzelnen Elementen.
 
-\newpage
 
 \subsection{Listen}
 In \LaTeX{} gibt es verschiedene Arten von Listen. Es folgen die wichtigsten Beispiele.
@@ -952,7 +952,7 @@ Ein breiterer Abstand zwischen den Linien kann mit \textbf{\texttt{\textbackslas
 \subsubsection{Tabellen über mehrere Seiten}
 Tabellen können sich oft über mehrere Seiten erstrecken. Damit ein Seitenumbruch erfolgen kann, wird das Paket \textbf{\texttt{longtable}} benötigt. Seitenumbrüchen können für normale Tabellen und für Buchtabellen ermöglicht werden. Es folgt die Einstellungen für das in \autoref{tab:operatoren} dargestellte Beispiel:
 
-\begin{lstlisting}[language={[LaTeX]TeX}, emph={\endfirsthead,\endhead,\endfoot,\endlastfoot}, emphstyle={\color{red}}]
+\begin{lstlisting}[language={[LaTeX]TeX}, emph={\endfirsthead,\endhead,\endfoot,\endlastfoot}, emphstyle={\color{red}}, basicstyle=\small\ttfamily]
 \begin{longtable}{l l l}
     % Ueberschrift fuer die erste Seite
     \toprule
@@ -991,7 +991,7 @@ Häufig sind Tabellen zu breit für die Seite. Solche Tabellen können mit dem B
 
 Soll die Proportion der Tabelle beibehalten werden, kann die Höhe mit \texttt{!} angegeben werden. Die Tabelle wird dann proportional zur Breite skaliert.
 
-\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{lstlisting}[language={[LaTeX]TeX}, basicstyle=\small\ttfamily]
 \begin{table}[H]
     \centering
     \resizebox{\textwidth}{!}{
@@ -1003,7 +1003,6 @@ Soll die Proportion der Tabelle beibehalten werden, kann die Höhe mit \texttt{!
     \label{...}
 \end{table}
     \end{lstlisting}
-
 Der \texttt{resizebox}-Befehl kann auch für andere Objekte angewendet werden, wie z.B. Bilder oder Texte.
 
 \subsubsection{Tabellen mit farbigen Zellen}
