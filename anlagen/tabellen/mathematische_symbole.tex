@@ -2,12 +2,12 @@
 \begin{longtable}{l l l}
     % Überschrift für die erste Seite
     \toprule
-    \textbf{Operator}         & \textbf{LaTeX-Code}                                                                     & \textbf{Beispiel}                    \\
+    \textbf{Operator}         & \textbf{LaTeX-Code}                                                                      & \textbf{Beispiel}                    \\
     \midrule
     \endfirsthead
     % Überschrift für alle folgenden Seiten
     \toprule
-    \textbf{Operator}         & \textbf{LaTeX-Code}                                                                     & \textbf{Beispiel}                    \\
+    \textbf{Operator}         & \textbf{LaTeX-Code}                                                                      & \textbf{Beispiel}                    \\
     \midrule
     \endhead
 
@@ -24,71 +24,72 @@
     \endlastfoot
 
 
-    Gleichheit                & \texttt{=}                                                                              & $ a = b $                            \\
-    Ungleichheit              & \texttt{\textbackslash neq}                                                             & $ a \neq b $                         \\
-    Größer als                & \texttt{>}                                                                              & $ a > b $                            \\
-    Kleiner als               & \texttt{<}                                                                              & $ a < b $                            \\
-    Größer-gleich             & \texttt{\textbackslash geq}                                                             & $ a \geq b $                         \\
-    Kleiner-gleich            & \texttt{\textbackslash leq}                                                             & $ a \leq b $                         \\
+    Gleichheit                & \texttt{=}                                                                               & $ a = b $                            \\
+    Ungleichheit              & \texttt{\textbackslash neq}                                                              & $ a \neq b $                         \\
+    Größer als                & \texttt{>}                                                                               & $ a > b $                            \\
+    Kleiner als               & \texttt{<}                                                                               & $ a < b $                            \\
+    Größer-gleich             & \texttt{\textbackslash geq}                                                              & $ a \geq b $                         \\
+    Kleiner-gleich            & \texttt{\textbackslash leq}                                                              & $ a \leq b $                         \\
 
     \midrule
-    Plus                      & \texttt{+}                                                                              & $ a + b $                            \\
-    Minus                     & \texttt{-}                                                                              & $ a - b $                            \\
-    Mal (×)                   & \texttt{\textbackslash times}                                                           & $ a \times b $                       \\
-    Mal (Punkt)               & \texttt{\textbackslash cdot}                                                            & $ a \cdot b $                        \\
-    Geteilt (Bruch)           & \texttt{\textbackslash frac\{a\}\{b\}}                                                  & $ \frac{a}{b} $                      \\
-    Doppelbrüche              & \texttt{\textbackslash cfrac\{a\}\{b + \textbackslash cfrac\{2\}\{3\}\}}                & $ \cfrac{a}{b + \cfrac{2}{3}} $      \\
-    Geteilt (÷)               & \texttt{\textbackslash div}                                                             & $ a \div b $                         \\
-    Prozent                   & \texttt{\%}                                                                             & $ 50\% $                             \\
-    Potenz                    & \texttt{a\^{}b}                                                                         & $ a^b $                              \\
-    Index                     & \texttt{a\_\{b\}}                                                                       & $ a_b $                              \\
-    Modulo                    & \texttt{a \textbackslash bmod b}                                                        & $ a \bmod b $                        \\
+    Plus                      & \texttt{+}                                                                               & $ a + b $                            \\
+    Minus                     & \texttt{-}                                                                               & $ a - b $                            \\
+    Mal (×)                   & \texttt{\textbackslash times}                                                            & $ a \times b $                       \\
+    Mal (Punkt)               & \texttt{\textbackslash cdot}                                                             & $ a \cdot b $                        \\
+    Geteilt (Bruch)           & \texttt{\textbackslash frac\{a\}\{b\}}                                                   & $ \frac{a}{b} $                      \\
+    Doppelbrüche              & \texttt{\textbackslash cfrac\{a\}\{b + \textbackslash cfrac\{2\}\{3\}\}}                 & $ \cfrac{a}{b + \cfrac{2}{3}} $      \\
+    Geteilt (÷)               & \texttt{\textbackslash div}                                                              & $ a \div b $                         \\
+    Prozent                   & \texttt{\%}                                                                              & $ 50\% $                             \\
+    Potenz                    & \texttt{a\^{}b}                                                                          & $ a^b $                              \\
+    Index                     & \texttt{a\_\{b\}}                                                                        & $ a_b $                              \\
+    Modulo                    & \texttt{a \textbackslash bmod b}                                                         & $ a \bmod b $                        \\
 
     \midrule
-    Summenzeichen             & \texttt{\textbackslash sum\_\{i=1\}\^{}\{n\} ...}                                       & $ \sum_{i=1}^{n} ... $               \\
-    Produktzeichen            & \texttt{\textbackslash prod\_\{i=1\}\^{}\{n\} ...}                                      & $ \prod_{i=1}^{n} ... $              \\
-    Integral                  & \texttt{\textbackslash int\_\{a\}\^{}\{b\} f(x) \textbackslash, dx}                     & $ \int_{a}^{b} f(x) \,dx $           \\
-    Ableitung                 & \texttt{\textbackslash frac\{d\}\{dx\} f(x)}                                            & $ \frac{d}{dx} f(x) $                \\
-    Ableitung (partiell)      & \texttt{\textbackslash frac\{\textbackslash partial\}\{\textbackslash partial x\} f(x)} & $ \frac{\partial}{\partial x} f(x) $ \\
-    Ableitung (nach der Zeit) & \texttt{\textbackslash dot\{x\}}                                                        & $ \dot{x} $                          \\
+    Summenzeichen             & \texttt{\textbackslash sum\_\{i=1\}\^{}\{n\} ...}                                        & $ \sum_{i=1}^{n} ... $               \\
+    Produktzeichen            & \texttt{\textbackslash prod\_\{i=1\}\^{}\{n\} ...}                                       & $ \prod_{i=1}^{n} ... $              \\
+    Integral                  & \texttt{\textbackslash int\_\{a\}\^{}\{b\} f(x) \textbackslash, dx}                      & $ \int_{a}^{b} f(x) \,dx $           \\
+    Integral (schöne Grenzen) & \texttt{\textbackslash int\textbackslash limits\_\{a\}\^{}\{b\} f(x) \textbackslash, dx} & $ \int\limits_{a}^{b} f(x) \,dx $    \\
+    Ableitung                 & \texttt{\textbackslash frac\{d\}\{dx\} f(x)}                                             & $ \frac{d}{dx} f(x) $                \\
+    Ableitung (partiell)      & \texttt{\textbackslash frac\{\textbackslash partial\}\{\textbackslash partial x\} f(x)}  & $ \frac{\partial}{\partial x} f(x) $ \\
+    Ableitung (nach der Zeit) & \texttt{\textbackslash dot\{x\}}                                                         & $ \dot{x} $                          \\
 
     \midrule
-    Betrag                    & \texttt{\textbackslash left| x \textbackslash right|}                                   & $ \left| x \right| $                 \\
-    Wurzel                    & \texttt{\textbackslash sqrt\{x\}}                                                       & $ \sqrt{x} $                         \\
-    n-te Wurzel               & \texttt{\textbackslash sqrt[n]\{x\}}                                                    & $ \sqrt[n]{x} $                      \\
-    Logarithmus               & \texttt{\textbackslash log{(x)}}                                                        & $ \log{(x)} $                        \\
-    Natürlicher Logarithmus   & \texttt{\textbackslash ln{(x)}}                                                         & $ \ln{(x)} $                         \\
-    Exponentialfunktion       & \texttt{e\^{}x}, \texttt{\textbackslash exp{(x)}}                                       & $ e^x, \exp{(x)} $                   \\
+    Betrag                    & \texttt{\textbackslash left| x \textbackslash right|}                                    & $ \left| x \right| $                 \\
+    Wurzel                    & \texttt{\textbackslash sqrt\{x\}}                                                        & $ \sqrt{x} $                         \\
+    n-te Wurzel               & \texttt{\textbackslash sqrt[n]\{x\}}                                                     & $ \sqrt[n]{x} $                      \\
+    Logarithmus               & \texttt{\textbackslash log{(x)}}                                                         & $ \log{(x)} $                        \\
+    Natürlicher Logarithmus   & \texttt{\textbackslash ln{(x)}}                                                          & $ \ln{(x)} $                         \\
+    Exponentialfunktion       & \texttt{e\^{}x}, \texttt{\textbackslash exp{(x)}}                                        & $ e^x, \exp{(x)} $                   \\
 
     \midrule
-    Sinus                     & \texttt{\textbackslash sin{(x)}}                                                        & $ \sin{(x)} $                        \\
-    Kosinus                   & \texttt{\textbackslash cos{(x)}}                                                        & $ \cos{(x)} $                        \\
-    Tangens                   & \texttt{\textbackslash tan{(x)}}                                                        & $ \tan{(x)} $                        \\
-    Cotangens                 & \texttt{\textbackslash cot{(x)}}                                                        & $ \cot{(x)} $                        \\
-    Arkussinus                & \texttt{\textbackslash arcsin{(x)}}                                                     & $ \arcsin{(x)} $                     \\
-    Arkuskosinus              & \texttt{\textbackslash arccos{(x)}}                                                     & $ \arccos{(x)} $                     \\
-    Arkustangens              & \texttt{\textbackslash arctan{(x)}}                                                     & $ \arctan{(x)} $                     \\
+    Sinus                     & \texttt{\textbackslash sin{(x)}}                                                         & $ \sin{(x)} $                        \\
+    Kosinus                   & \texttt{\textbackslash cos{(x)}}                                                         & $ \cos{(x)} $                        \\
+    Tangens                   & \texttt{\textbackslash tan{(x)}}                                                         & $ \tan{(x)} $                        \\
+    Cotangens                 & \texttt{\textbackslash cot{(x)}}                                                         & $ \cot{(x)} $                        \\
+    Arkussinus                & \texttt{\textbackslash arcsin{(x)}}                                                      & $ \arcsin{(x)} $                     \\
+    Arkuskosinus              & \texttt{\textbackslash arccos{(x)}}                                                      & $ \arccos{(x)} $                     \\
+    Arkustangens              & \texttt{\textbackslash arctan{(x)}}                                                      & $ \arctan{(x)} $                     \\
 
     \midrule
-    Konjunktion (UND)         & \texttt{\textbackslash wedge}                                                           & $ A \wedge B $                       \\
-    Disjunktion (ODER)        & \texttt{\textbackslash vee}                                                             & $ A \vee B $                         \\
-    Negation                  & \texttt{\textbackslash neg}                                                             & $ \neg A $                           \\
-    Implikation               & \texttt{\textbackslash Rightarrow}                                                      & $ A \Rightarrow B $                  \\
-    Äquivalenz                & \texttt{\textbackslash Leftrightarrow}                                                  & $ A \Leftrightarrow B $              \\
+    Konjunktion (UND)         & \texttt{\textbackslash wedge}                                                            & $ A \wedge B $                       \\
+    Disjunktion (ODER)        & \texttt{\textbackslash vee}                                                              & $ A \vee B $                         \\
+    Negation                  & \texttt{\textbackslash neg}                                                              & $ \neg A $                           \\
+    Implikation               & \texttt{\textbackslash Rightarrow}                                                       & $ A \Rightarrow B $                  \\
+    Äquivalenz                & \texttt{\textbackslash Leftrightarrow}                                                   & $ A \Leftrightarrow B $              \\
 
     \midrule
-    Natürliche Zahlen         & \texttt{\textbackslash mathbb\{N\}}                                                     & \( \mathbb{N} \)                     \\
-    Ganze Zahlen              & \texttt{\textbackslash mathbb\{Z\}}                                                     & \( \mathbb{Z} \)                     \\
-    Rationale Zahlen          & \texttt{\textbackslash mathbb\{Q\}}                                                     & \( \mathbb{Q} \)                     \\
-    Reelle Zahlen             & \texttt{\textbackslash mathbb\{R\}}                                                     & \( \mathbb{R} \)                     \\
-    Komplexe Zahlen           & \texttt{\textbackslash mathbb\{C\}}                                                     & \( \mathbb{C} \)                     \\
+    Natürliche Zahlen         & \texttt{\textbackslash mathbb\{N\}}                                                      & \( \mathbb{N} \)                     \\
+    Ganze Zahlen              & \texttt{\textbackslash mathbb\{Z\}}                                                      & \( \mathbb{Z} \)                     \\
+    Rationale Zahlen          & \texttt{\textbackslash mathbb\{Q\}}                                                      & \( \mathbb{Q} \)                     \\
+    Reelle Zahlen             & \texttt{\textbackslash mathbb\{R\}}                                                      & \( \mathbb{R} \)                     \\
+    Komplexe Zahlen           & \texttt{\textbackslash mathbb\{C\}}                                                      & \( \mathbb{C} \)                     \\
 
     \midrule
-    Laplace-Transformation    & \texttt{\textbackslash mathcal\{L\}\{f(t)\}}                                            & \( \mathcal{L}\{f(t)\} \)            \\
-    Fourier-Transformation    & \texttt{\textbackslash mathcal\{F\}\{f(t)\}}                                            & \( \mathcal{F}\{f(t)\} \)            \\
-    Nabla-Operator            & \texttt{\textbackslash nabla}                                                           & \( \nabla \)                         \\
-    Gradient                  & \texttt{\textbackslash nabla f}                                                         & \( \nabla f \)                       \\
-    Divergenz                 & \texttt{\textbackslash nabla \textbackslash cdot \textbackslash vec{F}}                 & \( \nabla \cdot \vec{F} \)           \\
-    Rotation                  & \texttt{\textbackslash nabla \textbackslash times \textbackslash vec{F}}                & \( \nabla \times \vec{F} \)          \\
-    Laplace-Operator          & \texttt{\textbackslash Delta}                                                           & \( \Delta \)                         \\
+    Laplace-Transformation    & \texttt{\textbackslash mathcal\{L\}\{f(t)\}}                                             & \( \mathcal{L}\{f(t)\} \)            \\
+    Fourier-Transformation    & \texttt{\textbackslash mathcal\{F\}\{f(t)\}}                                             & \( \mathcal{F}\{f(t)\} \)            \\
+    Nabla-Operator            & \texttt{\textbackslash nabla}                                                            & \( \nabla \)                         \\
+    Gradient                  & \texttt{\textbackslash nabla f}                                                          & \( \nabla f \)                       \\
+    Divergenz                 & \texttt{\textbackslash nabla \textbackslash cdot \textbackslash vec{F}}                  & \( \nabla \cdot \vec{F} \)           \\
+    Rotation                  & \texttt{\textbackslash nabla \textbackslash times \textbackslash vec{F}}                 & \( \nabla \times \vec{F} \)          \\
+    Laplace-Operator          & \texttt{\textbackslash Delta}                                                            & \( \Delta \)                         \\
 \end{longtable}
